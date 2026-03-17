@@ -282,6 +282,31 @@
 .dc-icon-purple { color: var(--accent); }
 .dc-icon-blue   { color: var(--accent-blue); }
 
+/* ─── Mobile responsive ─── */
+@media (max-width: 640px) {
+  .dc-card {
+    width: 16rem;
+    height: 9rem;
+    padding: 14px 24px;
+  }
+
+  .dc-card--1 { transform: skewY(-8deg) translateX(70px) translateY(240px); }
+  .dc-card--2 { transform: skewY(-8deg) translateX(35px) translateY(180px); }
+  .dc-card--3 { transform: skewY(-8deg) translateX(0px) translateY(120px); }
+  .dc-card--4 { transform: skewY(-8deg) translateX(-35px) translateY(60px); }
+  .dc-card--5 { transform: skewY(-8deg) translateX(-70px); }
+
+  .dc-card--1:hover { transform: skewY(-8deg) translateX(70px) translateY(180px); }
+  .dc-card--2:hover { transform: skewY(-8deg) translateX(35px) translateY(120px); }
+  .dc-card--3:hover { transform: skewY(-8deg) translateX(0px) translateY(60px); }
+  .dc-card--4:hover { transform: skewY(-8deg) translateX(-35px) translateY(0px); }
+  .dc-card--5:hover { transform: skewY(-8deg) translateX(-70px) translateY(-60px); }
+
+  .dc-card-title { font-size: 14px; }
+  .dc-card-desc { font-size: 11px; }
+  .dc-card::after { width: 3rem; }
+}
+
 /* ─── Light mode ─── */
 .wts-page--light .dc-card {
   background: color-mix(in srgb, var(--surface) 85%, transparent);

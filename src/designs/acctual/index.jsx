@@ -548,8 +548,8 @@ export default function Wantss() {
         <KineticNav light={light} toggle={toggle} />
         <Hero />
         <Problem />
-        <Differentiators />
         <ProcessOrbital />
+        <Differentiators />
         <Infrastructure />
         <Transformation />
         <Industries />
