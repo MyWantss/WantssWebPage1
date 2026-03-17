@@ -1,16 +1,8 @@
 import { Suspense, lazy } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Gallery from './Gallery'
 
+const Acctual = lazy(() => import('./designs/acctual/index'))
 const IndustryPage = lazy(() => import('./designs/acctual/industry/IndustryPage'))
-
-// Auto-discover all designs: just create src/designs/<name>/index.jsx
-const modules = import.meta.glob('./designs/*/index.jsx')
-
-const designs = Object.entries(modules).map(([path, load]) => {
-  const slug = path.split('/')[2] // ./designs/<slug>/index.jsx
-  return { slug, Component: lazy(load) }
-})
 
 function Loading() {
   return (
@@ -35,11 +27,8 @@ export default function App() {
     <BrowserRouter>
       <Suspense fallback={<Loading />}>
         <Routes>
-          <Route path="/" element={<Gallery />} />
+          <Route path="/" element={<Acctual />} />
           <Route path="/use-cases/:slug" element={<IndustryPage />} />
-          {designs.map(({ slug, Component }) => (
-            <Route key={slug} path={`/${slug}`} element={<Component />} />
-          ))}
         </Routes>
       </Suspense>
     </BrowserRouter>
