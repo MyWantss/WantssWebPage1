@@ -1,0 +1,374 @@
+/* ============================================
+   GLOBAL SECTION STYLES
+   ============================================ */
+.section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-title {
+  font-family: 'Bebas Neue', 'Oswald', sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  z-index: 5;
+  position: relative;
+}
+
+/* ============================================
+   NAVIGATION
+   ============================================ */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 24px 40px;
+  mix-blend-mode: difference;
+}
+
+.nav a {
+  font-family: 'Oswald', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #eee;
+  transition: color 0.3s ease;
+}
+
+.nav a:hover {
+  color: #fff;
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.hero {
+  background: #060606;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12vh 0;
+}
+
+.hero-text-top,
+.hero-text-bottom {
+  font-family: 'Bebas Neue', sans-serif;
+  text-transform: uppercase;
+  line-height: 0.85;
+  letter-spacing: -0.02em;
+  z-index: 2;
+  position: relative;
+  width: 100%;
+  padding: 0 5%;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-text-line {
+  font-size: clamp(70px, 12vw, 200px);
+  color: #fff;
+  display: block;
+  user-select: none;
+}
+
+.hero-text-right {
+  text-align: right;
+}
+
+.hero-whale {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -55%) rotate(-5deg);
+  width: clamp(400px, 55vw, 800px);
+  z-index: 3;
+  filter: brightness(0.75) contrast(1.15);
+  opacity: 0.95;
+}
+
+.hero-blood-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+}
+
+/* ============================================
+   DUMP SECTION
+   ============================================ */
+.dump-section {
+  background: #1a3a5c;
+  position: relative;
+  min-height: 100vh;
+}
+
+.dump-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.dump-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+}
+
+.dump-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(30, 80, 140, 0.3) 0%,
+    rgba(0,0,0,0.2) 100%
+  );
+  z-index: 2;
+}
+
+.dump-title {
+  font-size: clamp(60px, 10vw, 160px);
+  color: #fff;
+  text-shadow: 2px 4px 20px rgba(0,0,0,0.5);
+  z-index: 3;
+  text-align: left;
+  padding: 0 5%;
+  line-height: 0.95;
+  width: 100%;
+}
+
+/* ============================================
+   SPECIES SECTION
+   ============================================ */
+.species-section {
+  background: #f5f0eb;
+  min-height: 100vh;
+  position: relative;
+}
+
+.species-title {
+  font-size: clamp(50px, 9vw, 150px);
+  color: #1a1a1a;
+  z-index: 5;
+  text-align: center;
+  padding: 0 5%;
+  line-height: 0.95;
+}
+
+.species-cracks {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* ============================================
+   POISONED SECTION
+   ============================================ */
+.poisoned-section {
+  background: #faf5f0;
+  min-height: 100vh;
+  position: relative;
+}
+
+.poisoned-title {
+  font-size: clamp(60px, 12vw, 200px);
+  color: #1a1a1a;
+  z-index: 5;
+  text-align: center;
+  line-height: 0.95;
+}
+
+.poisoned-blood {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* ============================================
+   CORAL SECTION
+   ============================================ */
+.coral-section {
+  background: #2a2a2a;
+  min-height: 100vh;
+  position: relative;
+}
+
+.coral-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.coral-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(0.4) brightness(0.7);
+}
+
+.coral-overlay {
+  position: absolute;
+  z-index: 3;
+}
+
+.coral-overlay-1 {
+  width: 120px;
+  height: 80px;
+  background: rgba(160, 30, 30, 0.7);
+  top: 30%;
+  right: 10%;
+}
+
+.coral-overlay-2 {
+  width: 80px;
+  height: 60px;
+  background: rgba(160, 30, 30, 0.5);
+  bottom: 35%;
+  right: 15%;
+}
+
+.coral-title {
+  font-size: clamp(50px, 9vw, 150px);
+  color: #fff;
+  z-index: 5;
+  text-align: center;
+  padding: 0 5%;
+  line-height: 0.95;
+  text-shadow: 2px 4px 20px rgba(0,0,0,0.6);
+}
+
+/* ============================================
+   CTA / FINAL SECTION
+   ============================================ */
+.cta-section {
+  background: #f8f3ee;
+  min-height: 100vh;
+  position: relative;
+}
+
+.cta-turtle {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(300px, 45vw, 650px);
+  z-index: 3;
+  filter: brightness(0.9) contrast(1.05);
+}
+
+.cta-title {
+  font-size: clamp(50px, 9vw, 150px);
+  color: #1a1a1a;
+  z-index: 5;
+  text-align: center;
+  padding: 0 5%;
+  line-height: 0.95;
+}
+
+.cta-blood {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+}
+
+/* ============================================
+   BLOOD SPLATTER SVG EFFECTS
+   ============================================ */
+.blood-splatter {
+  position: absolute;
+  pointer-events: none;
+}
+
+/* ============================================
+   SCROLL ANIMATIONS
+   ============================================ */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.slide-left {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.slide-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scale-in {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.scale-in.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ============================================
+   DRIP ANIMATIONS
+   ============================================ */
+@keyframes drip {
+  0% { transform: translateY(-10px); opacity: 0; }
+  10% { opacity: 1; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+
+@keyframes splatter-pulse {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+
+@keyframes crack-grow {
+  0% { stroke-dashoffset: 1000; }
+  100% { stroke-dashoffset: 0; }
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+  .nav {
+    gap: 20px;
+    padding: 16px 20px;
+  }
+  .nav a {
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+  .hero-whale {
+    width: 85vw;
+  }
+  .cta-turtle {
+    width: 80vw;
+  }
+}

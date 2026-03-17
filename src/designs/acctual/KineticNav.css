@@ -1,0 +1,263 @@
+/* ============================================
+   KINETIC NAVIGATION
+   ============================================ */
+
+/* ─── Fixed header ─── */
+.kn-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background: rgba(9, 9, 11, 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+}
+
+.wts-page--light .kn-header {
+  background: rgba(248, 249, 251, 0.8);
+}
+
+.kn-header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.kn-logo {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+/* ─── Gradient text logo ─── */
+.kn-logo-text {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 800;
+  font-size: 26px;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  background: linear-gradient(135deg, #5B6BF5 0%, #A855F7 50%, #EC4899 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Large logo inside menu panel */
+.kn-menu-logo {
+  margin-bottom: 32px;
+}
+
+.kn-logo-text--lg {
+  font-size: clamp(48px, 7vw, 80px);
+}
+
+/* Logo image */
+.kn-logo-img {
+  height: 80px;
+  width: auto;
+  display: block;
+}
+
+.kn-logo-img--lg {
+  height: clamp(96px, 14vw, 160px);
+  width: auto;
+}
+
+.kn-header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ─── Menu button ─── */
+.kn-menu-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  color: var(--text);
+  padding: 8px 16px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  transition: border-color 0.2s;
+  cursor: none;
+}
+
+.kn-menu-btn:hover {
+  border-color: var(--border-hover);
+}
+
+.kn-btn-text {
+  height: 1.3em;
+  overflow: hidden;
+  line-height: 1.3;
+}
+
+.kn-btn-text p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.kn-btn-icon-wrap {
+  width: 14px;
+  height: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.kn-btn-icon {
+  display: block;
+}
+
+/* ─── Overlay wrapper ─── */
+.kn-overlay-wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+}
+
+.kn-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(3px);
+}
+
+/* ─── Sliding panel ─── */
+.kn-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 55%;
+  max-width: 760px;
+  height: 100%;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .kn-panel {
+    width: 100%;
+  }
+}
+
+/* ─── Staggered backdrop layers ─── */
+.kn-layer {
+  position: absolute;
+  inset: 0;
+}
+
+.kn-layer--1 { background: #18181b; }
+.kn-layer--2 { background: #111113; }
+.kn-layer--3 { background: #09090b; }
+
+/* ─── Hover shapes ─── */
+.kn-shapes {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.kn-bg-shape {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+.kn-bg-shape.active {
+  opacity: 1;
+}
+
+.shape-element {
+  opacity: 0;
+}
+
+/* Image inside each shape slot */
+.kn-bg-shape img.shape-element {
+  position: absolute;
+  width: 70%;
+  height: 60%;
+  object-fit: cover;
+  border-radius: 16px;
+  top: 20%;
+  right: 8%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* ─── Menu links ─── */
+.kn-links-wrap {
+  position: relative;
+  z-index: 10;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 80px 64px;
+}
+
+.kn-menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.kn-menu-item {
+  overflow: hidden;
+}
+
+.kn-link {
+  display: block;
+  position: relative;
+  padding: 6px 0;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.kn-link-text {
+  display: block;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(36px, 5.5vw, 68px);
+  font-weight: 700;
+  color: #f4f4f5;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  position: relative;
+  z-index: 1;
+  -webkit-background-clip: text;
+  background-clip: text;
+  transition: -webkit-text-fill-color 0.2s;
+}
+
+.kn-link:hover .kn-link-text {
+  background-image: linear-gradient(135deg, #EC4899 0%, #A855F7 50%, #5B6BF5 100%);
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.kn-link-bg {
+  position: absolute;
+  inset: 0;
+  background: rgba(168, 85, 247, 0.06);
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+.kn-link:hover .kn-link-bg {
+  opacity: 1;
+}

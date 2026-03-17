@@ -1,0 +1,366 @@
+/* ============================================
+   RADIAL ORBITAL TIMELINE
+   ============================================ */
+
+.rot-container {
+  width: 100%;
+  height: 650px;
+  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  overflow: hidden;
+}
+
+.rot-viewport {
+  position: relative;
+  width: 100%;
+  max-width: 56rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rot-orbit-area {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ─── Nucleus (center) ─── */
+.rot-nucleus {
+  position: absolute;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #a855f7, #3b82f6, #14b8a6);
+  animation: rot-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.rot-nucleus-core {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+}
+
+/* ─── Center label (below nucleus) ─── */
+.rot-center-label {
+  position: absolute;
+  top: calc(50% + 60px);
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 11;
+  pointer-events: none;
+}
+
+.rot-center-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.rot-center-desc {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 260px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+.rot-nucleus-ping {
+  position: absolute;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: rot-ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+  opacity: 0.7;
+}
+
+.rot-nucleus-ping--delayed {
+  width: 6rem;
+  height: 6rem;
+  border-color: rgba(255, 255, 255, 0.1);
+  opacity: 0.5;
+  animation-delay: 0.5s;
+}
+
+/* ─── Orbit ring ─── */
+.rot-orbit-ring {
+  position: absolute;
+  width: 32rem;
+  height: 32rem;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ─── Node ─── */
+.rot-node {
+  position: absolute;
+  transition: all 700ms cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.rot-node-glow {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
+}
+
+.rot-node-glow--pulse {
+  animation: rot-pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.rot-node-circle {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  transition: all 300ms ease;
+}
+
+.rot-node-circle--expanded {
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  transform: scale(1.5);
+}
+
+.rot-node-circle--related {
+  background: rgba(255, 255, 255, 0.5);
+  color: #000;
+  border-color: #fff;
+  animation: rot-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* ─── Node label ─── */
+.rot-node-label {
+  position: absolute;
+  top: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--accent, #A855F7);
+  transition: all 300ms ease;
+  font-family: 'Space Grotesk', 'Oswald', sans-serif;
+}
+
+.rot-node-label--active {
+  color: #fff;
+  transform: scale(1.25);
+}
+
+/* ─── Expanded card ─── */
+.rot-card {
+  position: absolute;
+  top: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16rem;
+  background: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 20px 60px rgba(255, 255, 255, 0.1);
+  overflow: visible;
+}
+
+.rot-card-stem {
+  position: absolute;
+  top: -0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 0.75rem;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.rot-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.rot-card-date {
+  font-size: 0.7rem;
+  font-family: 'Space Mono', monospace;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.rot-card-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 0.5rem;
+  font-family: 'Space Grotesk', 'Oswald', sans-serif;
+}
+
+.rot-card-content {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5;
+  margin: 0;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* ─── Badge ─── */
+.rot-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  border: 1px solid;
+  letter-spacing: 0.05em;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.rot-badge--completed {
+  color: #fff;
+  background: #000;
+  border-color: #fff;
+}
+
+.rot-badge--in-progress {
+  color: #000;
+  background: #fff;
+  border-color: #000;
+}
+
+.rot-badge--pending {
+  color: #fff;
+  background: rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* ─── Energy bar ─── */
+.rot-energy {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.rot-energy-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.7rem;
+  margin-bottom: 0.25rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.rot-energy-label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.rot-energy-value {
+  font-family: 'Space Mono', monospace;
+}
+
+.rot-energy-track {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.rot-energy-fill {
+  height: 100%;
+  background: linear-gradient(to right, #3b82f6, #a855f7);
+  border-radius: 9999px;
+  transition: width 500ms ease;
+}
+
+/* ─── Connected nodes ─── */
+.rot-connections {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.rot-connections-header {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 0.5rem;
+}
+
+.rot-connections-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.rot-connection-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 1.5rem;
+  padding: 0 0.5rem;
+  font-size: 0.7rem;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  transition: all 200ms ease;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.rot-connection-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+/* ─── Animations ─── */
+@keyframes rot-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes rot-ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}

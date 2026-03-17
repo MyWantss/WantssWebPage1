@@ -1,0 +1,321 @@
+/* ============================================
+   INDUSTRY PAGE
+   ============================================ */
+
+/* ─── Breadcrumb ─── */
+.ind-breadcrumb {
+  padding: 100px 24px 0;
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.ind-breadcrumb a {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.ind-breadcrumb a:hover {
+  color: var(--accent);
+}
+
+.ind-breadcrumb-sep {
+  margin: 0 8px;
+  opacity: 0.5;
+}
+
+.ind-breadcrumb-current {
+  color: var(--text);
+}
+
+/* ─── Hero ─── */
+.ind-hero {
+  text-align: center;
+  padding: 60px 24px 80px;
+}
+
+.ind-hero-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.ind-hero-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+
+.ind-hero-title span {
+  color: var(--accent);
+}
+
+.ind-hero-sub {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 32px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ─── Sections ─── */
+.ind-section {
+  padding: 60px 24px;
+}
+
+.ind-section-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.ind-section-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 24px;
+}
+
+.ind-section-body {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 700px;
+}
+
+/* ─── ICP Grid ─── */
+.ind-icp-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.ind-icp-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ind-icp-label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+}
+
+.ind-icp-value {
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* ─── Card Grids (Signals, Researches) ─── */
+.ind-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.ind-signal-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  transition: border-color 0.2s;
+}
+
+.ind-signal-card:hover {
+  border-color: var(--border-hover);
+}
+
+.ind-signal-num {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.ind-signal-card p {
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ─── Activation Card ─── */
+.ind-activation-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.ind-activation-label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.ind-activation-context p,
+.ind-activation-message p {
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.ind-activation-message {
+  background: rgba(168, 85, 247, 0.06);
+  border-left: 3px solid var(--accent);
+  padding: 16px 20px;
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.ind-activation-message p {
+  font-style: italic;
+}
+
+/* ─── Impact Grid ─── */
+.ind-impact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+.ind-impact-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  transition: border-color 0.2s;
+}
+
+.ind-impact-card:hover {
+  border-color: var(--border-hover);
+}
+
+.ind-impact-card p {
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ─── Related Use Cases ─── */
+.ind-related-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.ind-related-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  text-decoration: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  display: block;
+}
+
+.ind-related-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+
+.ind-related-card h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.ind-related-card p {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.5;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ─── CTA ─── */
+.ind-cta {
+  text-align: center;
+  padding: 80px 24px;
+  border-top: 1px solid var(--border);
+}
+
+.ind-cta-inner {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.ind-cta-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 24px;
+}
+
+/* ─── 404 ─── */
+.ind-not-found {
+  text-align: center;
+  padding: 200px 24px;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.ind-not-found h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 32px;
+  color: var(--text);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .ind-icp-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ind-related-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ind-card-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,697 @@
+/* ============================================
+   ACCTUAL — GLOBAL
+   ============================================ */
+/* Fonts moved to index.html <link> for non-blocking load */
+
+.acc-page {
+  --bg: #f7fafc;
+  --text: #000000e6;
+  --muted: #666;
+  --accent: #004370;
+  --dark: #0a1628;
+  --dark-surface: #0e1d33;
+  --radius: 10px;
+
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 15px;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.55;
+  overflow-x: hidden;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes float-drift {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  25% { transform: translateY(-12px) rotate(2deg); }
+  75% { transform: translateY(8px) rotate(-2deg); }
+}
+
+@keyframes float-drift-alt {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-18px) rotate(-3deg); }
+  66% { transform: translateY(10px) rotate(3deg); }
+}
+
+.float-element {
+  position: absolute;
+  animation: float-drift 6s ease-in-out infinite;
+  z-index: 2;
+  font-size: 32px;
+  pointer-events: none;
+}
+
+.float-element:nth-child(even) {
+  animation-name: float-drift-alt;
+  animation-duration: 7s;
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.visible .fade-up {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================
+   NAVIGATION
+   ============================================ */
+.acc-nav {
+  padding: 16px 32px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 50;
+  background: var(--bg);
+}
+
+.acc-nav--dark {
+  background: var(--dark);
+}
+
+.acc-nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1100px;
+  padding: 10px 20px;
+  border: 1px solid #e2e8f0;
+  border-radius: 50px;
+  background: #fff;
+}
+
+.acc-nav--dark .acc-nav-inner {
+  background: var(--dark-surface);
+  border-color: #1e3050;
+}
+
+.acc-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.acc-logo--white { color: #fff; }
+
+.acc-logo-img {
+  height: 28px;
+  width: auto;
+  display: block;
+}
+
+.acc-nav--dark .acc-logo { color: #fff; }
+
+.acc-nav-links {
+  display: flex;
+  gap: 28px;
+}
+
+.acc-nav-links a {
+  font-size: 13.5px;
+  font-weight: 400;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.acc-nav-links a:hover { color: var(--text); }
+
+.acc-nav--dark .acc-nav-links a { color: #8899aa; }
+.acc-nav--dark .acc-nav-links a:hover { color: #fff; }
+
+.acc-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.acc-nav-login {
+  font-size: 13.5px;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.acc-nav--dark .acc-nav-login { color: #8899aa; }
+
+.acc-btn-sm {
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 18px;
+  background: var(--text);
+  color: #fff;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.acc-btn-sm:hover { opacity: 0.85; }
+
+.acc-nav--dark .acc-btn-sm {
+  background: #fff;
+  color: var(--dark);
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+.acc-btn {
+  display: inline-block;
+  padding: 14px 32px;
+  background: var(--text);
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: opacity 0.2s, transform 0.2s;
+  cursor: pointer;
+}
+
+.acc-btn:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+.acc-btn-full { width: 100%; text-align: center; }
+
+.acc-btn-outline {
+  background: transparent;
+  border: 1px solid #ffffff44;
+  color: #fff;
+}
+
+.acc-btn-outline:hover {
+  background: #ffffff11;
+  border-color: #ffffff88;
+}
+
+/* ============================================
+   HERO
+   ============================================ */
+.acc-hero {
+  text-align: center;
+  padding: 80px 24px 60px;
+  position: relative;
+}
+
+.acc-hero-title {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: clamp(42px, 6vw, 72px);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 18px;
+}
+
+.acc-hero-sub {
+  font-size: 15px;
+  color: var(--muted);
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+
+.acc-hero-trust {
+  margin-top: 32px;
+  font-size: 12.5px;
+  color: #aaa;
+  letter-spacing: 0.01em;
+}
+
+/* ============================================
+   VALUE PROP
+   ============================================ */
+.acc-value {
+  position: relative;
+  text-align: center;
+  padding: 120px 24px 100px;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.acc-value-content { position: relative; z-index: 3; }
+
+.acc-value-title {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: clamp(30px, 4.5vw, 52px);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin-bottom: 20px;
+}
+
+.acc-value-sub {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 28px;
+  line-height: 1.7;
+}
+
+.acc-value-sub a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Floating element positions */
+.acc-float-coin { top: 15%; left: 6%; font-size: 36px; }
+.acc-float-card-left { top: 22%; left: 3%; }
+.acc-float-card-right { top: 18%; right: 3%; }
+.acc-float-blue { top: 35%; left: 8%; font-size: 28px; }
+.acc-float-clip { bottom: 35%; left: 38%; font-size: 40px; opacity: 0.7; }
+.acc-float-red { bottom: 40%; right: 5%; font-size: 32px; }
+
+/* Mini cards */
+.acc-mini-card {
+  background: #fff;
+  border: 1px solid #e8ecf0;
+  border-radius: 12px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  pointer-events: none;
+}
+
+.acc-mini-avatar {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.acc-mini-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.acc-mini-lines { display: flex; flex-direction: column; gap: 6px; }
+
+.acc-mini-line {
+  height: 6px;
+  background: #e8ecf0;
+  border-radius: 3px;
+}
+
+/* ============================================
+   TESTIMONIAL
+   ============================================ */
+.acc-testimonial {
+  padding: 80px 24px;
+  text-align: center;
+}
+
+.acc-testimonial-inner {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.acc-quote {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.7;
+  font-style: italic;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.acc-quote::before {
+  content: '✦';
+  display: block;
+  font-style: normal;
+  font-size: 16px;
+  margin-bottom: 16px;
+  color: #ccc;
+}
+
+.acc-quote-author {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.acc-quote-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.acc-quote-author span {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.acc-quote-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #aaa;
+}
+
+.acc-quote-stars { font-size: 11px; }
+
+/* ============================================
+   PRICING
+   ============================================ */
+.acc-pricing {
+  padding: 60px 24px 80px;
+  text-align: center;
+}
+
+.acc-pricing-inner {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.acc-pricing-title {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 400;
+  margin-bottom: 32px;
+}
+
+.acc-pricing-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 32px 28px;
+  text-align: left;
+}
+
+.acc-pricing-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: #aaa;
+  margin-bottom: 16px;
+}
+
+.acc-pricing-rate,
+.acc-pricing-zero {
+  font-size: 14px;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.acc-pricing-num {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 28px;
+  font-weight: 400;
+}
+
+.acc-pricing-zero {
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+.acc-pricing-zero .acc-pricing-num {
+  font-size: 22px;
+}
+
+.acc-pricing-features {
+  margin-top: 20px;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 16px;
+}
+
+.acc-pricing-features-label {
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: var(--muted);
+}
+
+.acc-pricing-features ul {
+  list-style: none;
+  padding: 0;
+}
+
+.acc-pricing-features li {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+/* ============================================
+   DARK CTA
+   ============================================ */
+.acc-dark-cta {
+  background: var(--dark);
+  padding: 80px 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.acc-dark-cta-inner {
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.acc-dark-cta-text {
+  font-size: 14px;
+  color: #8899aa;
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+.acc-float-ticket { top: -20px; left: -60px; font-size: 48px; }
+.acc-float-moneybag { bottom: -30px; right: -40px; font-size: 52px; }
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.acc-footer {
+  background: var(--dark);
+  padding: 60px 24px 40px;
+  color: #8899aa;
+}
+
+.acc-footer-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+  gap: 40px;
+}
+
+.acc-footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.acc-footer-copy {
+  font-size: 12px;
+  color: #556677;
+}
+
+.acc-footer-col h4 {
+  font-size: 12px;
+  font-weight: 600;
+  color: #667788;
+  letter-spacing: 0.5px;
+  margin-bottom: 14px;
+}
+
+.acc-footer-col a {
+  display: block;
+  font-size: 13px;
+  color: #8899aa;
+  text-decoration: none;
+  margin-bottom: 8px;
+  transition: color 0.2s;
+}
+
+.acc-footer-col a:hover { color: #fff; }
+
+.acc-footer-app-badges {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.acc-app-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border: 1px solid #2a3a50;
+  border-radius: 6px;
+  font-size: 11px;
+  color: #8899aa;
+  text-decoration: none;
+  transition: border-color 0.2s;
+}
+
+.acc-app-badge:hover { border-color: #4a5a70; }
+
+/* ============================================
+   PROUD INVOICES
+   ============================================ */
+.acc-proud {
+  padding: 120px 24px 80px;
+  text-align: center;
+  position: relative;
+  background: var(--bg);
+}
+
+.acc-proud-inner {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.acc-proud-label {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+.acc-proud-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 32px;
+}
+
+.acc-proud-card-header {
+  height: 8px;
+  background: linear-gradient(90deg, #e2e8f0, #cbd5e0);
+}
+
+.acc-proud-card-body {
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.acc-proud-card-line {
+  height: 8px;
+  background: #edf2f7;
+  border-radius: 4px;
+}
+
+.acc-float-apple {
+  top: 8%;
+  left: 10%;
+  font-size: 36px;
+}
+
+/* ============================================
+   FOUNDER LETTER
+   ============================================ */
+.acc-letter {
+  background: var(--dark);
+  padding: 100px 24px;
+}
+
+.acc-letter-inner {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.acc-letter-card {
+  background: var(--dark-surface);
+  border: 1px solid #1e3050;
+  border-radius: 16px;
+  padding: 40px 36px;
+}
+
+.acc-letter-greeting {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 20px;
+  color: #e8524a;
+  margin-bottom: 24px;
+}
+
+.acc-letter-body p {
+  font-size: 14px;
+  color: #8899aa;
+  line-height: 1.75;
+  margin-bottom: 16px;
+}
+
+.acc-letter-sig {
+  margin-top: 24px;
+}
+
+.acc-letter-name {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 18px;
+  color: #e8524a;
+  margin-bottom: 2px;
+}
+
+.acc-letter-role {
+  font-size: 12px;
+  color: #556677;
+}
+
+/* ============================================
+   FINAL CTA
+   ============================================ */
+.acc-final {
+  background: var(--dark);
+  padding: 60px 24px 100px;
+  text-align: center;
+}
+
+.acc-final-inner {
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+.acc-final-title {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: clamp(24px, 3.5vw, 36px);
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.3;
+  margin-bottom: 32px;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+  .acc-nav-links { display: none; }
+
+  .acc-footer-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .acc-float-card-left,
+  .acc-float-card-right {
+    display: none;
+  }
+
+  .acc-value {
+    padding: 80px 24px 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .acc-footer-inner {
+    grid-template-columns: 1fr;
+  }
+}

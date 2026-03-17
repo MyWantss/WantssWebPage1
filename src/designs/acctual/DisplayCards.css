@@ -1,0 +1,296 @@
+/* ============================================
+   DISPLAY CARDS — stacked skew component (5 cards)
+   ============================================ */
+.dc-stack {
+  display: grid;
+  grid-template-areas: 'stack';
+  place-items: center;
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  animation: fade-in 0.7s ease both;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ─── Card base ─── */
+.dc-card {
+  grid-area: stack;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28rem;
+  height: 11rem;          /* 176px */
+  padding: 20px 48px;
+  border-radius: 12px;
+  border: 1.5px solid var(--border);
+  background: color-mix(in srgb, var(--surface) 70%, transparent);
+  backdrop-filter: blur(8px);
+  transform: skewY(-8deg);
+  transition: transform 0.35s ease, border-color 0.25s ease,
+              filter 0.35s ease, z-index 0s;
+  cursor: default;
+  user-select: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* right-side fade mask */
+.dc-card::after {
+  content: '';
+  position: absolute;
+  right: -4px;
+  top: -5%;
+  width: 6rem;
+  height: 110%;
+  background: linear-gradient(to left, var(--bg), transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* gray overlay on cards 2–5 */
+.dc-card--2::before,
+.dc-card--3::before,
+.dc-card--4::before,
+.dc-card--5::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--bg) 55%, transparent);
+  transition: opacity 0.35s ease;
+  z-index: 2;
+}
+
+/* ─── Card float animation ─── */
+@keyframes dc-float {
+  0% { margin-top: 0px; }
+  10% { margin-top: -5px; }
+  20% { margin-top: -12px; }
+  30% { margin-top: -16px; }
+  40% { margin-top: -12px; }
+  50% { margin-top: -3px; }
+  60% { margin-top: 4px; }
+  70% { margin-top: 9px; }
+  80% { margin-top: 7px; }
+  90% { margin-top: 3px; }
+  100% { margin-top: 0px; }
+}
+
+/* ─── Stack positions — centered spread, 70px X steps, 72px Y steps (inverted) ─── */
+.dc-card--1 {
+  transform: skewY(-8deg) translateX(140px) translateY(288px);
+  filter: grayscale(0%);
+  z-index: 5;
+  animation: dc-float 5s ease-in-out infinite;
+  animation-delay: 0s;
+}
+
+.dc-card--2 {
+  transform: skewY(-8deg) translateX(70px) translateY(216px);
+  filter: grayscale(20%);
+  z-index: 4;
+  animation: dc-float 5s ease-in-out infinite;
+  animation-delay: 0.8s;
+}
+
+.dc-card--3 {
+  transform: skewY(-8deg) translateX(0px) translateY(144px);
+  filter: grayscale(50%);
+  z-index: 3;
+  animation: dc-float 5s ease-in-out infinite;
+  animation-delay: 1.6s;
+}
+
+.dc-card--4 {
+  transform: skewY(-8deg) translateX(-70px) translateY(72px);
+  filter: grayscale(80%);
+  z-index: 2;
+  animation: dc-float 5s ease-in-out infinite;
+  animation-delay: 2.4s;
+}
+
+.dc-card--5 {
+  transform: skewY(-8deg) translateX(-140px);
+  filter: grayscale(100%);
+  z-index: 1;
+  animation: dc-float 5s ease-in-out infinite;
+  animation-delay: 3.2s;
+}
+
+/* ─── Hover: lift 80px up from base position, pop to front ─── */
+.dc-card--1:hover {
+  transform: skewY(-8deg) translateX(140px) translateY(208px);
+  border-color: var(--accent);
+  z-index: 10;
+}
+
+.dc-card--2:hover {
+  transform: skewY(-8deg) translateX(70px) translateY(136px);
+  filter: grayscale(0%);
+  border-color: var(--accent);
+  z-index: 10;
+}
+.dc-card--2:hover::before { opacity: 0; }
+
+.dc-card--3:hover {
+  transform: skewY(-8deg) translateX(0px) translateY(64px);
+  filter: grayscale(0%);
+  border-color: var(--accent);
+  z-index: 10;
+}
+.dc-card--3:hover::before { opacity: 0; }
+
+.dc-card--4:hover {
+  transform: skewY(-8deg) translateX(-70px) translateY(-8px);
+  filter: grayscale(0%);
+  border-color: var(--accent);
+  z-index: 10;
+}
+.dc-card--4:hover::before { opacity: 0; }
+
+.dc-card--5:hover {
+  transform: skewY(-8deg) translateX(-140px) translateY(-80px);
+  filter: grayscale(0%);
+  border-color: var(--accent);
+  z-index: 10;
+}
+.dc-card--5:hover::before { opacity: 0; }
+
+/* ─── Card internals ─── */
+.dc-card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  z-index: 3;
+}
+
+.dc-card-icon-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(168, 85, 247, 0.15);
+  flex-shrink: 0;
+}
+
+.dc-card-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+  position: relative;
+  z-index: 3;
+}
+
+.dc-card-desc {
+  font-size: 13px;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  position: relative;
+  z-index: 3;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.dc-card-date {
+  font-size: 12px;
+  color: var(--accent);
+  margin: 0;
+  position: relative;
+  z-index: 3;
+}
+
+/* ─── Expanded card overlay ─── */
+.dc-overlay-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(6px);
+  z-index: 100;
+}
+
+.dc-overlay-center {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 101;
+  cursor: pointer;
+}
+
+.dc-card-expanded {
+  width: 480px !important;
+  height: auto !important;
+  max-width: 90vw;
+  padding: 36px 40px !important;
+  transform: none !important;
+  filter: none !important;
+  cursor: default;
+  animation: none !important;
+  margin-top: 0 !important;
+}
+
+.dc-card-expanded::before,
+.dc-card-expanded::after {
+  display: none !important;
+}
+
+.dc-card-expanded .dc-card-title {
+  font-size: 20px;
+}
+
+.dc-card-desc--expanded {
+  display: block !important;
+  -webkit-line-clamp: unset !important;
+  overflow: visible !important;
+  font-size: 15px !important;
+  line-height: 1.7 !important;
+}
+
+.dc-card-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 18px;
+  padding: 4px 8px;
+  transition: color 0.2s;
+  z-index: 2;
+}
+
+.dc-card-close:hover {
+  color: var(--text);
+}
+
+/* ─── Icon colors ─── */
+.dc-icon-pink   { color: var(--accent-pink); }
+.dc-icon-purple { color: var(--accent); }
+.dc-icon-blue   { color: var(--accent-blue); }
+
+/* ─── Light mode ─── */
+.wts-page--light .dc-card {
+  background: color-mix(in srgb, var(--surface) 85%, transparent);
+}
+
+.wts-page--light .dc-card::after {
+  background: linear-gradient(to left, var(--bg), transparent);
+}
+
+.wts-page--light .dc-card-icon-wrap {
+  background: rgba(147, 51, 234, 0.1);
+}

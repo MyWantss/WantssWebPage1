@@ -1,0 +1,1414 @@
+/* ============================================
+   WANTSS — GLOBAL
+   ============================================ */
+/* Fonts moved to index.html <link> for non-blocking load */
+
+.wts-page {
+  --bg: #09090b;
+  --text: #f4f4f5;
+  --muted: #71717a;
+  --accent: #A855F7;
+  --accent-glow: rgba(168, 85, 247, 0.15);
+  --accent-blue: #5B6BF5;
+  --accent-pink: #EC4899;
+  --gradient-btn: linear-gradient(to top, #EC4899, #5B6BF5);
+  --surface: #18181b;
+  --border: #27272a;
+  --border-hover: #3f3f46;
+  --subtle: #52525b;
+  --radius: 12px;
+
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 15px;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.55;
+  overflow-x: hidden;
+  transition: background 0.3s ease, color 0.3s ease;
+  cursor: none;
+}
+
+.wts-page * {
+  cursor: none !important;
+}
+
+/* ─── Light Theme Override ─── */
+.wts-page--light {
+  --bg: #f8f9fb;
+  --text: #18181b;
+  --muted: #71717a;
+  --accent: #9333EA;
+  --accent-glow: rgba(147, 51, 234, 0.12);
+  --accent-blue: #4F56E8;
+  --accent-pink: #DB2777;
+  --gradient-btn: linear-gradient(to top, #DB2777, #4F56E8);
+  --surface: #ffffff;
+  --border: #e4e4e7;
+  --border-hover: #a1a1aa;
+  --subtle: #a1a1aa;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes float-drift {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  25% { transform: translateY(-12px) rotate(2deg); }
+  75% { transform: translateY(8px) rotate(-2deg); }
+}
+
+@keyframes float-drift-alt {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-18px) rotate(-3deg); }
+  66% { transform: translateY(10px) rotate(3deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.7; }
+}
+
+.float-element {
+  animation: float-drift 6s ease-in-out infinite;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.float-element:nth-child(even) {
+  animation-name: float-drift-alt;
+  animation-duration: 7s;
+}
+
+/* ─── Floater images: responsive & theme ─── */
+@media (max-width: 768px) {
+  .floater-hide-mobile { display: none; }
+}
+
+.wts-page--light .float-element img {
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.15)) !important;
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.visible .fade-up {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================
+   SECTION LABEL (system-style)
+   ============================================ */
+.wts-section-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+/* ─── Theme Toggle ─── */
+.wts-theme-toggle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s, background 0.2s;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.wts-theme-toggle:hover {
+  border-color: var(--border-hover);
+  color: var(--text);
+}
+
+/* Light mode: swap logo if needed */
+.wts-page--light .wts-logo-img-dark { display: none; }
+.wts-page--light .wts-logo-img-light { display: block; }
+.wts-page:not(.wts-page--light) .wts-logo-img-dark { display: block; }
+.wts-page:not(.wts-page--light) .wts-logo-img-light { display: none; }
+
+/* ============================================
+   NAVIGATION
+   ============================================ */
+.wts-nav {
+  padding: 16px 32px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 50;
+  background: var(--bg);
+}
+
+.wts-nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1100px;
+  padding: 10px 20px;
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  background: var(--surface);
+}
+
+.wts-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.wts-logo-img {
+  height: 28px;
+  width: auto;
+  display: block;
+}
+
+.wts-nav-links {
+  display: flex;
+  gap: 28px;
+}
+
+.wts-nav-links a {
+  font-size: 13.5px;
+  font-weight: 400;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.wts-nav-links a:hover {
+  color: var(--text);
+}
+
+.wts-nav-actions {
+  display: flex;
+  align-items: center;
+}
+
+.wts-btn-sm {
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 18px;
+  background: var(--gradient-btn);
+  color: #fff;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: opacity 0.2s, box-shadow 0.2s;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.wts-btn-sm::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 50px;
+  background: conic-gradient(
+    from var(--btn-angle, 0deg),
+    #EC4899,
+    #A855F7,
+    #5B6BF5,
+    #EC4899
+  );
+  z-index: -2;
+  animation: btn-border-spin 3s linear infinite;
+}
+
+.wts-btn-sm::after {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  border-radius: 50px;
+  background: linear-gradient(to right, #EC4899, #5B6BF5, #EC4899);
+  background-size: 200% 100%;
+  animation: btn-gradient-slide 12s ease infinite;
+  z-index: -1;
+}
+
+.wts-btn-sm:hover {
+  opacity: 0.9;
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+.wts-btn {
+  display: inline-block;
+  padding: 14px 32px;
+  background: var(--gradient-btn);
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.wts-btn::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 50px;
+  background: conic-gradient(
+    from var(--btn-angle, 0deg),
+    #EC4899,
+    #A855F7,
+    #5B6BF5,
+    #EC4899
+  );
+  z-index: -2;
+  animation: btn-border-spin 3s linear infinite;
+}
+
+.wts-btn::after {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  border-radius: 50px;
+  background: linear-gradient(to right, #EC4899, #5B6BF5, #EC4899);
+  background-size: 200% 100%;
+  animation: btn-gradient-slide 12s ease infinite;
+  z-index: -1;
+}
+
+@keyframes btn-gradient-slide {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@property --btn-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes btn-border-spin {
+  to {
+    --btn-angle: 360deg;
+  }
+}
+
+.wts-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+  box-shadow: 0 0 24px var(--accent-glow);
+}
+
+.wts-btn-outline {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.wts-btn-outline:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+
+/* ============================================
+   HERO
+   ============================================ */
+.wts-hero {
+  text-align: center;
+  padding: 140px 24px 80px;
+  min-height: 75vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.wts-hero-content {
+  position: relative;
+  z-index: 3;
+}
+
+.wts-hero-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(42px, 6vw, 72px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+
+.wts-hero-title span {
+  color: var(--accent);
+}
+
+.wts-hero-sub {
+  font-size: 14px;
+  color: #c4c4cc;
+  margin-bottom: 32px;
+  line-height: 1.7;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wts-hero-micro {
+  font-size: 12px;
+  color: #c4c4cc;
+  margin-top: 16px;
+  letter-spacing: 0.02em;
+  opacity: 0.7;
+}
+
+.wts-hero-tag {
+  margin-top: 32px;
+  font-size: 12px;
+  color: var(--subtle);
+  letter-spacing: 0.5px;
+}
+
+/* Hero video background */
+.wts-hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.wts-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(9, 9, 11, 0.65);
+  z-index: 1;
+}
+
+.wts-page--light .wts-hero-overlay {
+  background: rgba(248, 249, 251, 0.22);
+}
+
+/* Hero: force white text + shadows in light mode for readability over video */
+.wts-page--light .wts-hero-title {
+  color: #ffffff;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.5), 0 1px 4px rgba(0,0,0,0.35);
+}
+
+.wts-page--light .wts-hero-title span {
+  color: var(--accent);
+  text-shadow: 0 2px 20px rgba(0,0,0,0.5), 0 1px 4px rgba(0,0,0,0.35);
+}
+
+.wts-page--light .wts-hero-sub {
+  color: #4a4a52;
+  text-shadow: 0 1px 10px rgba(0,0,0,0.45);
+}
+
+.wts-page--light .wts-hero-micro {
+  color: #4a4a52;
+}
+
+.wts-page--light .wts-hero-tag {
+  color: rgba(255,255,255,0.65);
+  text-shadow: 0 1px 8px rgba(0,0,0,0.4);
+}
+
+.wts-page--light .wts-hero-content .wts-section-label {
+  color: #ffffff;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.4);
+}
+
+/* Floating geometric shapes for hero */
+.wts-float-dot-1 { top: 18%; left: 8%; }
+.wts-float-dot-2 { top: 30%; right: 10%; }
+.wts-float-dot-3 { bottom: 25%; left: 15%; }
+
+.wts-geo-shape {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.4;
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+.wts-geo-shape--lg {
+  width: 12px;
+  height: 12px;
+  opacity: 0.25;
+}
+
+.wts-geo-shape--ring {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1.5px solid var(--accent);
+  opacity: 0.2;
+}
+
+/* ============================================
+   PROBLEM
+   ============================================ */
+.wts-problem {
+  padding: 80px 24px 0px;
+  text-align: center;
+  position: relative;
+  overflow: visible;
+}
+
+.wts-problem-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.wts-problem-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: 40px;
+}
+
+.wts-problem-cards-wrap {
+  /* height for 5 cards: 176px card + 288px offset + 80px hover clearance */
+  min-height: 600px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 16px;
+  margin-bottom: 0;
+  overflow: visible;
+}
+
+.wts-problem-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent-pink);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.wts-problem-result {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--accent-pink);
+  margin-top: 12px;
+}
+
+/* ============================================
+   TRANSFORMATION
+   ============================================ */
+.wts-transform {
+  padding: 80px 24px;
+}
+
+.wts-transform-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.wts-transform-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 32px;
+  text-align: left;
+}
+
+.wts-transform-col {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+}
+
+.wts-transform-col h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.wts-transform-col--before {
+  border-left: 3px solid var(--accent-pink);
+}
+
+.wts-transform-col--before h3 {
+  color: var(--accent-pink);
+}
+
+.wts-transform-col--after {
+  border-left: 3px solid var(--accent-blue);
+}
+
+.wts-transform-col--after h3 {
+  color: var(--accent-blue);
+}
+
+.wts-transform-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.wts-transform-col li {
+  font-size: 14px;
+  color: var(--muted);
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border);
+  line-height: 1.5;
+}
+
+.wts-transform-col li:last-child {
+  border-bottom: none;
+}
+
+/* ============================================
+   INFRASTRUCTURE — zoom parallax
+   ============================================ */
+.wts-infra-zoom {
+  /* no extra padding — parallax container handles height */
+}
+
+.wts-infra-zoom-header {
+  text-align: center;
+  padding: 80px 24px 16px;
+}
+
+.wts-infra-zoom-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(36px, 5vw, 60px);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--text);
+}
+
+/* Section big title — same scale as infra-zoom-title */
+.wts-section-big-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(36px, 5vw, 60px);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--text);
+  margin-bottom: 40px;
+}
+
+/* ─── Infrastructure parallax video ─── */
+.wts-infra-video-wrap {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  margin-top: -100vh;
+  clip-path: inset(0);  /* allows fixed child to be clipped by this container */
+}
+
+.wts-infra-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.wts-infra-video-overlay {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    var(--bg) 0%,
+    var(--bg) 5%,
+    transparent 30%,
+    transparent 70%,
+    var(--bg) 95%,
+    var(--bg) 100%
+  );
+  pointer-events: none;
+}
+
+/* ─── Legacy infra styles (kept for .wts-infra-card used by ZoomParallax) ─── */
+.wts-infra {
+  padding: 100px 24px;
+  text-align: center;
+}
+
+.wts-infra-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.wts-infra-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+
+.wts-infra-sub {
+  font-size: 15px;
+  color: var(--muted);
+  margin-bottom: 48px;
+  line-height: 1.6;
+}
+
+.wts-infra-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  text-align: left;
+}
+
+.wts-infra-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.wts-infra-card:hover {
+  border-color: var(--border-hover);
+  box-shadow: 0 0 30px var(--accent-glow);
+}
+
+.wts-infra-card-num {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.wts-infra-card h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.wts-infra-card p {
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* ============================================
+   PROCESS (How It Works)
+   ============================================ */
+.wts-process {
+  padding: 80px 24px;
+  text-align: center;
+  position: relative;
+  overflow: visible;
+}
+
+.wts-process-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.wts-process-steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.wts-process-step {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.wts-process-num {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.wts-process-label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.wts-process-arrow {
+  font-size: 16px;
+  color: var(--border-hover);
+  margin: 0 16px;
+}
+
+/* ============================================
+   INDUSTRIES
+   ============================================ */
+.wts-industries {
+  padding: 100px 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.wts-industries-dots {
+  position: absolute;
+  top: -30%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.wts-industries-inner {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.wts-industries-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(24px, 3.5vw, 36px);
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 40px;
+}
+
+.wts-industries-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.wts-industry-tag {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  padding: 10px 22px;
+  font-size: 13.5px;
+  color: var(--muted);
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.wts-industry-tag:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.wts-industries-note {
+  margin-top: 28px;
+  font-size: 13px;
+  color: var(--subtle);
+}
+
+/* ============================================
+   DIFFERENTIATORS
+   ============================================ */
+.wts-diff {
+  padding: 80px 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.wts-diff-dots {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.wts-diff-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.wts-diff-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 40px;
+  text-align: left;
+}
+
+.wts-diff-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  transition: border-color 0.2s;
+}
+
+.wts-diff-card:hover {
+  border-color: var(--border-hover);
+}
+
+.wts-diff-card h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.wts-diff-card p {
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* ─── Diff expanded overlay ─── */
+.wts-diff-overlay-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(6px);
+  z-index: 100;
+}
+
+.wts-diff-overlay-center {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 101;
+  cursor: pointer;
+}
+
+.wts-diff-card-expanded {
+  width: 480px !important;
+  max-width: 90vw;
+  padding: 36px 40px !important;
+  cursor: default;
+}
+
+.wts-diff-card-expanded h3 {
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+.wts-diff-card-expanded p {
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.wts-diff-card-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 18px;
+  padding: 4px 8px;
+  transition: color 0.2s;
+  z-index: 2;
+}
+
+.wts-diff-card-close:hover {
+  color: var(--text);
+}
+
+/* ============================================
+   OFFER
+   ============================================ */
+.wts-offer {
+  padding: 80px 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.wts-offer-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.wts-offer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 40px;
+  text-align: left;
+}
+
+.wts-offer-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px 28px;
+}
+
+.wts-offer-card h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.wts-offer-card > p {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.wts-offer-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+}
+
+.wts-offer-card li {
+  font-size: 13.5px;
+  color: var(--muted);
+  padding: 5px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.wts-offer-card li::before {
+  content: '+';
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.wts-offer-intro {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 640px;
+  margin: 0 auto 40px;
+}
+
+.wts-offer-badge {
+  display: inline-block;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  background: var(--accent-glow);
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+}
+
+.wts-offer-price {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+
+.wts-offer-period {
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.wts-offer-note {
+  font-size: 12px;
+  color: var(--subtle);
+  margin-top: 16px;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+}
+
+.wts-offer-subtitle {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--accent);
+  text-align: center;
+  margin: 48px 0 24px;
+}
+
+.wts-offer-tiers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  text-align: left;
+}
+
+.wts-offer-tier {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.wts-offer-tier--featured {
+  border-color: var(--accent);
+  box-shadow: 0 0 30px var(--accent-glow);
+}
+
+.wts-offer-tier h4 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.wts-offer-tier-desc {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.wts-offer-tier .wts-offer-price {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.wts-offer-tier-total {
+  font-size: 12px;
+  color: var(--subtle);
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.wts-offer-tier-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px;
+}
+
+.wts-offer-tier-list li {
+  font-size: 13px;
+  color: var(--muted);
+  padding: 4px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.wts-offer-tier-list li::before {
+  content: '+';
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.wts-offer-discount {
+  display: inline-block;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #fff;
+  background: var(--accent);
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+  align-self: flex-start;
+}
+
+.wts-offer-phase {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  text-align: center;
+  margin-bottom: 4px;
+  margin-top: 40px;
+}
+
+.wts-offer-grid--single {
+  grid-template-columns: 1fr;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wts-offer-tier-recommend {
+  font-size: 11px;
+  color: var(--accent);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+
+.wts-offer-outcomes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.wts-offer-outcome {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  transition: border-color 0.2s;
+}
+
+.wts-offer-outcome:hover {
+  border-color: var(--border-hover);
+}
+
+.wts-offer-outcome p {
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.wts-offer-card-expanded {
+  width: 520px !important;
+  max-width: 90vw;
+  padding: 36px 40px !important;
+  cursor: default;
+}
+
+.wts-offer-card-expanded h3 {
+  font-size: 22px !important;
+}
+
+.wts-offer-card-expanded p {
+  font-size: 15px !important;
+  line-height: 1.7 !important;
+}
+
+.wts-offer-card-expanded .wts-offer-price {
+  font-size: 28px;
+}
+
+.wts-offer-outcomes-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 500px;
+  text-align: left;
+}
+
+.wts-offer-outcomes-list li {
+  font-size: 14px;
+  color: var(--muted);
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.wts-offer-outcomes-list li::before {
+  content: '✓';
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .wts-offer-tiers {
+    grid-template-columns: 1fr;
+  }
+
+  .wts-offer-outcomes {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================
+   FINAL CTA
+   ============================================ */
+.wts-cta-final {
+  padding: 100px 24px;
+  text-align: center;
+}
+
+.wts-cta-final-inner {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.wts-cta-final-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(24px, 3.5vw, 38px);
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  margin-bottom: 32px;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.wts-footer {
+  background: var(--surface);
+  padding: 60px 24px 40px;
+  color: var(--muted);
+}
+
+.wts-footer-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 40px;
+}
+
+.wts-footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.wts-footer-desc {
+  font-size: 13px;
+  color: var(--subtle);
+  line-height: 1.6;
+}
+
+.wts-footer-copy {
+  font-size: 12px;
+  color: var(--border-hover);
+  margin-top: 8px;
+}
+
+.wts-footer-col h4 {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.wts-footer-col a {
+  display: block;
+  font-size: 13px;
+  color: var(--subtle);
+  text-decoration: none;
+  margin-bottom: 8px;
+  transition: color 0.2s;
+}
+
+.wts-footer-col a:hover {
+  color: var(--text);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+  .wts-nav-links {
+    display: none;
+  }
+
+  .wts-transform-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wts-infra-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .wts-diff-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wts-offer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wts-process-steps {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .wts-process-arrow {
+    transform: rotate(90deg);
+    margin: 0;
+  }
+
+  .wts-footer-inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .wts-infra-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wts-problem-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,213 @@
+/* ============================================
+   ZOOM PARALLAX — scroll-based zoom effect
+   ============================================ */
+
+.zp-container {
+  position: relative;
+  height: 155vh;
+}
+
+.zp-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Each framer-motion layer fills the viewport */
+.zp-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 22vh;
+}
+
+/* ─── Default slot container ─── */
+.zp-slot {
+  position: relative;
+  height: 16vh;
+  width: 18vw;
+  top: 0;
+  left: 0;
+}
+
+/* ─── 3×2 grid layout — row 1 ─── */
+.zp-slot-0 {
+  top: -14vh;
+  left: -20vw;
+}
+
+.zp-slot-1 {
+  top: -14vh;
+  left: 0vw;
+}
+
+.zp-slot-2 {
+  top: -14vh;
+  left: 20vw;
+}
+
+/* ─── 3×2 grid layout — row 2 ─── */
+.zp-slot-3 {
+  top: 6vh;
+  left: -20vw;
+}
+
+.zp-slot-4 {
+  top: 6vh;
+  left: 0vw;
+}
+
+.zp-slot-5 {
+  top: 6vh;
+  left: 20vw;
+}
+
+/* ─── Card inside slot ─── */
+.zp-card {
+  width: 100%;
+  height: 100%;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px 32px !important;
+}
+
+.zp-card h3 {
+  font-size: 18px !important;
+  margin-bottom: 6px !important;
+}
+
+.zp-card .wts-infra-card-num {
+  display: inline !important;
+  margin-right: 8px !important;
+}
+
+.zp-card .zp-card-header {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-left: -12px;
+  margin-bottom: 10px;
+}
+
+.zp-card p {
+  font-size: 12px !important;
+  line-height: 1.5 !important;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ─── DottedSurface effect inside card ─── */
+.dotted-surface {
+  pointer-events: none;
+}
+
+.zp-card-effect {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.4;
+}
+
+/* ─── Arrows between cards ─── */
+.zp-arrow {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.zp-arrow-icon {
+  font-size: 20px;
+  color: var(--accent);
+  opacity: 0.9;
+}
+
+/* Row 1 arrows (between slots at top: -14vh) */
+.zp-arrow-row1 {
+  top: -14vh;
+}
+
+/* Row 2 arrows (between slots at top: 6vh) */
+.zp-arrow-row2 {
+  top: 6vh;
+}
+
+/* Left arrow: between col1 (-20vw) and col2 (0vw) → at -10vw */
+.zp-arrow-left {
+  left: -10vw;
+}
+
+/* Right arrow: between col2 (0vw) and col3 (20vw) → at 10vw */
+.zp-arrow-right {
+  left: 10vw;
+}
+
+/* ─── Expanded card overlay ─── */
+.zp-overlay-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(6px);
+  z-index: 100;
+}
+
+.zp-overlay-center {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 101;
+  cursor: pointer;
+}
+
+.zp-card-expanded {
+  width: 480px !important;
+  height: auto !important;
+  max-width: 90vw;
+  padding: 36px 40px !important;
+  cursor: default;
+}
+
+.zp-card-expanded h3 {
+  font-size: 24px !important;
+  margin-bottom: 12px !important;
+}
+
+.zp-card-expanded .wts-infra-card-num {
+  font-size: 18px !important;
+}
+
+.zp-card-expanded-desc {
+  font-size: 15px !important;
+  line-height: 1.7 !important;
+  display: block !important;
+  -webkit-line-clamp: unset !important;
+  overflow: visible !important;
+}
+
+.zp-card-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 18px;
+  padding: 4px 8px;
+  transition: color 0.2s;
+  z-index: 2;
+}
+
+.zp-card-close:hover {
+  color: var(--text);
+}

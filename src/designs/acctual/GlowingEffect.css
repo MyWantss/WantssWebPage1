@@ -1,0 +1,53 @@
+/* ============================================
+   GLOWING EFFECT — mouse-tracking border glow
+   ============================================ */
+
+.ge-container {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: 1;
+  transition: opacity 0.3s;
+  z-index: 0;
+}
+
+.ge-glow {
+  border-radius: inherit;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.ge-glow::after {
+  content: "";
+  border-radius: inherit;
+  position: absolute;
+  inset: calc(-1 * var(--glowingeffect-border-width));
+  border: var(--glowingeffect-border-width) solid transparent;
+  background: var(--gradient);
+  background-attachment: fixed;
+  opacity: var(--active);
+  transition: opacity 0.3s;
+
+  -webkit-mask-clip: padding-box, border-box;
+  mask-clip: padding-box, border-box;
+  -webkit-mask-composite: destination-in;
+  mask-composite: intersect;
+  -webkit-mask-image:
+    linear-gradient(#0000, #0000),
+    conic-gradient(
+      from calc((var(--start) - var(--spread)) * 1deg),
+      #00000000 0deg,
+      #fff,
+      #00000000 calc(var(--spread) * 2deg)
+    );
+  mask-image:
+    linear-gradient(#0000, #0000),
+    conic-gradient(
+      from calc((var(--start) - var(--spread)) * 1deg),
+      #00000000 0deg,
+      #fff,
+      #00000000 calc(var(--spread) * 2deg)
+    );
+}
