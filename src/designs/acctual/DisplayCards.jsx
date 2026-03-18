@@ -24,14 +24,14 @@ export default function DisplayCards({ cards }) {
   const defaultCards = [
     {
       icon: <TrendingDown size={16} className="dc-icon-purple" />,
-      title: 'Inbound is unpredictable',
+      title: 'Inbound Is Unpredictable',
       description: 'Waiting for inbound leads makes pipeline growth slow and unreliable.',
       date: '',
       className: 'dc-card--1',
     },
     {
       icon: <AlertTriangle size={16} className="dc-icon-purple" />,
-      title: 'Outreach Lacks Precision',
+      title: 'Outreach Without Precision',
       description: 'Thousands of emails are sent without knowing which companies actually need the service.',
       date: '',
       className: 'dc-card--2',
@@ -45,14 +45,14 @@ export default function DisplayCards({ cards }) {
     },
     {
       icon: <Users size={16} className="dc-icon-pink" />,
-      title: 'Pipeline becomes fragile',
+      title: 'Fragile Pipeline',
       description: 'Client acquisition depends on occasional campaigns instead of a continuous system.',
       date: '',
       className: 'dc-card--4',
     },
     {
       icon: <DollarSign size={16} className="dc-icon-pink" />,
-      title: 'Opportunity signals are missed',
+      title: 'Opportunity Signals Missed',
       description: 'Companies that could become great clients remain invisible because no system is monitoring the market.',
       date: '',
       className: 'dc-card--5',

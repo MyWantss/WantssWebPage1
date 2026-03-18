@@ -76,16 +76,33 @@
   flex-direction: column;
   justify-content: center;
   padding: 20px 32px !important;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.zp-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(168, 85, 247, 0.15), 0 0 15px rgba(168, 85, 247, 0.08);
+  border-color: var(--accent) !important;
 }
 
 .zp-card h3 {
   font-size: 18px !important;
   margin-bottom: 6px !important;
+  color: var(--accent);
+  transition: color 0.3s ease;
 }
 
 .zp-card .wts-infra-card-num {
   display: inline !important;
   margin-right: 8px !important;
+  color: var(--accent);
+  font-weight: 700;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.zp-card:hover .wts-infra-card-num {
+  opacity: 1;
 }
 
 .zp-card .zp-card-header {
@@ -210,4 +227,67 @@
 
 .zp-card-close:hover {
   color: var(--text);
+}
+
+/* ============================================
+   MOBILE — stack cards vertically
+   ============================================ */
+@media (max-width: 768px) {
+  .zp-container {
+    height: auto;
+  }
+
+  .zp-sticky {
+    position: relative;
+    height: auto;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 24px 20px;
+  }
+
+  .zp-layer {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100%;
+    height: auto;
+    display: block;
+    padding-top: 0;
+    transform: none !important;
+  }
+
+  .zp-slot,
+  .zp-slot-0, .zp-slot-1, .zp-slot-2,
+  .zp-slot-3, .zp-slot-4, .zp-slot-5 {
+    position: relative;
+    top: auto !important;
+    left: auto !important;
+    width: 100%;
+    height: auto;
+  }
+
+  .zp-card {
+    width: 100% !important;
+    height: auto !important;
+    padding: 20px 24px !important;
+  }
+
+  .zp-card h3 {
+    font-size: 16px !important;
+  }
+
+  .zp-card p {
+    font-size: 13px !important;
+    -webkit-line-clamp: unset;
+    overflow: visible;
+    display: block;
+  }
+
+  /* Hide arrows on mobile */
+  .zp-arrow {
+    display: none;
+  }
 }

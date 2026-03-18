@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { useParams, Link, useLocation } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { ThemeContext } from '../ThemeContext'
 import KineticNav from '../KineticNav'
@@ -12,9 +12,14 @@ import './IndustryPage.css'
 
 export default function IndustryPage() {
   const { slug } = useParams()
+  const location = useLocation()
   const [light, setLight] = useState(false)
   const toggle = () => setLight(prev => !prev)
   const data = industryBySlug[slug]
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [location.pathname])
 
   if (!data) {
     return (

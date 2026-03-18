@@ -245,9 +245,29 @@
 }
 
 .rot-badge--completed {
-  color: #fff;
-  background: #000;
-  border-color: #fff;
+  color: var(--accent, #a855f7);
+  background: rgba(0, 0, 0, 0.8);
+  border: 1.5px solid transparent;
+  border-radius: 9999px;
+  background-clip: padding-box;
+  position: relative;
+}
+
+.rot-badge--completed::before {
+  content: '';
+  position: absolute;
+  inset: -1.5px;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #a855f7, #3b82f6, #14b8a6);
+  background-size: 200% 200%;
+  animation: rot-badge-glow 3s linear infinite;
+  z-index: -1;
+}
+
+@keyframes rot-badge-glow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .rot-badge--in-progress {
@@ -362,5 +382,81 @@
   75%, 100% {
     transform: scale(2);
     opacity: 0;
+  }
+}
+
+/* ============================================
+   MOBILE — smaller orbit, readable text
+   ============================================ */
+@media (max-width: 768px) {
+  .rot-container {
+    height: 500px;
+    overflow: visible;
+  }
+
+  .rot-orbit-ring {
+    width: 19rem;
+    height: 19rem;
+  }
+
+  .rot-nucleus {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .rot-nucleus-core {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .rot-nucleus-ping {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  .rot-nucleus-ping--delayed {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+
+  .rot-center-label {
+    top: calc(50% + 42px);
+  }
+
+  .rot-center-title {
+    font-size: 10px;
+  }
+
+  .rot-center-desc {
+    font-size: 10px;
+    max-width: 160px;
+  }
+
+  .rot-node-circle {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+
+  .rot-node-label {
+    font-size: 0.7rem;
+    white-space: normal;
+    text-align: center;
+    width: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    line-height: 1.3;
+  }
+
+  .rot-card {
+    width: 13rem;
+    padding: 0.75rem;
+  }
+
+  .rot-card-title {
+    font-size: 0.8rem;
+  }
+
+  .rot-card-content {
+    font-size: 0.7rem;
   }
 }

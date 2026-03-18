@@ -81,34 +81,30 @@
   100% { margin-top: 0px; }
 }
 
-/* ─── Stack positions — centered spread, 70px X steps, 72px Y steps (inverted) ─── */
+/* ─── Stack positions — 70px X steps, 140px Y steps (80% visible) ─── */
 .dc-card--1 {
-  transform: skewY(-8deg) translateX(140px) translateY(288px);
-  filter: grayscale(0%);
+  transform: skewY(-8deg) translateX(140px) translateY(560px);
   z-index: 5;
   animation: dc-float 5s ease-in-out infinite;
   animation-delay: 0s;
 }
 
 .dc-card--2 {
-  transform: skewY(-8deg) translateX(70px) translateY(216px);
-  filter: grayscale(20%);
+  transform: skewY(-8deg) translateX(70px) translateY(420px);
   z-index: 4;
   animation: dc-float 5s ease-in-out infinite;
   animation-delay: 0.8s;
 }
 
 .dc-card--3 {
-  transform: skewY(-8deg) translateX(0px) translateY(144px);
-  filter: grayscale(50%);
+  transform: skewY(-8deg) translateX(0px) translateY(280px);
   z-index: 3;
   animation: dc-float 5s ease-in-out infinite;
   animation-delay: 1.6s;
 }
 
 .dc-card--4 {
-  transform: skewY(-8deg) translateX(-70px) translateY(72px);
-  filter: grayscale(80%);
+  transform: skewY(-8deg) translateX(-70px) translateY(140px);
   z-index: 2;
   animation: dc-float 5s ease-in-out infinite;
   animation-delay: 2.4s;
@@ -116,7 +112,6 @@
 
 .dc-card--5 {
   transform: skewY(-8deg) translateX(-140px);
-  filter: grayscale(100%);
   z-index: 1;
   animation: dc-float 5s ease-in-out infinite;
   animation-delay: 3.2s;
@@ -124,30 +119,27 @@
 
 /* ─── Hover: lift 80px up from base position, pop to front ─── */
 .dc-card--1:hover {
-  transform: skewY(-8deg) translateX(140px) translateY(208px);
+  transform: skewY(-8deg) translateX(140px) translateY(480px);
   border-color: var(--accent);
   z-index: 10;
 }
 
 .dc-card--2:hover {
-  transform: skewY(-8deg) translateX(70px) translateY(136px);
-  filter: grayscale(0%);
+  transform: skewY(-8deg) translateX(70px) translateY(340px);
   border-color: var(--accent);
   z-index: 10;
 }
 .dc-card--2:hover::before { opacity: 0; }
 
 .dc-card--3:hover {
-  transform: skewY(-8deg) translateX(0px) translateY(64px);
-  filter: grayscale(0%);
+  transform: skewY(-8deg) translateX(0px) translateY(200px);
   border-color: var(--accent);
   z-index: 10;
 }
 .dc-card--3:hover::before { opacity: 0; }
 
 .dc-card--4:hover {
-  transform: skewY(-8deg) translateX(-70px) translateY(-8px);
-  filter: grayscale(0%);
+  transform: skewY(-8deg) translateX(-70px) translateY(60px);
   border-color: var(--accent);
   z-index: 10;
 }
@@ -155,7 +147,6 @@
 
 .dc-card--5:hover {
   transform: skewY(-8deg) translateX(-140px) translateY(-80px);
-  filter: grayscale(0%);
   border-color: var(--accent);
   z-index: 10;
 }
@@ -185,7 +176,7 @@
   font-family: 'Space Grotesk', sans-serif;
   font-size: 17px;
   font-weight: 600;
-  color: #ffffff;
+  color: var(--accent);
   margin: 0;
   position: relative;
   z-index: 3;
@@ -290,16 +281,16 @@
     padding: 14px 24px;
   }
 
-  .dc-card--1 { transform: skewY(-8deg) translateX(70px) translateY(240px); }
-  .dc-card--2 { transform: skewY(-8deg) translateX(35px) translateY(180px); }
-  .dc-card--3 { transform: skewY(-8deg) translateX(0px) translateY(120px); }
-  .dc-card--4 { transform: skewY(-8deg) translateX(-35px) translateY(60px); }
+  .dc-card--1 { transform: skewY(-8deg) translateX(70px) translateY(448px); }
+  .dc-card--2 { transform: skewY(-8deg) translateX(35px) translateY(336px); }
+  .dc-card--3 { transform: skewY(-8deg) translateX(0px) translateY(224px); }
+  .dc-card--4 { transform: skewY(-8deg) translateX(-35px) translateY(112px); }
   .dc-card--5 { transform: skewY(-8deg) translateX(-70px); }
 
-  .dc-card--1:hover { transform: skewY(-8deg) translateX(70px) translateY(180px); }
-  .dc-card--2:hover { transform: skewY(-8deg) translateX(35px) translateY(120px); }
-  .dc-card--3:hover { transform: skewY(-8deg) translateX(0px) translateY(60px); }
-  .dc-card--4:hover { transform: skewY(-8deg) translateX(-35px) translateY(0px); }
+  .dc-card--1:hover { transform: skewY(-8deg) translateX(70px) translateY(388px); }
+  .dc-card--2:hover { transform: skewY(-8deg) translateX(35px) translateY(276px); }
+  .dc-card--3:hover { transform: skewY(-8deg) translateX(0px) translateY(164px); }
+  .dc-card--4:hover { transform: skewY(-8deg) translateX(-35px) translateY(52px); }
   .dc-card--5:hover { transform: skewY(-8deg) translateX(-70px) translateY(-60px); }
 
   .dc-card-title { font-size: 14px; }

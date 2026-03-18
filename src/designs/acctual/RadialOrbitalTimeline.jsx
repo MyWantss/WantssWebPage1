@@ -11,9 +11,17 @@ export default function RadialOrbitalTimeline({ timelineData, centerTitle, cente
   const [pulseEffect, setPulseEffect] = useState({});
   const [centerOffset] = useState({ x: 0, y: 0 });
   const [activeNodeId, setActiveNodeId] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
   const containerRef = useRef(null);
   const orbitRef = useRef(null);
   const nodeRefs = useRef({});
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth <= 768);
+    check();
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
 
   const handleContainerClick = (e) => {
     if (e.target === containerRef.current || e.target === orbitRef.current) {
@@ -68,7 +76,7 @@ export default function RadialOrbitalTimeline({ timelineData, centerTitle, cente
     if (autoRotate) {
       rotationTimer = setInterval(() => {
         setRotationAngle((prev) => {
-          const newAngle = (prev + 0.3) % 360;
+          const newAngle = (prev + 0.6) % 360;
           return Number(newAngle.toFixed(3));
         });
       }, 50);
@@ -88,7 +96,7 @@ export default function RadialOrbitalTimeline({ timelineData, centerTitle, cente
 
   const calculateNodePosition = (index, total) => {
     const angle = ((index / total) * 360 + rotationAngle) % 360;
-    const radius = 260;
+    const radius = isMobile ? 150 : 260;
     const radian = (angle * Math.PI) / 180;
 
     const x = radius * Math.cos(radian) + centerOffset.x;

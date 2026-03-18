@@ -21,6 +21,7 @@ import floater5 from './floaters/floater-5.png'
 import floater6 from './floaters/floater-6.png'
 import floater7 from './floaters/floater-7.png'
 import floater8 from './floaters/floater-8.png'
+import ctaLeftFloater from '../../../assets/acctual/FloatingElements/ChatGPT Image Mar 18, 2026, 03_41_20 PM.png'
 
 const floaterImages = {
   'floater-1.png': floater1,
@@ -160,9 +161,9 @@ export const floaterConfig = [
   },
   {
     id: 'cta-floater-4',
-    src: img('floater-4.png'),
+    src: ctaLeftFloater,
     section: 'cta-final',
-    position: { top: '5%', left: '5%' },
+    position: { top: '12%', right: '5%' },
     size: 540,
     rotation: 3,
     delay: 0.4,
@@ -174,7 +175,7 @@ export const floaterConfig = [
     id: 'cta-floater-8',
     src: img('floater-8.png'),
     section: 'cta-final',
-    position: { top: '12%', right: '5%' },
+    position: { top: '5%', left: '5%' },
     size: 480,
     rotation: -4,
     delay: 0.6,

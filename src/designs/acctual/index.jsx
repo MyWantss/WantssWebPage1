@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import './Wantss.css'
 /* Logo PNG imports removed — using CSS gradient text logo instead */
 import heroVideo from '../../../assets/acctual/11 (1).mp4'
-import infraVideo from '../../../assets/acctual/13.mp4'
+import infraVideo from '../../../assets/acctual/0318(1).mp4' // reloaded
 import DisplayCards from './DisplayCards'
 import ZoomParallax from './ZoomParallax'
 import Cursor from './Cursor'
@@ -50,7 +50,7 @@ const infrastructureTimelineData = [
     category: 'Intelligence',
     icon: Code,
     relatedIds: [2, 4],
-    status: 'in-progress',
+    status: 'completed',
     energy: 89,
   },
   {
@@ -61,7 +61,7 @@ const infrastructureTimelineData = [
     category: 'Activation',
     icon: User,
     relatedIds: [3, 5],
-    status: 'pending',
+    status: 'completed',
     energy: 93,
   },
   {
@@ -72,7 +72,7 @@ const infrastructureTimelineData = [
     category: 'Pipeline',
     icon: Clock,
     relatedIds: [4],
-    status: 'pending',
+    status: 'completed',
     energy: 95,
   },
 ]
@@ -124,28 +124,21 @@ function Hero() {
       />
       <div className="wts-hero-overlay" />
       <FloatingElements section="hero" />
-      <Float className="wts-float-dot-1" delay={0}>
-        <div className="wts-geo-shape" />
-      </Float>
-      <Float className="wts-float-dot-2" delay={0.5}>
-        <div className="wts-geo-shape wts-geo-shape--ring" />
-      </Float>
-      <Float className="wts-float-dot-3" delay={1}>
-        <div className="wts-geo-shape wts-geo-shape--lg" />
-      </Float>
 
       <div className="wts-hero-content fade-up">
         <h1 className="wts-hero-title">
-          The AI system behind<br/><span>modern B2B client acquisition</span>
+          Find and capture opportunities<br/><span>before your competitors even see them</span>
         </h1>
         <p className="wts-hero-sub">
           Detects opportunities, researches ideal prospects and initiates conversations.
         </p>
-        <a href="#" className="wts-btn" style={{ position: 'relative' }}>
-          <GlowingEffect spread={40} proximity={64} inactiveZone={0.01} borderWidth={2} disabled={false} />
-          Discuss Infrastructure
-        </a>
-        <p className="wts-hero-micro">Private infrastructure for a small number of B2B companies.</p>
+        <div style={{ marginTop: '120px' }}>
+          <a href="#" className="wts-btn" style={{ position: 'relative' }}>
+            <GlowingEffect spread={40} proximity={64} inactiveZone={0.01} borderWidth={2} disabled={false} />
+            Discuss Infrastructure
+          </a>
+          <p className="wts-hero-micro">Private infrastructure for a small number of B2B companies.</p>
+        </div>
       </div>
     </section>
   )
@@ -158,7 +151,7 @@ function Problem() {
     <section className="wts-problem" ref={ref}>
       <FloatingElements section="problem" />
       <div className="wts-problem-content fade-up">
-        <h2 className="wts-section-big-title">The Problem</h2>
+        <h2 className="wts-section-big-title">The problem isn't effort<br/><span style={{ color: 'var(--accent)' }}>It's timing</span></h2>
         <div className="wts-problem-cards-wrap">
           <DisplayCards />
         </div>
@@ -183,7 +176,7 @@ function Transformation() {
         topOffset={20}
       />
       <div className="wts-transform-inner fade-up" style={{ position: 'relative', zIndex: 1 }}>
-        <h2 className="wts-section-big-title">What This System Creates</h2>
+        <h2 className="wts-section-big-title">What This System<br/><span style={{ color: 'var(--accent)' }}>Makes Possible</span></h2>
         <div className="wts-transform-grid">
           <div className="wts-transform-col wts-transform-col--before" style={{ position: 'relative' }}>
             <GlowingEffect spread={40} proximity={64} inactiveZone={0.01} borderWidth={2} disabled={false} />
@@ -219,8 +212,11 @@ function Infrastructure() {
     <section className="wts-infra-zoom" style={{ position: 'relative', overflow: 'visible' }}>
       {/* <BeamsBackground intensity="medium" /> */}
       <FloatingElements section="infra-zoom" />
-      <div className="wts-infra-zoom-header" style={{ position: 'relative', zIndex: 1 }}>
-        <h2 className="wts-infra-zoom-title">How the System Operates</h2>
+      <div className="wts-infra-zoom-header" style={{ position: 'relative', zIndex: 1, textAlign: 'center' }}>
+        <h2 className="wts-infra-zoom-title">How Opportunities Become Conversations</h2>
+        <p style={{ maxWidth: '640px', margin: '12px auto 0', color: 'var(--accent)', fontSize: '0.95rem', lineHeight: 1.6 }}>
+          From signal to conversation, continuously.
+        </p>
       </div>
       <ZoomParallax />
       <div className="wts-infra-video-wrap">
@@ -245,9 +241,9 @@ function ProcessOrbital() {
     <section className="wts-process-orbital" style={{ position: 'relative', overflow: 'visible' }}>
       <FloatingElements section="process-orbital" />
       <div style={{ textAlign: 'center', padding: '80px 24px 0' }}>
-        <h2 className="wts-section-big-title" style={{ marginBottom: '8px' }}>Infrastructure in Motion</h2>
-        <p style={{ maxWidth: '640px', margin: '0 auto', color: 'rgba(255,255,255,0.6)', fontSize: '0.95rem', lineHeight: 1.6 }}>
-          A system that detects opportunities and activates conversations.
+        <h2 className="wts-section-big-title" style={{ marginBottom: '8px' }}>From Signal to Conversation</h2>
+        <p style={{ maxWidth: '640px', margin: '0 auto', color: 'var(--accent)', fontSize: '0.95rem', lineHeight: 1.6 }}>
+          Everything needed to identify demand, build context, and act at the right time.
         </p>
       </div>
       <RadialOrbitalTimeline
@@ -292,17 +288,17 @@ function Differentiators() {
   const ref = useFadeIn()
   const [selectedDiff, setSelectedDiff] = useState(null)
   const items = [
-    { title: 'Scalable Infrastructure', desc: 'Client acquisition operates as a system that scales with your market instead of relying on manual outreach.' },
-    { title: 'Signal-Driven Personalization', desc: 'Every conversation is generated from real market signals and prospect intelligence. No templates.' },
-    { title: 'Operational Speed', desc: 'Research, identification and conversation activation happen continuously and faster than manual teams.' },
-    { title: 'System Architecture', desc: 'Client acquisition is built as infrastructure rather than isolated campaigns.' },
+    { title: 'Opportunities Don\'t Wait', desc: 'The earlier you see them, the easier they are to win.' },
+    { title: 'Context Improves Every Message', desc: 'A strong message works better when it is backed by real context.' },
+    { title: 'Speed Changes Outcomes', desc: 'The faster you identify and act, the fewer opportunities you lose.' },
+    { title: 'Systems Create Consistency', desc: 'Growth becomes more reliable when acquisition runs as a system.' },
   ]
   return (
     <section className="wts-diff" ref={ref} style={{ position: 'relative', overflow: 'hidden' }}>
       <DottedSurface className="wts-diff-dots" color={[0.659, 0.333, 0.969]} />
       <FloatingElements section="diff" />
       <div className="wts-diff-inner fade-up">
-        <h2 className="wts-section-big-title">The Shift</h2>
+        <h2 className="wts-section-big-title">The Reality Behind Growth</h2>
         <div className="wts-diff-grid">
           {items.map((item, i) => (
             <motion.div
@@ -357,15 +353,15 @@ function Offer() {
   const phaseCards = [
     {
       badge: 'One-Time',
-      title: 'Infrastructure Deployment',
+      title: 'Deployment',
       price: '$7,500 — $15,000',
       period: null,
-      desc: 'Design and deployment of the acquisition infrastructure tailored to your market, including signal detection, prospect intelligence pipelines and activation systems.',
+      desc: 'System built for your specific market. Includes signal detection, company identification, and initial activation workflows.',
       note: 'Typical timeline: 3–6 weeks.',
     },
     {
       badge: 'Ongoing',
-      title: 'Infrastructure Operation',
+      title: 'Continuous Operations of the System',
       price: '$3,000 — $6,500',
       period: '/ month',
       desc: 'Continuous system operation including market signal monitoring, prospect intelligence, conversation activation, pipeline development and ongoing optimization.',
@@ -375,8 +371,8 @@ function Offer() {
 
   const tierCards = [
     {
-      title: '6-Month Engagement',
-      desc: 'Recommended for companies building a predictable outbound pipeline.',
+      title: '6 Months',
+      desc: 'Initial deployment and validation. Recommended for companies building a predictable outbound pipeline.',
       price: '$3,000 — $6,500',
       period: '/ month',
       total: 'Total engagement range: $18,000 — $39,000',
@@ -386,11 +382,11 @@ function Offer() {
       list: null,
     },
     {
-      title: '12-Month Engagement',
-      desc: 'Best for companies seeking long-term acquisition infrastructure.',
-      price: '$2,700 — $5,850',
+      title: '12 Months',
+      desc: 'Build for continuous acquisition.',
+      price: '$2,500 — $6,000',
       period: '/ month',
-      total: 'Total engagement range: $32,400 — $70,200',
+      total: 'Total engagement range: $30,000 — $72,000',
       featured: true,
       discount: '10% commitment discount',
       recommend: 'Recommended for long-term infrastructure',
@@ -398,7 +394,7 @@ function Offer() {
     },
     {
       title: 'Custom Infrastructure',
-      desc: 'For organizations requiring deeper integrations, additional markets or dedicated research capacity.',
+      desc: 'For extended systems and integrations, additional markets or dedicated research capacity.',
       price: null,
       period: null,
       total: 'Pricing defined after infrastructure assessment.',
@@ -413,9 +409,9 @@ function Offer() {
     <section className="wts-offer" ref={ref}>
       <FloatingElements section="offer" />
       <div className="wts-offer-inner fade-up">
-        <h2 className="wts-section-big-title">Infrastructure Investment</h2>
-        <p className="wts-offer-intro">
-          Client acquisition infrastructure is deployed as a dedicated system<br/>tailored to each company's market and growth objectives.
+        <h2 className="wts-section-big-title">Access the System</h2>
+        <p className="wts-offer-intro" style={{ color: 'var(--accent)' }}>
+          Built and operated as a continuous system.
         </p>
 
         {/* Deployment + Operation side by side */}
@@ -461,6 +457,7 @@ function Offer() {
           <li>Reduced reliance on referrals and manual prospecting</li>
           <li>Predictable outbound pipeline growth</li>
         </ul>
+        <p style={{ marginTop: '32px', color: 'var(--accent)', fontSize: '14px', fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase' }}>Limited Availability</p>
       </div>
 
       <AnimatePresence>
@@ -531,6 +528,8 @@ function FinalCTA() {
           <GlowingEffect spread={40} proximity={64} inactiveZone={0.01} borderWidth={2} disabled={false} />
           Discuss Infrastructure
         </a>
+        <p style={{ marginTop: '24px', color: 'var(--accent)', fontSize: '14px', fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase' }}>Limited Availability</p>
+        <p style={{ marginTop: '6px', color: 'var(--muted)', fontSize: '13px' }}>Only a small number of systems are deployed at a time.</p>
       </div>
     </section>
   )
@@ -548,11 +547,11 @@ export default function Wantss() {
         <KineticNav light={light} toggle={toggle} />
         <Hero />
         <Problem />
-        <ProcessOrbital />
         <Differentiators />
-        <Infrastructure />
-        <Transformation />
+        <ProcessOrbital />
         <Industries />
+        {/* <Infrastructure /> */}
+        <Transformation />
         <Offer />
         <FinalCTA />
         <Footer />
