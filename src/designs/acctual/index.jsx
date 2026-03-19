@@ -127,19 +127,115 @@ function Hero() {
 
       <div className="wts-hero-content fade-up">
         <h1 className="wts-hero-title">
-          Find and capture opportunities<br/><span>before your competitors even see them</span>
+          New Opportunities Don't Appear.<br/><span>They Are Detected</span><br/><span style={{ fontSize: 'clamp(22px, 3vw, 36px)', fontWeight: 400, color: 'var(--text)', marginTop: '-8px', display: 'inline-block' }}>We make sure you're the one receiving them.</span>
         </h1>
-        <p className="wts-hero-sub">
-          Detects opportunities, researches ideal prospects and initiates conversations.
-        </p>
+        <p className="wts-hero-sub"></p>
         <div style={{ marginTop: '120px' }}>
           <a href="#" className="wts-btn" style={{ position: 'relative' }}>
             <GlowingEffect spread={40} proximity={64} inactiveZone={0.01} borderWidth={2} disabled={false} />
             Discuss Infrastructure
           </a>
-          <p className="wts-hero-micro">Private infrastructure for a small number of B2B companies.</p>
+          <p className="wts-hero-micro">A dedicated private partner working behind your pipeline.</p>
         </div>
       </div>
+    </section>
+  )
+}
+
+/* ─── Notification Showcase ─── */
+import floater1 from './floaters/floater-1.png'
+import floater2 from './floaters/floater-2.png'
+import floater3 from './floaters/floater-3.png'
+import floater4 from './floaters/floater-4.png'
+import floater5 from './floaters/floater-5.png'
+import floater6 from './floaters/floater-6.png'
+import floater7 from './floaters/floater-7.png'
+import floater8 from './floaters/floater-8.png'
+
+const notificationItems = [
+  { src: floater1, alt: 'New Sales Opportunity', from: 'right', width: '768px' },
+  { src: floater5, alt: 'New Meeting Scheduled', from: 'left', width: '900px', extraSpace: -25 },
+  { src: floater7, alt: 'Opportunity Qualified', from: 'right', width: '576px', extraSpace: -15 },
+  { src: floater8, alt: 'Market Signal Detected', from: 'left', width: '820px', extraSpace: -5 },
+  { src: floater6, alt: 'AI Prospect Identified', from: 'right', width: '820px' },
+  { src: floater2, alt: 'AI Lead Analysis', from: 'left', width: '768px', extraSpace: 20 },
+  { src: floater3, alt: 'Deal Cards', from: 'left', width: '864px', extraSpace: 20 },
+  { src: floater4, alt: 'Pipeline Growth', from: 'right', width: '720px', extraSpace: 20 },
+]
+
+function NotifItem({ item, index, sectionVisible }) {
+  const itemRef = useRef(null)
+  const [state, setState] = useState('hidden') // hidden | visible | exited
+
+  useEffect(() => {
+    const el = itemRef.current
+    if (!el) return
+    const obs = new IntersectionObserver(
+      ([e]) => {
+        if (e.isIntersecting) {
+          setState('visible')
+        } else {
+          setState(prev => prev === 'visible' ? 'exited' : prev)
+        }
+      },
+      { threshold: 0.05, rootMargin: '50px 0px' }
+    )
+    obs.observe(el)
+    return () => obs.disconnect()
+  }, [])
+
+  const isVisible = sectionVisible && state === 'visible'
+  const isExited = state === 'exited'
+  const exitDir = item.from === 'left' ? 'right' : 'left'
+
+  return (
+    <div
+      ref={itemRef}
+      className={`wts-notif-slide ${isExited ? `wts-notif-exit-${exitDir}` : `wts-notif-from-${item.from}`}${isVisible ? ' wts-notif-slide--visible' : ''}`}
+      style={{
+        width: item.width,
+        transitionDelay: isVisible ? `${index * 0.25}s` : '0s',
+        ...(item.extraSpace ? { marginTop: `${item.extraSpace}px` } : {}),
+      }}
+    >
+      <div
+        className="wts-notif-float"
+        style={{ animationDelay: `${index * 0.6}s` }}
+      >
+        <img src={item.src} alt={item.alt} loading="lazy" draggable="false" />
+      </div>
+    </div>
+  )
+}
+
+function NotificationShowcase() {
+  const sectionRef = useRef(null)
+  const [visible, setVisible] = useState(false)
+
+  useEffect(() => {
+    const el = sectionRef.current
+    if (!el) return
+    const obs = new IntersectionObserver(
+      ([e]) => { if (e.isIntersecting) { setVisible(true); obs.disconnect() } },
+      { threshold: 0.05 }
+    )
+    obs.observe(el)
+    return () => obs.disconnect()
+  }, [])
+
+  return (
+    <section className="wts-notif-showcase" ref={sectionRef}>
+      <h2 className="wts-section-big-title" style={{ opacity: visible ? 1 : 0, transform: visible ? 'translateY(0)' : 'translateY(20px)', transition: 'opacity 0.6s ease, transform 0.6s ease', marginBottom: '40px' }}>
+        <span style={{ color: 'var(--accent)' }}>This is what your morning</span><br/><span style={{ display: 'block', textAlign: 'center' }}>should look like</span>
+      </h2>
+      <div className="wts-notif-container">
+        {notificationItems.map((item, i) => (
+          <NotifItem key={i} item={item} index={i} sectionVisible={visible} />
+        ))}
+      </div>
+      <p style={{ maxWidth: '720px', textAlign: 'center', fontFamily: "'Inter', sans-serif", fontSize: 'clamp(16px, 2.2vw, 22px)', fontWeight: 400, letterSpacing: '0.01em', color: 'var(--text)', lineHeight: 1.5, marginTop: '120px', opacity: visible ? 1 : 0, transform: visible ? 'translateY(0)' : 'translateY(20px)', transition: 'opacity 0.8s ease 3s, transform 0.8s ease 3s' }}>
+        We identify the right companies, build context around them, and initiate meaningful conversations.<br/><span style={{ color: 'var(--accent)' }}>So You Step In When There's Real Interest.</span>
+      </p>
     </section>
   )
 }
@@ -546,6 +642,7 @@ export default function Wantss() {
       <div className={`wts-page ${light ? 'wts-page--light' : ''}`}>
         <KineticNav light={light} toggle={toggle} />
         <Hero />
+        <NotificationShowcase />
         <Problem />
         <Differentiators />
         <ProcessOrbital />

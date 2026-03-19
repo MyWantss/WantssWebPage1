@@ -105,15 +105,23 @@
 /* ─── Orbit ring ─── */
 .rot-orbit-ring {
   position: absolute;
-  width: 32rem;
-  height: 32rem;
+  width: 480px;
+  height: 480px;
   border-radius: 50%;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  left: 50%;
+  top: 50%;
+  margin-left: -240px;
+  margin-top: -240px;
 }
 
 /* ─── Node ─── */
 .rot-node {
   position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -1.25rem;
+  margin-top: -1.25rem;
   transition: all 700ms cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
 }
@@ -395,8 +403,10 @@
   }
 
   .rot-orbit-ring {
-    width: 19rem;
-    height: 19rem;
+    width: 270px;
+    height: 270px;
+    margin-left: -135px;
+    margin-top: -135px;
   }
 
   .rot-nucleus {

@@ -470,6 +470,110 @@
 }
 
 /* ============================================
+   NOTIFICATION SHOWCASE
+   ============================================ */
+.wts-notif-showcase {
+  position: relative;
+  min-height: 100vh;
+  padding: 80px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 45%, transparent 30%, rgba(168, 85, 247, 0.08) 70%, transparent 100%),
+    radial-gradient(ellipse 80% 60% at 50% 50%, transparent 20%, rgba(91, 107, 245, 0.05) 80%, transparent 100%),
+    var(--bg);
+}
+
+.wts-notif-headline {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(24px, 4vw, 42px);
+  font-weight: 600;
+  color: var(--text);
+  text-align: center;
+  margin-bottom: 60px;
+  letter-spacing: -0.02em;
+}
+
+.wts-notif-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+  max-width: 900px;
+}
+
+/* Outer wrapper: handles slide-in transition */
+.wts-notif-slide {
+  opacity: 0;
+  margin-top: -60px;
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.wts-notif-slide:first-child {
+  margin-top: 0;
+}
+
+.wts-notif-from-left {
+  transform: translateX(-400px) scale(0.85);
+}
+
+.wts-notif-from-right {
+  transform: translateX(400px) scale(0.85);
+}
+
+.wts-notif-slide--visible {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}
+
+/* Exit to opposite side */
+.wts-notif-exit-left {
+  transform: translateX(-400px) scale(0.85);
+}
+
+.wts-notif-exit-right {
+  transform: translateX(400px) scale(0.85);
+}
+
+/* Inner wrapper: handles float animation */
+.wts-notif-float {
+  animation: float-drift 6s ease-in-out infinite;
+  filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.3));
+}
+
+.wts-notif-from-right .wts-notif-float {
+  animation-name: float-drift-alt;
+  animation-duration: 7s;
+}
+
+.wts-notif-float img {
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+  user-select: none;
+  margin-top: -15%;
+  margin-bottom: -15%;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .wts-notif-container {
+    gap: 0;
+  }
+
+  .wts-notif-slide {
+    width: 280px !important;
+  }
+
+  .wts-notif-slide:nth-child(n+6) {
+    display: none;
+  }
+}
+
+/* ============================================
    PROBLEM
    ============================================ */
 .wts-problem {
