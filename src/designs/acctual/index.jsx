@@ -127,13 +127,13 @@ function Hero() {
 
       <div className="wts-hero-content fade-up">
         <h1 className="wts-hero-title">
-          New Opportunities Don't Appear.<br/><span>They Are Detected</span><br/><span style={{ fontSize: 'clamp(22px, 3vw, 36px)', fontWeight: 400, color: 'var(--text)', marginTop: '-8px', display: 'inline-block' }}>We make sure you're the one receiving them.</span>
+          Real opportunities<br/>don't knock on your door.<br/><span>They're detected and<br/>approached with precision</span>
         </h1>
         <p className="wts-hero-sub"></p>
         <div style={{ marginTop: '120px' }}>
           <a href="#" className="wts-btn" style={{ position: 'relative' }}>
             <GlowingEffect spread={40} proximity={64} inactiveZone={0.01} borderWidth={2} disabled={false} />
-            Discuss Infrastructure
+            Book a Discovery Call
           </a>
           <p className="wts-hero-micro">A dedicated private partner working behind your pipeline.</p>
         </div>
@@ -622,7 +622,7 @@ function FinalCTA() {
         </h2>
         <a href="#" className="wts-btn" style={{ position: 'relative' }}>
           <GlowingEffect spread={40} proximity={64} inactiveZone={0.01} borderWidth={2} disabled={false} />
-          Discuss Infrastructure
+          Book a Discovery Call
         </a>
         <p style={{ marginTop: '24px', color: 'var(--accent)', fontSize: '14px', fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase' }}>Limited Availability</p>
         <p style={{ marginTop: '6px', color: 'var(--muted)', fontSize: '13px' }}>Only a small number of systems are deployed at a time.</p>

@@ -5,7 +5,7 @@ export const industries = [
     hero: {
       title: 'Client Acquisition Infrastructure for Commercial Real Estate',
       subtitle: 'Detect companies expanding operations, relocating offices or investing in new facilities and activate conversations with decision makers at the right moment.',
-      cta: 'Discuss Infrastructure for Commercial Real Estate',
+      cta: 'Book a Discovery Call for Commercial Real Estate',
     },
     whyThisIndustry: {
       heading: 'The Problem in Commercial Real Estate',
@@ -53,7 +53,7 @@ export const industries = [
     hero: {
       title: 'Client Acquisition Infrastructure for Financial Services',
       subtitle: 'Identify businesses and executives entering financial decision moments and initiate relevant advisory conversations.',
-      cta: 'Discuss Infrastructure for Financial Services',
+      cta: 'Book a Discovery Call for Financial Services',
     },
     whyThisIndustry: {
       heading: 'The Problem in Financial Services',
@@ -100,7 +100,7 @@ export const industries = [
     hero: {
       title: 'Client Acquisition Infrastructure for Marketing Agencies',
       subtitle: 'Detect companies actively investing in growth and initiate conversations about marketing support.',
-      cta: 'Discuss Infrastructure for Marketing Agencies',
+      cta: 'Book a Discovery Call for Marketing Agencies',
     },
     whyThisIndustry: {
       heading: 'The Problem in Marketing Agencies',
@@ -147,7 +147,7 @@ export const industries = [
     hero: {
       title: 'Client Acquisition Infrastructure for Legal Services',
       subtitle: 'Identify businesses entering legal decision moments and initiate timely advisory conversations.',
-      cta: 'Discuss Infrastructure for Legal Services',
+      cta: 'Book a Discovery Call for Legal Services',
     },
     whyThisIndustry: {
       heading: 'The Problem in Legal Services',
@@ -194,7 +194,7 @@ export const industries = [
     hero: {
       title: 'Client Acquisition Infrastructure for Manufacturing',
       subtitle: 'Detect manufacturers expanding production or supply chains and activate conversations with operational decision makers.',
-      cta: 'Discuss Infrastructure for Manufacturing',
+      cta: 'Book a Discovery Call for Manufacturing',
     },
     whyThisIndustry: {
       heading: 'The Problem in Manufacturing',
@@ -241,7 +241,7 @@ export const industries = [
     hero: {
       title: 'Client Acquisition Infrastructure for Cybersecurity Companies',
       subtitle: 'Detect organizations increasing security investments and initiate conversations with security leadership.',
-      cta: 'Discuss Infrastructure for Cybersecurity',
+      cta: 'Book a Discovery Call for Cybersecurity',
     },
     whyThisIndustry: {
       heading: 'The Problem in Cybersecurity',
@@ -288,7 +288,7 @@ export const industries = [
     hero: {
       title: 'Client Acquisition Infrastructure for SEO Agencies',
       subtitle: 'Identify companies investing in digital growth and initiate conversations about search visibility.',
-      cta: 'Discuss Infrastructure for SEO Agencies',
+      cta: 'Book a Discovery Call for SEO Agencies',
     },
     whyThisIndustry: {
       heading: 'The Problem in SEO Agencies',
@@ -335,7 +335,7 @@ export const industries = [
     hero: {
       title: 'Client Acquisition Infrastructure for Recruitment Firms',
       subtitle: 'Detect companies entering rapid hiring phases and initiate conversations about recruiting support.',
-      cta: 'Discuss Infrastructure for Recruitment',
+      cta: 'Book a Discovery Call for Recruitment',
     },
     whyThisIndustry: {
       heading: 'The Problem in Recruitment',
@@ -382,7 +382,7 @@ export const industries = [
     hero: {
       title: 'Client Acquisition Infrastructure for B2B SaaS',
       subtitle: 'Detect companies entering growth phases and initiate conversations about technology solutions.',
-      cta: 'Discuss Infrastructure for B2B SaaS',
+      cta: 'Book a Discovery Call for B2B SaaS',
     },
     whyThisIndustry: {
       heading: 'The Problem in B2B SaaS',

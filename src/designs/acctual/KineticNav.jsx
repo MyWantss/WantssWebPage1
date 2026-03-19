@@ -128,7 +128,7 @@ export default function KineticNav({ light, toggle, homePath }) {
             </button>
             <a href="#" className="wts-btn-sm" style={{ position: 'relative' }}>
               <GlowingEffect spread={40} proximity={64} inactiveZone={0.01} borderWidth={2} disabled={false} />
-              Discuss Infrastructure
+              Book a Discovery Call
             </a>
             <button className="kn-menu-btn" onClick={() => setIsMenuOpen((p) => !p)} style={{ position: 'relative' }}>
               <GlowingEffect spread={30} proximity={48} inactiveZone={0.01} borderWidth={2} disabled={false} />
