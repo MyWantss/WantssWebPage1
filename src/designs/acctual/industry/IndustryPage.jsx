@@ -8,6 +8,16 @@ import Cursor from '../Cursor'
 import { GlowingEffect } from '../GlowingEffect'
 import { industryBySlug, industries } from './industryData'
 import '../Wantss.css'
+
+const CALENDLY_URL = 'https://calendly.com/wantss/explore-a-partnership-wantss'
+const openCalendly = (e) => {
+  e.preventDefault()
+  if (window.Calendly) {
+    window.Calendly.initPopupWidget({ url: CALENDLY_URL })
+  } else {
+    window.open(CALENDLY_URL, '_blank')
+  }
+}
 import './IndustryPage.css'
 
 export default function IndustryPage() {
@@ -66,7 +76,7 @@ export default function IndustryPage() {
           <div className="ind-hero-inner">
             <h1 className="ind-hero-title">{data.hero.title}</h1>
             <p className="ind-hero-sub">{data.hero.subtitle}</p>
-            <a href="#" className="wts-btn" style={{ position: 'relative' }}>
+            <a href="#" onClick={openCalendly} className="wts-btn" style={{ position: 'relative' }}>
               <GlowingEffect spread={40} proximity={64} inactiveZone={0.01} borderWidth={2} disabled={false} />
               {data.hero.cta}
             </a>
@@ -194,7 +204,7 @@ export default function IndustryPage() {
         <section className="ind-cta">
           <div className="ind-cta-inner">
             <h2 className="ind-cta-title">{data.hero.cta}</h2>
-            <a href="#" className="wts-btn" style={{ position: 'relative' }}>
+            <a href="#" onClick={openCalendly} className="wts-btn" style={{ position: 'relative' }}>
               <GlowingEffect spread={40} proximity={64} inactiveZone={0.01} borderWidth={2} disabled={false} />
               {data.hero.cta}
             </a>

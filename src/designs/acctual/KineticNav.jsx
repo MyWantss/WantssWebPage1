@@ -1,20 +1,76 @@
 import { useEffect, useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import gsap from 'gsap'
 import { CustomEase } from 'gsap/CustomEase'
 import './KineticNav.css'
 import wantssLogo from '../../../assets/WANTTS logo.png'
 import { GlowingEffect } from './GlowingEffect'
 
+import menuImgSystem from '../../../assets/acctual/Menu/Crea_una_imagen_similar_a_la_q_Nano_Banana_2_00844.jpg'
+import menuImgResults from '../../../assets/acctual/Menu/Crea_una_imagen_similar_a_la_q_Nano_Banana_2_42464.jpg'
+import menuImgUseCases from '../../../assets/acctual/Menu/Obscurece_el_fondo_de_la_image_Nano_Banana_2_53798.jpg'
+import menuImgPartnership from '../../../assets/acctual/Menu/Regrgale_mi_logotipo_en_alguna_Nano_Banana_2_43997.jpg'
+import menuImgAbout from '../../../assets/acctual/Menu/Crea_una_imagen_similar_a_la_q_Nano_Banana_2_63684.jpg'
+import menuImgContact from '../../../assets/acctual/Menu/Agrega_el_logotipo_en_colores__Nano_Banana_2_69920.jpg'
+
 gsap.registerPlugin(CustomEase)
 
+const CALENDLY_URL = 'https://calendly.com/wantss/explore-a-partnership-wantss'
+const openCalendly = (e) => {
+  e.preventDefault()
+  if (window.Calendly) {
+    window.Calendly.initPopupWidget({ url: CALENDLY_URL })
+  } else {
+    window.open(CALENDLY_URL, '_blank')
+  }
+}
+
 const defaultLinks = [
-  { label: 'Infrastructure', href: '#' },
-  { label: 'Results',        href: '#' },
-  { label: 'Use Cases',      href: '#use-cases' },
-  { label: 'About',          href: '#' },
-  { label: 'Contact',        href: '#' },
+  { label: 'The System',  href: '#the-system',  type: 'scroll', img: menuImgSystem },
+  { label: 'Results',     href: '#results',      type: 'scroll', img: menuImgResults },
+  { label: 'Use Cases',   href: '#use-cases',    type: 'scroll', img: menuImgUseCases },
+  { label: 'Partnership', href: '#partnership',   type: 'scroll', img: menuImgPartnership },
+  { label: 'About',       href: '/about',         type: 'route',  img: menuImgAbout },
+  { label: 'Contact',     href: '#',              type: 'calendly', img: menuImgContact },
 ]
+
+function MenuLink({ link, homePath, onClose }) {
+  const navigate = useNavigate()
+
+  const handleClick = (e) => {
+    e.preventDefault()
+    onClose()
+
+    if (link.type === 'calendly') {
+      setTimeout(() => openCalendly(e), 600)
+      return
+    }
+
+    if (link.type === 'route') {
+      setTimeout(() => navigate(link.href), 600)
+      return
+    }
+
+    // scroll type — if on a subpage, navigate home first
+    if (homePath) {
+      setTimeout(() => navigate('/' + link.href), 600)
+      return
+    }
+
+    const id = link.href.replace('#', '')
+    setTimeout(() => {
+      const el = document.getElementById(id)
+      if (el) el.scrollIntoView({ behavior: 'smooth' })
+    }, 600)
+  }
+
+  return (
+    <a href={link.href} className="kn-link" onClick={handleClick}>
+      <span className="kn-link-text">{link.label}</span>
+      <div className="kn-link-bg" />
+    </a>
+  )
+}
 
 export default function KineticNav({ light, toggle, homePath }) {
   const containerRef = useRef(null)
@@ -126,9 +182,9 @@ export default function KineticNav({ light, toggle, homePath }) {
               <GlowingEffect spread={30} proximity={48} inactiveZone={0.01} borderWidth={2} disabled={false} />
               {light ? '\u263E' : '\u2600'}
             </button>
-            <a href="#" className="wts-btn-sm" style={{ position: 'relative' }}>
+            <a href="#" onClick={openCalendly} className="wts-btn-sm" style={{ position: 'relative' }}>
               <GlowingEffect spread={40} proximity={64} inactiveZone={0.01} borderWidth={2} disabled={false} />
-              Book a Discovery Call
+              Explore a Partnership
             </a>
             <button className="kn-menu-btn" onClick={() => setIsMenuOpen((p) => !p)} style={{ position: 'relative' }}>
               <GlowingEffect spread={30} proximity={48} inactiveZone={0.01} borderWidth={2} disabled={false} />
@@ -163,21 +219,11 @@ export default function KineticNav({ light, toggle, homePath }) {
 
           {/* Hover images — one per link */}
           <div className="kn-shapes">
-            <div className="kn-bg-shape kn-shape-1">
-              <img className="shape-element" src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=700&q=80" alt="Infrastructure" />
-            </div>
-            <div className="kn-bg-shape kn-shape-2">
-              <img className="shape-element" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=80" alt="Results" />
-            </div>
-            <div className="kn-bg-shape kn-shape-3">
-              <img className="shape-element" src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=700&q=80" alt="Use Cases" />
-            </div>
-            <div className="kn-bg-shape kn-shape-4">
-              <img className="shape-element" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=700&q=80" alt="About" />
-            </div>
-            <div className="kn-bg-shape kn-shape-5">
-              <img className="shape-element" src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=700&q=80" alt="Contact" />
-            </div>
+            {defaultLinks.map((link, i) => (
+              <div className={`kn-bg-shape kn-shape-${i + 1}`} key={i}>
+                <img className="shape-element" src={link.img} alt={link.label} />
+              </div>
+            ))}
           </div>
 
           {/* Links */}
@@ -186,26 +232,11 @@ export default function KineticNav({ light, toggle, homePath }) {
               <img src={wantssLogo} alt="WANTSS" className="kn-logo-img kn-logo-img--lg" />
             </div>
             <ul className="kn-menu-list">
-              {defaultLinks.map((link, i) => {
-                const href = homePath
-                  ? (link.href === '#use-cases' ? `${homePath}#use-cases` : homePath)
-                  : link.href
-                return (
-                  <li className="kn-menu-item" data-shape={String(i + 1)} key={i}>
-                    {homePath && link.href !== '#' ? (
-                      <Link to={href} className="kn-link" onClick={() => setIsMenuOpen(false)}>
-                        <span className="kn-link-text">{link.label}</span>
-                        <div className="kn-link-bg" />
-                      </Link>
-                    ) : (
-                      <a href={link.href} className="kn-link" onClick={() => setIsMenuOpen(false)}>
-                        <span className="kn-link-text">{link.label}</span>
-                        <div className="kn-link-bg" />
-                      </a>
-                    )}
-                  </li>
-                )
-              })}
+              {defaultLinks.map((link, i) => (
+                <li className="kn-menu-item" data-shape={String(i + 1)} key={i}>
+                  <MenuLink link={link} homePath={homePath} onClose={() => setIsMenuOpen(false)} />
+                </li>
+              ))}
             </ul>
           </div>
         </nav>

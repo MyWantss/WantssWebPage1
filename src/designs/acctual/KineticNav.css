@@ -33,6 +33,7 @@
   text-decoration: none;
   display: flex;
   align-items: center;
+  flex-shrink: 0;
 }
 
 /* ─── Gradient text logo ─── */
@@ -63,6 +64,8 @@
   height: 80px;
   width: auto;
   display: block;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 .kn-logo-img--lg {
@@ -190,12 +193,13 @@
 /* Image inside each shape slot */
 .kn-bg-shape img.shape-element {
   position: absolute;
-  width: 70%;
-  height: 60%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border-radius: 16px;
-  top: 20%;
-  right: 8%;
+  border-radius: 0;
+  top: 0;
+  left: 0;
+  opacity: 0.35;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
 }
 

@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 const Acctual = lazy(() => import('./designs/acctual/index'))
 const IndustryPage = lazy(() => import('./designs/acctual/industry/IndustryPage'))
+const AboutPage = lazy(() => import('./designs/acctual/about/AboutPage'))
 
 function Loading() {
   return (
@@ -29,6 +30,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Acctual />} />
           <Route path="/use-cases/:slug" element={<IndustryPage />} />
+          <Route path="/about" element={<AboutPage />} />
         </Routes>
       </Suspense>
     </BrowserRouter>

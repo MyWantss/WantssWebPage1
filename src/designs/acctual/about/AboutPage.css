@@ -1,0 +1,29 @@
+.about-hero {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 24px 80px;
+  text-align: center;
+}
+
+.about-hero-inner {
+  max-width: 700px;
+}
+
+.about-hero-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--text);
+  margin-bottom: 24px;
+}
+
+.about-hero-sub {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--muted);
+}

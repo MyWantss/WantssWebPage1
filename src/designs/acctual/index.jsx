@@ -19,6 +19,16 @@ import DottedSurface from './DottedSurface'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Calendar, Code, FileText, User, Clock } from 'lucide-react'
 
+const CALENDLY_URL = 'https://calendly.com/wantss/explore-a-partnership-wantss'
+const openCalendly = (e) => {
+  e.preventDefault()
+  if (window.Calendly) {
+    window.Calendly.initPopupWidget({ url: CALENDLY_URL })
+  } else {
+    window.open(CALENDLY_URL, '_blank')
+  }
+}
+
 const infrastructureTimelineData = [
   {
     id: 1,
@@ -127,15 +137,15 @@ function Hero() {
 
       <div className="wts-hero-content fade-up">
         <h1 className="wts-hero-title">
-          Real opportunities<br/>don't knock on your door.<br/><span>They're detected and<br/>approached with precision</span>
+          Real opportunities don't just<br/>knock on your door.<br/><span>They must be detected, understood,<br/>and approached with precision</span>
         </h1>
         <p className="wts-hero-sub"></p>
         <div style={{ marginTop: '120px' }}>
-          <a href="#" className="wts-btn" style={{ position: 'relative' }}>
+          <a href="#" onClick={openCalendly} className="wts-btn" style={{ position: 'relative' }}>
             <GlowingEffect spread={40} proximity={64} inactiveZone={0.01} borderWidth={2} disabled={false} />
-            Book a Discovery Call
+            Explore a Partnership
           </a>
-          <p className="wts-hero-micro">A dedicated private partner working behind your pipeline.</p>
+          <p className="wts-hero-micro">A private partner for opportunity detection and client acquisition</p>
         </div>
       </div>
     </section>
@@ -153,14 +163,14 @@ import floater7 from './floaters/floater-7.png'
 import floater8 from './floaters/floater-8.png'
 
 const notificationItems = [
-  { src: floater1, alt: 'New Sales Opportunity', from: 'right', width: '768px' },
-  { src: floater5, alt: 'New Meeting Scheduled', from: 'left', width: '900px', extraSpace: -25 },
-  { src: floater7, alt: 'Opportunity Qualified', from: 'right', width: '576px', extraSpace: -15 },
-  { src: floater8, alt: 'Market Signal Detected', from: 'left', width: '820px', extraSpace: -5 },
-  { src: floater6, alt: 'AI Prospect Identified', from: 'right', width: '820px' },
-  { src: floater2, alt: 'AI Lead Analysis', from: 'left', width: '768px', extraSpace: 20 },
-  { src: floater3, alt: 'Deal Cards', from: 'left', width: '864px', extraSpace: 20 },
-  { src: floater4, alt: 'Pipeline Growth', from: 'right', width: '720px', extraSpace: 20 },
+  { src: floater1, alt: 'New Sales Opportunity', from: 'right', width: '860px' },
+  { src: floater5, alt: 'New Meeting Scheduled', from: 'left', width: '900px', extraSpace: -80 },
+  { src: floater8, alt: 'Market Signal Detected', from: 'left', width: '820px', extraSpace: -110 },
+  { src: floater6, alt: 'AI Prospect Identified', from: 'right', width: '820px', extraSpace: -110 },
+  { src: floater2, alt: 'AI Lead Analysis', from: 'left', width: '768px', extraSpace: -45 },
+  { src: floater7, alt: 'Opportunity Qualified', from: 'right', width: '576px', extraSpace: -45 },
+  { src: floater3, alt: 'Deal Cards', from: 'left', width: '864px', extraSpace: -45 },
+  { src: floater4, alt: 'Pipeline Growth', from: 'right', width: '720px', extraSpace: -45 },
 ]
 
 function NotifItem({ item, index, sectionVisible }) {
@@ -226,7 +236,7 @@ function NotificationShowcase() {
   return (
     <section className="wts-notif-showcase" ref={sectionRef}>
       <h2 className="wts-section-big-title" style={{ opacity: visible ? 1 : 0, transform: visible ? 'translateY(0)' : 'translateY(20px)', transition: 'opacity 0.6s ease, transform 0.6s ease', marginBottom: '40px' }}>
-        <span style={{ color: 'var(--accent)' }}>This is what your morning</span><br/><span style={{ display: 'block', textAlign: 'center' }}>should look like</span>
+        <span style={{ color: 'var(--accent)' }}>What opportunity in motion</span><br/><span style={{ display: 'block', textAlign: 'center' }}>looks like</span>
       </h2>
       <div className="wts-notif-container">
         {notificationItems.map((item, i) => (
@@ -244,9 +254,10 @@ function NotificationShowcase() {
 function Problem() {
   const ref = useFadeIn(0.1)
   return (
-    <section className="wts-problem" ref={ref}>
+    <section className="wts-problem" ref={ref} style={{ position: 'relative', overflow: 'hidden' }}>
+      <DottedSurface className="wts-problem-dots" color={[0.659, 0.333, 0.969]} />
       <FloatingElements section="problem" />
-      <div className="wts-problem-content fade-up">
+      <div className="wts-problem-content fade-up" style={{ position: 'relative', zIndex: 1 }}>
         <h2 className="wts-section-big-title">The problem isn't effort<br/><span style={{ color: 'var(--accent)' }}>It's timing</span></h2>
         <div className="wts-problem-cards-wrap">
           <DisplayCards />
@@ -260,7 +271,7 @@ function Problem() {
 function Transformation() {
   const ref = useFadeIn()
   return (
-    <section className="wts-transform" ref={ref} style={{ position: 'relative', overflow: 'hidden' }}>
+    <section id="results" className="wts-transform" ref={ref} style={{ position: 'relative', overflow: 'hidden' }}>
       <FloatingElements section="transform" />
       <AnimatedGradientBackground
         startingGap={110}
@@ -334,7 +345,7 @@ function Infrastructure() {
 /* ─── Process (Orbital Timeline) ─── */
 function ProcessOrbital() {
   return (
-    <section className="wts-process-orbital" style={{ position: 'relative', overflow: 'visible' }}>
+    <section id="the-system" className="wts-process-orbital" style={{ position: 'relative', overflow: 'visible' }}>
       <FloatingElements section="process-orbital" />
       <div style={{ textAlign: 'center', padding: '80px 24px 0' }}>
         <h2 className="wts-section-big-title" style={{ marginBottom: '8px' }}>From Signal to Conversation</h2>
@@ -391,7 +402,6 @@ function Differentiators() {
   ]
   return (
     <section className="wts-diff" ref={ref} style={{ position: 'relative', overflow: 'hidden' }}>
-      <DottedSurface className="wts-diff-dots" color={[0.659, 0.333, 0.969]} />
       <FloatingElements section="diff" />
       <div className="wts-diff-inner fade-up">
         <h2 className="wts-section-big-title">The Reality Behind Growth</h2>
@@ -502,7 +512,7 @@ function Offer() {
   ]
 
   return (
-    <section className="wts-offer" ref={ref}>
+    <section id="partnership" className="wts-offer" ref={ref}>
       <FloatingElements section="offer" />
       <div className="wts-offer-inner fade-up">
         <h2 className="wts-section-big-title">Access the System</h2>
@@ -601,6 +611,30 @@ function Offer() {
   )
 }
 
+/* ─── Mid CTA ─── */
+function MidCTA() {
+  const ref = useFadeIn()
+  return (
+    <section className="wts-mid-cta" ref={ref} style={{ position: 'relative', overflow: 'hidden' }}>
+      <DottedSurface className="wts-mid-cta-dots" color={[0.659, 0.333, 0.969]} />
+      <div className="wts-mid-cta-inner fade-up" style={{ position: 'relative', zIndex: 1 }}>
+        <h2 className="wts-mid-cta-title">
+          See how this could work<br/><span style={{ color: 'var(--accent)' }}>for your business</span>
+        </h2>
+        <p className="wts-mid-cta-desc">
+          Each partnership is designed around your market, your sales process, and your growth priorities.<br/>
+          Let's explore whether this is the right fit.
+        </p>
+        <a href="#" className="wts-btn" style={{ position: 'relative' }}>
+          <GlowingEffect spread={40} proximity={64} inactiveZone={0.01} borderWidth={2} disabled={false} />
+          Explore a Partnership
+        </a>
+        <p className="wts-mid-cta-note">No commitment. No pitch deck. Just a focused conversation.</p>
+      </div>
+    </section>
+  )
+}
+
 /* ─── Final CTA ─── */
 function FinalCTA() {
   const ref = useFadeIn()
@@ -622,7 +656,7 @@ function FinalCTA() {
         </h2>
         <a href="#" className="wts-btn" style={{ position: 'relative' }}>
           <GlowingEffect spread={40} proximity={64} inactiveZone={0.01} borderWidth={2} disabled={false} />
-          Book a Discovery Call
+          Explore a Partnership
         </a>
         <p style={{ marginTop: '24px', color: 'var(--accent)', fontSize: '14px', fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase' }}>Limited Availability</p>
         <p style={{ marginTop: '6px', color: 'var(--muted)', fontSize: '13px' }}>Only a small number of systems are deployed at a time.</p>
@@ -645,10 +679,11 @@ export default function Wantss() {
         <NotificationShowcase />
         <Problem />
         <Differentiators />
+        <Transformation />
+        <MidCTA />
         <ProcessOrbital />
         <Industries />
         {/* <Infrastructure /> */}
-        <Transformation />
         <Offer />
         <FinalCTA />
         <Footer />
