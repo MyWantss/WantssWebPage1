@@ -470,3 +470,75 @@
     font-size: 0.7rem;
   }
 }
+
+/* ============================================
+   LIGHT MODE
+   ============================================ */
+.wts-page--light .rot-center-title {
+  color: #18181b;
+}
+
+.wts-page--light .rot-center-desc {
+  color: rgba(24, 24, 27, 0.6);
+}
+
+.wts-page--light .rot-orbit-ring {
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+.wts-page--light .rot-nucleus-ping {
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+.wts-page--light .rot-nucleus-ping--delayed {
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+.wts-page--light .rot-node-circle {
+  background: #ffffff;
+  color: #18181b;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.wts-page--light .rot-node-circle--expanded {
+  background: #18181b;
+  color: #ffffff;
+  border-color: #18181b;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+
+.wts-page--light .rot-node-circle--related {
+  background: rgba(0, 0, 0, 0.3);
+  color: #ffffff;
+  border-color: #18181b;
+}
+
+.wts-page--light .rot-node-label--active {
+  color: #18181b;
+}
+
+.wts-page--light .rot-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+.wts-page--light .rot-card-stem {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.wts-page--light .rot-card-date {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.wts-page--light .rot-card-title {
+  color: #18181b;
+}
+
+.wts-page--light .rot-card-content {
+  color: rgba(24, 24, 27, 0.8);
+}
+
+.wts-page--light .rot-node-glow {
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
+}

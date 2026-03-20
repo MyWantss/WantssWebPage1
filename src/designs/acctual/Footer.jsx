@@ -6,9 +6,9 @@ export default function Footer({ homePath = '/acctual' }) {
     <footer className="wts-footer">
       <div className="wts-footer-inner">
         <div className="wts-footer-brand">
-          <Link to={homePath} className="wts-logo">
+          <a href="#" className="wts-logo" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }) }}>
             <img src={wantssLogo} alt="WANTSS" className="kn-logo-img" />
-          </Link>
+          </a>
           <p className="wts-footer-desc">
             AI Research and Growth Infrastructure for B2B.
           </p>

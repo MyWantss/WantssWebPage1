@@ -310,3 +310,11 @@
 .wts-page--light .dc-card-icon-wrap {
   background: rgba(147, 51, 234, 0.1);
 }
+
+.wts-page--light .dc-card-desc {
+  color: #3f3f46;
+}
+
+.wts-page--light .dc-card-title {
+  color: var(--accent);
+}

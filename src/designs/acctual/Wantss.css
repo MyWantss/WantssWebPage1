@@ -514,11 +514,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow: hidden;
+  overflow: clip;
   background:
     radial-gradient(ellipse 60% 50% at 50% 45%, transparent 30%, rgba(168, 85, 247, 0.08) 70%, transparent 100%),
     radial-gradient(ellipse 80% 60% at 50% 50%, transparent 20%, rgba(91, 107, 245, 0.05) 80%, transparent 100%),
     var(--bg);
+}
+
+.wts-notif-title-mobile {
+  display: none;
+  text-align: center;
 }
 
 .wts-notif-headline {
@@ -597,41 +602,68 @@
 @media (max-width: 768px) {
   .wts-notif-showcase {
     padding: 60px 16px;
-    overflow: visible;
+    overflow: clip;
   }
 
   .wts-notif-container {
-    gap: 0;
+    gap: 20px;
     overflow: visible;
+    align-items: center;
   }
 
   .wts-notif-slide {
-    width: 85vw !important;
-    margin-top: -40px;
+    width: 80vw !important;
+    align-self: center;
   }
 
-  .wts-notif-slide:first-child {
-    margin-top: 0;
+  .wts-notif-slide:nth-child(-n+4) {
+    width: 92vw !important;
+  }
+
+  .wts-notif-slide:nth-child(3),
+  .wts-notif-slide:nth-child(4),
+  .wts-notif-slide:nth-child(6),
+  .wts-notif-slide:nth-child(7),
+  .wts-notif-slide:nth-child(8) {
+    padding-top: 30px;
+  }
+
+  .wts-notif-slide--visible {
+    transform: translateX(0) scale(1) !important;
   }
 
   .wts-notif-from-left {
-    transform: translateX(-120px) scale(0.9);
+    transform: translateX(-150px) scale(0.9);
   }
 
   .wts-notif-from-right {
-    transform: translateX(120px) scale(0.9);
+    transform: translateX(150px) scale(0.9);
   }
 
   .wts-notif-exit-left {
-    transform: translateX(-120px) scale(0.9);
+    transform: translateX(-150px) scale(0.9);
   }
 
   .wts-notif-exit-right {
-    transform: translateX(120px) scale(0.9);
+    transform: translateX(150px) scale(0.9);
   }
 
   .wts-notif-headline {
     margin-bottom: 40px;
+  }
+
+  .wts-notif-title-desktop {
+    display: none !important;
+  }
+
+  .wts-notif-title-mobile {
+    display: block !important;
+  }
+
+
+  .wts-notif-closing-text {
+    padding: 0 16px;
+    font-size: 16px !important;
   }
 }
 
@@ -758,6 +790,11 @@
 
 .wts-transform-col li:last-child {
   border-bottom: none;
+}
+
+/* Light mode — force white title on dark gradient background */
+.wts-page--light .wts-transform .wts-section-big-title {
+  color: #ffffff;
 }
 
 /* ============================================

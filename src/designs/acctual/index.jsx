@@ -236,7 +236,10 @@ function NotificationShowcase() {
   return (
     <section className="wts-notif-showcase" ref={sectionRef}>
       <h2 className="wts-section-big-title" style={{ opacity: visible ? 1 : 0, transform: visible ? 'translateY(0)' : 'translateY(20px)', transition: 'opacity 0.6s ease, transform 0.6s ease', marginBottom: '40px' }}>
-        <span style={{ color: 'var(--accent)' }}>What opportunity in motion</span><br/><span style={{ display: 'block', textAlign: 'center' }}>looks like</span>
+        <span className="wts-notif-title-desktop" style={{ color: 'var(--accent)', display: 'block', textAlign: 'center' }}>What opportunity in motion</span>
+        <span className="wts-notif-title-mobile" style={{ color: 'var(--accent)' }}>What opportunity</span>
+        <span className="wts-notif-title-mobile" style={{ color: 'var(--accent)' }}>in motion</span>
+        <span style={{ display: 'block', textAlign: 'center' }}>looks like</span>
       </h2>
       <div className="wts-notif-container">
         {notificationItems.map((item, i) => (
