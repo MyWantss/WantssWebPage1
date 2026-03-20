@@ -96,7 +96,7 @@ export default function RadialOrbitalTimeline({ timelineData, centerTitle, cente
 
   const calculateNodePosition = (index, total) => {
     const angle = ((index / total) * 360 + rotationAngle) % 360;
-    const radius = isMobile ? 175 : 260;
+    const radius = isMobile ? 185 : 260;
     const radian = (angle * Math.PI) / 180;
 
     const x = radius * Math.cos(radian) + centerOffset.x;
