@@ -13,6 +13,9 @@ import FloatingElements from './FloatingElements'
 import Footer from './Footer'
 import { Link } from 'react-router-dom'
 import { industries } from './industry/industryData'
+import FeaturedUseCases from './industry/FeaturedUseCases'
+import AccessSystem from './AccessSystem'
+import PipelineSteps from './PipelineSteps'
 import RadialOrbitalTimeline from './RadialOrbitalTimeline'
 import BeamsBackground from './BeamsBackground'
 import DottedSurface from './DottedSurface'
@@ -139,7 +142,7 @@ function Hero() {
         <h1 className="wts-hero-title">
           Real opportunities don't just<br/>knock on your door.<br/><span>They must be detected, understood,<br/>and approached with precision</span>
         </h1>
-        <p className="wts-hero-sub"></p>
+        <p className="wts-hero-sub">A done-for-you outbound system that turns market signals into strategic outreach.</p>
         <div style={{ marginTop: '120px' }}>
           <a href="#" onClick={openCalendly} className="wts-btn" style={{ position: 'relative' }}>
             <GlowingEffect spread={40} proximity={64} inactiveZone={0.01} borderWidth={2} disabled={false} />
@@ -164,13 +167,11 @@ import floater8 from './floaters/floater-8.png'
 
 const notificationItems = [
   { src: floater1, alt: 'New Sales Opportunity', from: 'right', width: '860px' },
-  { src: floater5, alt: 'New Meeting Scheduled', from: 'left', width: '900px', extraSpace: -80 },
-  { src: floater8, alt: 'Market Signal Detected', from: 'left', width: '820px', extraSpace: -110 },
-  { src: floater6, alt: 'AI Prospect Identified', from: 'right', width: '820px', extraSpace: -110 },
-  { src: floater2, alt: 'AI Lead Analysis', from: 'left', width: '768px', extraSpace: -45 },
-  { src: floater7, alt: 'Opportunity Qualified', from: 'right', width: '576px', extraSpace: -45 },
-  { src: floater3, alt: 'Deal Cards', from: 'left', width: '864px', extraSpace: -45 },
-  { src: floater4, alt: 'Pipeline Growth', from: 'right', width: '720px', extraSpace: -45 },
+  { src: floater5, alt: 'New Meeting Scheduled', from: 'left', width: '900px', extraSpace: -110 },
+  { src: floater2, alt: 'AI Lead Analysis', from: 'left', width: '768px', extraSpace: -110 },
+  { src: floater6, alt: 'AI Prospect Identified', from: 'right', width: '820px', extraSpace: -140 },
+  { src: floater8, alt: 'Market Signal Detected', from: 'left', width: '820px', extraSpace: -90 },
+  { src: floater3, alt: 'Deal Cards', from: 'left', width: '864px', extraSpace: -75 },
 ]
 
 function NotifItem({ item, index, sectionVisible }) {
@@ -643,7 +644,7 @@ function FinalCTA() {
   const ref = useFadeIn()
   return (
     <section className="wts-cta-final" ref={ref} style={{ position: 'relative', overflow: 'hidden' }}>
-      <FloatingElements section="cta-final" />
+      {/* <FloatingElements section="cta-final" /> */}
       <AnimatedGradientBackground
         startingGap={120}
         Breathing={true}
@@ -680,14 +681,17 @@ export default function Wantss() {
         <KineticNav light={light} toggle={toggle} />
         <Hero />
         <NotificationShowcase />
-        <Problem />
         <Differentiators />
         <Transformation />
         <MidCTA />
-        <ProcessOrbital />
-        <Industries />
+        {/* <ProcessOrbital /> */}
+        <PipelineSteps steps={infrastructureTimelineData} />
+        <Problem />
+        {/* <Industries /> */}
+        <FeaturedUseCases />
         {/* <Infrastructure /> */}
-        <Offer />
+        {/* <Offer /> */}
+        <AccessSystem />
         <FinalCTA />
         <Footer />
         <Cursor light={light} />
