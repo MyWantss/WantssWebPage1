@@ -149,6 +149,44 @@
   align-self: center;
 }
 
+/* ── Guarantee ── */
+.wts-access-guarantee {
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.wts-access-guarantee-badge {
+  display: inline-block;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #fff;
+  background: var(--accent);
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+}
+
+.wts-access-guarantee-text {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Scarcity ── */
+.wts-access-scarcity {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+  margin: 0 0 40px 0;
+  letter-spacing: 0.02em;
+}
+
 /* ── Badge ── */
 .wts-access-badge {
   display: inline-block;

@@ -16,6 +16,8 @@ import { industries } from './industry/industryData'
 import FeaturedUseCases from './industry/FeaturedUseCases'
 import AccessSystem from './AccessSystem'
 import PipelineSteps from './PipelineSteps'
+import SocialProof from './SocialProof'
+import FounderCredibility from './FounderCredibility'
 import RadialOrbitalTimeline from './RadialOrbitalTimeline'
 import BeamsBackground from './BeamsBackground'
 import DottedSurface from './DottedSurface'
@@ -686,12 +688,14 @@ export default function Wantss() {
         <MidCTA />
         {/* <ProcessOrbital /> */}
         <PipelineSteps steps={infrastructureTimelineData} />
+        <SocialProof />
         <Problem />
         {/* <Industries /> */}
         <FeaturedUseCases />
         {/* <Infrastructure /> */}
         {/* <Offer /> */}
         <AccessSystem />
+        <FounderCredibility />
         <FinalCTA />
         <Footer />
         <Cursor light={light} />

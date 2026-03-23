@@ -54,6 +54,7 @@ export default function AccessSystem() {
           Signal detection, personalized outreach, and continuous operation.
           Fully managed for you — from first contact to booked conversation.
         </p>
+        <p className="wts-access-scarcity">Now accepting 5 companies into our founding cohort</p>
 
         {/* Pilot month — entry point */}
         <div className="wts-access-pilot" style={{ position: 'relative', cursor: 'default' }}>
@@ -71,6 +72,12 @@ export default function AccessSystem() {
           <p className="wts-access-card-desc">
             One full month of active campaigning in your market. List, copy, setup, and iterations included. No long-term commitment until you see results.
           </p>
+          <div className="wts-access-guarantee">
+            <span className="wts-access-guarantee-badge">Money-back guarantee</span>
+            <p className="wts-access-guarantee-text">
+              If your pilot doesn't deliver at least 3 qualified meetings in 30 days, you get a full refund.
+            </p>
+          </div>
           <a href="#" onClick={openCalendly} className="wts-access-cta wts-access-cta--center" style={{ position: 'relative' }}>
             <GlowingEffect spread={40} proximity={64} inactiveZone={0.01} borderWidth={2} disabled={false} />
             Explore a Partnership

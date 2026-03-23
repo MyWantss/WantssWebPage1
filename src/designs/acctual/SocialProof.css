@@ -1,0 +1,96 @@
+/* ============================================
+   SOCIAL PROOF — Early Adopter Results
+   ============================================ */
+.wts-proof {
+  padding: 80px 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.wts-proof-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.wts-proof-subtitle {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 560px;
+  margin: 0 auto 40px;
+}
+
+/* ── Cards grid ── */
+.wts-proof-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  text-align: left;
+}
+
+/* ── Card ── */
+.wts-proof-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.wts-proof-card-metric {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.wts-proof-card-desc {
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.wts-proof-card-industry {
+  display: inline-block;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  background: var(--accent-glow);
+  padding: 3px 8px;
+  border-radius: 20px;
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+/* ── Note ── */
+.wts-proof-note {
+  margin-top: 24px;
+  font-size: 12px;
+  color: var(--subtle);
+  font-style: italic;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .wts-proof {
+    padding: 48px 20px;
+  }
+
+  .wts-proof-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .wts-proof-card-metric {
+    font-size: 24px;
+  }
+}
