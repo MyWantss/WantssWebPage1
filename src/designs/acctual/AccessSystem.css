@@ -342,12 +342,31 @@
     grid-template-columns: 1fr;
   }
 
+  .wts-access-pilot {
+    text-align: center;
+  }
+
   .wts-access-pilot-top {
     flex-direction: column;
+    align-items: center;
     gap: 12px;
   }
 
   .wts-access-pilot-pricing {
-    text-align: left;
+    text-align: center;
+  }
+
+  .wts-access-card-desc {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .wts-access-badge {
+    align-self: center;
+  }
+
+  .wts-access-cta--center {
+    align-self: center;
   }
 }
