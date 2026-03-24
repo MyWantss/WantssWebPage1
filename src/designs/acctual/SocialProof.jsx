@@ -17,7 +17,7 @@ function useFadeIn(threshold = 0.15) {
   return ref
 }
 
-{/* [REPLACE] Replace placeholder metrics below with real client data */}
+// [REPLACE] Replace placeholder metrics below with real client data
 const results = [
   {
     metric: '12 meetings',
@@ -59,7 +59,7 @@ export default function SocialProof() {
           ))}
         </div>
 
-        {/* [REPLACE] Update note when you have more case studies */}
+        {/* Update note when you have more case studies */}
         <p className="wts-proof-note">Results from pilot program participants. Individual outcomes may vary.</p>
       </div>
     </section>
