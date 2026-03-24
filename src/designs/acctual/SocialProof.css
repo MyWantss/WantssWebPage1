@@ -13,6 +13,14 @@
   text-align: center;
 }
 
+.wts-proof-accent {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(20px, 3vw, 28px);
+  font-weight: 700;
+  color: var(--accent);
+  margin: 0 0 8px 0;
+}
+
 .wts-proof-subtitle {
   font-size: 14px;
   color: var(--muted);
@@ -37,16 +45,28 @@
   padding: 28px 24px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  align-items: center;
+  text-align: center;
+  gap: 4px;
 }
 
-.wts-proof-card-metric {
+.wts-proof-card-number {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 700;
-  color: var(--accent);
+  color: var(--text);
   letter-spacing: -0.02em;
   line-height: 1.1;
+}
+
+.wts-proof-card-label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 12px;
 }
 
 .wts-proof-card-desc {
@@ -80,6 +100,7 @@
 }
 
 /* ── Responsive ── */
+
 @media (max-width: 768px) {
   .wts-proof {
     padding: 48px 20px;

@@ -17,22 +17,21 @@ function useFadeIn(threshold = 0.15) {
   return ref
 }
 
-// [REPLACE] Replace placeholder metrics below with real client data
 const results = [
   {
-    metric: '12 meetings',
-    desc: 'Qualified sales meetings booked in the first 8 weeks of operation for a mid-size SaaS company.',
-    industry: 'B2B SaaS',
+    number: '56%',
+    label: 'open rate',
+    desc: 'Email open rate achieved through signal-driven targeting, optimized subject lines, and deliverability management.',
   },
   {
-    metric: '4.1% reply rate',
+    number: '15',
+    label: 'meetings',
+    desc: 'Qualified sales meetings booked through AI-powered prospecting and personalized outreach sequences.',
+  },
+  {
+    number: '5.75%',
+    label: 'reply rate',
     desc: 'Cold outreach reply rate achieved through signal-driven targeting and AI-written copy — 3x the industry average.',
-    industry: 'Cybersecurity',
-  },
-  {
-    metric: '38 conversations',
-    desc: 'New client conversations initiated in 60 days, converting to 6 active placements.',
-    industry: 'Recruitment',
   },
 ]
 
@@ -43,24 +42,25 @@ export default function SocialProof() {
     <section id="results" className="wts-proof" ref={ref}>
       <div className="wts-proof-inner fade-up">
         <p className="wts-section-label">Early Results</p>
-        <h2 className="wts-section-big-title" style={{ marginBottom: '12px' }}>What the System Delivers</h2>
+        <h2 className="wts-section-big-title" style={{ marginBottom: '8px' }}>What the System Delivers</h2>
+        <p className="wts-proof-accent">In the first 8 weeks</p>
         <p className="wts-proof-subtitle">
-          Real outcomes from companies running the system in their market.
+          For every 1,000 prospects reached.
         </p>
 
         <div className="wts-proof-grid">
           {results.map((r, i) => (
             <div className="wts-proof-card" key={i} style={{ position: 'relative' }}>
               <GlowingEffect spread={40} proximity={64} inactiveZone={0.01} borderWidth={2} disabled={false} />
-              <div className="wts-proof-card-metric">{r.metric}</div>
+              <div className="wts-proof-card-number">{r.number}</div>
+              <div className="wts-proof-card-label">{r.label}</div>
               <p className="wts-proof-card-desc">{r.desc}</p>
-              <span className="wts-proof-card-industry">{r.industry}</span>
             </div>
           ))}
         </div>
 
         {/* Update note when you have more case studies */}
-        <p className="wts-proof-note">Results from pilot program participants. Individual outcomes may vary.</p>
+        <p className="wts-proof-note">Results vary from program to program. Individual outcomes may vary.</p>
       </div>
     </section>
   )
