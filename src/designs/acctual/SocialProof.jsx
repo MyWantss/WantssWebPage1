@@ -24,7 +24,7 @@ const results = [
     desc: 'Email open rate achieved through signal-driven targeting, optimized subject lines, and deliverability management.',
   },
   {
-    number: '15',
+    number: '2.2%',
     label: 'meetings',
     desc: 'Qualified sales meetings booked through AI-powered prospecting and personalized outreach sequences.',
   },
@@ -43,10 +43,7 @@ export default function SocialProof() {
       <div className="wts-proof-inner fade-up">
         <p className="wts-section-label">Early Results</p>
         <h2 className="wts-section-big-title" style={{ marginBottom: '8px' }}>What the System Delivers</h2>
-        <p className="wts-proof-accent">In the first 8 weeks</p>
-        <p className="wts-proof-subtitle">
-          For every 1,000 prospects reached.
-        </p>
+        <p className="wts-proof-accent">In Average</p>
 
         <div className="wts-proof-grid">
           {results.map((r, i) => (

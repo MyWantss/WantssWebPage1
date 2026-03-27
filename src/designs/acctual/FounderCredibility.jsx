@@ -40,7 +40,7 @@ export default function FounderCredibility() {
             <h3 className="wts-founder-name">José Manuel</h3>
             <p className="wts-founder-role">Founder & AI Systems Architect · Montreal, Canada</p>
             <p className="wts-founder-bio">
-              Over two decades building and scaling businesses — from managing 150 people as COO to growing revenue 33% in events production and achieving 150% sales growth on Amazon. Now applying that operational experience to AI: designing voice agents, automating complex workflows, and building the acquisition engine behind WANTSS.
+              Over two decades building and scaling businesses — from managing 150 people as COO to growing revenue 33% in events production and achieving 150% sales growth on Amazon. With deep experience in sales and client acquisition across multiple industries, now applying that operational expertise to AI: designing voice agents, automating complex workflows, and building the acquisition engine behind WANTSS.
             </p>
 
             <div className="wts-founder-stats">
@@ -52,12 +52,8 @@ export default function FounderCredibility() {
                 <span className="wts-founder-stat-num">7</span>
                 <span className="wts-founder-stat-label">Companies founded</span>
               </div>
-              <div className="wts-founder-stat">
-                <span className="wts-founder-stat-num">150%</span>
-                <span className="wts-founder-stat-label">Sales growth (Amazon)</span>
-              </div>
-              <div className="wts-founder-stat">
-                <span className="wts-founder-stat-num wts-founder-stat-num--accent">English · Spanish · French</span>
+              <div className="wts-founder-stat" style={{ marginLeft: '40px', textAlign: 'center' }}>
+                <span className="wts-founder-stat-num wts-founder-stat-num--accent">English &nbsp;·&nbsp; Spanish &nbsp;·&nbsp; French</span>
                 <span className="wts-founder-stat-label">Languages</span>
               </div>
             </div>

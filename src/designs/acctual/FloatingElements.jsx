@@ -108,10 +108,12 @@ export default function FloatingElements({ section }) {
 
         const slideFrom = item.slideInFrom || (item.position?.left != null ? 'left' : 'right')
 
+        const side = item.position?.left != null ? 'left' : 'right'
+
         return (
           <div
             key={item.id}
-            className={item.hideOnMobile ? 'floater-hide-mobile' : undefined}
+            className={`floater-side-${side}${item.hideOnMobile ? ' floater-hide-mobile' : ''}`}
             style={{
               ...item.position,
               position: 'absolute',

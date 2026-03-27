@@ -91,7 +91,7 @@ export default function AccessSystem() {
           <span className="wts-access-price-from">From</span>
           <div className="wts-access-price">$18,000</div>
           <span className="wts-access-period">per period · pricing based on commitment horizon</span>
-          <p className="wts-access-meta">Starting at 6-month plans</p>
+          <p className="wts-access-meta">Starting at 4-month plans</p>
         </div>
 
         <h4 className="wts-access-section-title">What's included</h4>
