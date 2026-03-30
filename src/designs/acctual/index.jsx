@@ -688,7 +688,7 @@ export default function Wantss() {
         <MidCTA />
         {/* <ProcessOrbital /> */}
         <PipelineSteps steps={infrastructureTimelineData} />
-        <SocialProof />
+        {/* <SocialProof /> */}
         <Problem />
         {/* <Industries /> */}
         <FeaturedUseCases />
