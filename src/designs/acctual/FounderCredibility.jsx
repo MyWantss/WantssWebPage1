@@ -40,7 +40,7 @@ export default function FounderCredibility() {
             <h3 className="wts-founder-name">José Manuel</h3>
             <p className="wts-founder-role">Founder & AI Systems Architect · Montreal, Canada</p>
             <p className="wts-founder-bio">
-              Over two decades building and scaling businesses — from managing 150 people as COO to growing revenue 33% in events production and achieving 150% sales growth on Amazon. With deep experience in sales and client acquisition across multiple industries, now applying that operational expertise to AI: designing voice agents, automating complex workflows, and building the acquisition engine behind WANTSS.
+              After two decades of building and scaling businesses — managing teams, growing revenue, figuring out what makes people buy — I realized the hardest part was always the same: finding the right conversation with the right person at the right time. So I built a system that does exactly that. WANTSS is what I wish I'd had from day one.
             </p>
 
             <div className="wts-founder-stats">
