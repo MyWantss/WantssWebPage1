@@ -1,5 +1,5 @@
 /* ============================================
-   WANTSS — GLOBAL
+   INTELINX — GLOBAL
    ============================================ */
 /* Fonts moved to index.html <link> for non-blocking load */
 
@@ -132,8 +132,8 @@
     gap: 6px;
   }
 
-  .kn-logo-img {
-    height: 50px;
+  .kn-header .kn-logo-img {
+    height: 30px;
   }
 }
 

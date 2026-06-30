@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
-import wantssLogo from '../../../assets/WANTTS logo.png'
+import intelinxLogoDark from '../../../assets/intelinx-logo-dark.png'
+import intelinxLogoLight from '../../../assets/intelinx-logo-light.png'
 
 export default function Footer({ homePath = '/acctual' }) {
   return (
@@ -7,12 +8,13 @@ export default function Footer({ homePath = '/acctual' }) {
       <div className="wts-footer-inner">
         <div className="wts-footer-brand">
           <a href="#" className="wts-logo" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }) }}>
-            <img src={wantssLogo} alt="WANTSS" className="kn-logo-img" />
+            <img src={intelinxLogoDark} alt="Intelinx" className="kn-logo-img kn-logo-img--for-dark" />
+            <img src={intelinxLogoLight} alt="Intelinx" className="kn-logo-img kn-logo-img--for-light" />
           </a>
           <p className="wts-footer-desc">
             AI Research and Growth Infrastructure for B2B.
           </p>
-          <p className="wts-footer-copy">&copy; {new Date().getFullYear()} WANTSS</p>
+          <p className="wts-footer-copy">&copy; {new Date().getFullYear()} Intelinx</p>
         </div>
         <div className="wts-footer-col">
           <h4>Company</h4>

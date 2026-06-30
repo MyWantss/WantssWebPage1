@@ -7,7 +7,7 @@ import Footer from '../Footer'
 import Cursor from '../Cursor'
 import { GlowingEffect } from '../GlowingEffect'
 import { industryBySlug, industries } from './industryData'
-import '../Wantss.css'
+import '../Intelinx.css'
 
 const CALENDLY_URL = 'https://calendly.com/wantss/explore-a-partnership-wantss'
 const openCalendly = (e) => {
@@ -50,6 +50,28 @@ export default function IndustryPage() {
   const related = data.relatedUseCases
     .map(s => industries.find(i => i.slug === s))
     .filter(Boolean)
+
+  // Per-industry section labels with fallbacks to the defaults
+  const labels = data.labels || {}
+  const icpLabel = labels.icp || 'Ideal Client Profile'
+  const signalsLabel = labels.signals || 'Signals the System Detects'
+  const researchesLabel = labels.researches || 'What the System Researches'
+  const activationLabel = labels.activation || 'Example Activation'
+  const impactLabel = labels.impact || 'What This Creates'
+
+  // ICP can be a generic [{ label, value }] array, or the legacy 4-field object
+  const icpItems = Array.isArray(data.icpProfile)
+    ? data.icpProfile
+    : [
+        { label: 'Company Size', value: data.icpProfile.companySize },
+        { label: 'Revenue Range', value: data.icpProfile.revenueRange },
+        { label: 'Team Maturity', value: data.icpProfile.teamMaturity },
+        { label: 'Buyer Roles', value: Array.isArray(data.icpProfile.buyerRoles) ? data.icpProfile.buyerRoles.join(', ') : data.icpProfile.buyerRoles },
+      ]
+
+  const activation = data.exampleActivation
+  const contextLabel = activation.contextLabel || 'Context'
+  const messageLabel = activation.messageLabel || 'Message'
 
   return (
     <ThemeContext.Provider value={{ light, toggle }}>
@@ -94,28 +116,15 @@ export default function IndustryPage() {
         {/* ICP Profile */}
         <section className="ind-section">
           <div className="ind-section-inner">
-            <h2 className="ind-section-title">Ideal Client Profile</h2>
+            <h2 className="ind-section-title">{icpLabel}</h2>
             <div className="ind-icp-grid">
-              <div className="ind-icp-card" style={{ position: 'relative' }}>
-                <GlowingEffect spread={30} proximity={48} inactiveZone={0.01} borderWidth={2} disabled={false} />
-                <span className="ind-icp-label">Company Size</span>
-                <span className="ind-icp-value">{data.icpProfile.companySize}</span>
-              </div>
-              <div className="ind-icp-card" style={{ position: 'relative' }}>
-                <GlowingEffect spread={30} proximity={48} inactiveZone={0.01} borderWidth={2} disabled={false} />
-                <span className="ind-icp-label">Revenue Range</span>
-                <span className="ind-icp-value">{data.icpProfile.revenueRange}</span>
-              </div>
-              <div className="ind-icp-card" style={{ position: 'relative' }}>
-                <GlowingEffect spread={30} proximity={48} inactiveZone={0.01} borderWidth={2} disabled={false} />
-                <span className="ind-icp-label">Team Maturity</span>
-                <span className="ind-icp-value">{data.icpProfile.teamMaturity}</span>
-              </div>
-              <div className="ind-icp-card" style={{ position: 'relative' }}>
-                <GlowingEffect spread={30} proximity={48} inactiveZone={0.01} borderWidth={2} disabled={false} />
-                <span className="ind-icp-label">Buyer Roles</span>
-                <span className="ind-icp-value">{data.icpProfile.buyerRoles.join(', ')}</span>
-              </div>
+              {icpItems.map((item, i) => (
+                <div className="ind-icp-card" key={i} style={{ position: 'relative' }}>
+                  <GlowingEffect spread={30} proximity={48} inactiveZone={0.01} borderWidth={2} disabled={false} />
+                  <span className="ind-icp-label">{item.label}</span>
+                  <span className="ind-icp-value">{item.value}</span>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -123,7 +132,7 @@ export default function IndustryPage() {
         {/* Signals */}
         <section className="ind-section">
           <div className="ind-section-inner">
-            <h2 className="ind-section-title">Signals the System Detects</h2>
+            <h2 className="ind-section-title">{signalsLabel}</h2>
             <div className="ind-card-grid">
               {data.signals.map((signal, i) => (
                 <div className="ind-signal-card" key={i} style={{ position: 'relative' }}>
@@ -139,7 +148,7 @@ export default function IndustryPage() {
         {/* What the System Researches */}
         <section className="ind-section">
           <div className="ind-section-inner">
-            <h2 className="ind-section-title">What the System Researches</h2>
+            <h2 className="ind-section-title">{researchesLabel}</h2>
             <div className="ind-card-grid">
               {data.researches.map((item, i) => (
                 <div className="ind-signal-card" key={i} style={{ position: 'relative' }}>
@@ -154,16 +163,16 @@ export default function IndustryPage() {
         {/* Example Activation */}
         <section className="ind-section">
           <div className="ind-section-inner">
-            <h2 className="ind-section-title">Example Activation</h2>
+            <h2 className="ind-section-title">{activationLabel}</h2>
             <div className="ind-activation-card" style={{ position: 'relative' }}>
               <GlowingEffect spread={40} proximity={64} inactiveZone={0.01} borderWidth={2} disabled={false} />
               <div className="ind-activation-context">
-                <span className="ind-activation-label">Context</span>
-                <p>{data.exampleActivation.context}</p>
+                <span className="ind-activation-label">{contextLabel}</span>
+                <p>{activation.context}</p>
               </div>
               <div className="ind-activation-message">
-                <span className="ind-activation-label">Message</span>
-                <p>{data.exampleActivation.message}</p>
+                <span className="ind-activation-label">{messageLabel}</span>
+                <p>{activation.message}</p>
               </div>
             </div>
           </div>
@@ -172,7 +181,7 @@ export default function IndustryPage() {
         {/* What This Creates */}
         <section className="ind-section">
           <div className="ind-section-inner">
-            <h2 className="ind-section-title">What This Creates</h2>
+            <h2 className="ind-section-title">{impactLabel}</h2>
             <div className="ind-impact-grid">
               {data.impact.map((item, i) => (
                 <div className="ind-impact-card" key={i} style={{ position: 'relative' }}>

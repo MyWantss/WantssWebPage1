@@ -6,7 +6,7 @@ import FloatingElements from '../FloatingElements'
 import DottedSurface from '../DottedSurface'
 import './FeaturedUseCases.css'
 
-const FEATURED_SLUGS = ['b2b-saas', 'cybersecurity', 'recruitment']
+const FEATURED_SLUGS = ['b2b-saas', 'financial-services', 'recruitment']
 
 const featured = FEATURED_SLUGS.map(s => industries.find(i => i.slug === s)).filter(Boolean)
 const remaining = industries.filter(i => !FEATURED_SLUGS.includes(i.slug))

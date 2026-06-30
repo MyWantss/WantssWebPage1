@@ -60,7 +60,8 @@ export default function AccessSystem() {
           <div className="wts-access-plan-card" style={{ position: 'relative', cursor: 'default' }}>
             <GlowingEffect spread={40} proximity={64} inactiveZone={0.01} borderWidth={2} disabled={false} />
             <span className="wts-access-badge">6 months</span>
-            <div className="wts-access-plan-price">$4,900<span className="wts-access-plan-mo">/mo</span></div>
+            <span className="wts-access-plan-from">Starting at</span>
+            <div className="wts-access-plan-price">$5,250<span className="wts-access-plan-mo">/mo</span></div>
             <p className="wts-access-plan-billing">Billed every six months · 6-month minimum</p>
             <p className="wts-access-plan-desc">
               Full outbound system — list building, copy, infrastructure, and optimization.
@@ -76,9 +77,10 @@ export default function AccessSystem() {
             <GlowingEffect spread={40} proximity={64} inactiveZone={0.01} borderWidth={2} disabled={false} />
             <span className="wts-access-recommended">Recommended</span>
             <span className="wts-access-badge">12 months</span>
-            <div className="wts-access-plan-price">$3,900<span className="wts-access-plan-mo">/mo</span></div>
+            <span className="wts-access-plan-from">Starting at</span>
+            <div className="wts-access-plan-price">$4,950<span className="wts-access-plan-mo">/mo</span></div>
             <p className="wts-access-plan-billing">Billed annually · 12-month commitment</p>
-            <span className="wts-access-plan-savings">Save $12,000 vs. 6-month rate</span>
+            <span className="wts-access-plan-savings">Save $3,600 vs. 6-month rate</span>
             <p className="wts-access-plan-desc">
               Everything in the 6-month plan, with a longer runway to compound results. Best value for sustained pipeline.
             </p>

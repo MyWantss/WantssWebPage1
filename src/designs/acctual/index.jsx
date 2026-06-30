@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
-import './Wantss.css'
+import './Intelinx.css'
 /* Logo PNG imports removed — using CSS gradient text logo instead */
-import heroVideo from '../../../assets/acctual/11 (1).mp4'
+import heroVideo from '../../../assets/acctual/11 (2)(2).mp4'
 import infraVideo from '../../../assets/acctual/0318(1).mp4' // reloaded
 import DisplayCards from './DisplayCards'
 import ZoomParallax from './ZoomParallax'
@@ -673,7 +673,7 @@ function FinalCTA() {
 
 /* ─── Footer ─── */
 /* ─── Main ─── */
-export default function Wantss() {
+export default function Intelinx() {
   const [light, setLight] = useState(false)
   const toggle = () => setLight(prev => !prev)
 
@@ -705,7 +705,7 @@ export default function Wantss() {
 }
 
 export const meta = {
-  title: 'WANTSS — Client Acquisition Infrastructure',
+  title: 'Intelinx — Client Acquisition Infrastructure',
   description: 'AI Research and Growth Infrastructure for B2B client acquisition',
   thumbnail: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=600&q=80',
   date: '2026-03-11',

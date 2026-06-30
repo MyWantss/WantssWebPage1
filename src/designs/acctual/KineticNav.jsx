@@ -3,7 +3,8 @@ import { Link, useNavigate } from 'react-router-dom'
 import gsap from 'gsap'
 import { CustomEase } from 'gsap/CustomEase'
 import './KineticNav.css'
-import wantssLogo from '../../../assets/WANTTS logo.png'
+import intelinxLogoDark from '../../../assets/intelinx-logo-dark.png'
+import intelinxLogoLight from '../../../assets/intelinx-logo-light.png'
 import { GlowingEffect } from './GlowingEffect'
 
 import menuImgSystem from '../../../assets/acctual/Menu/Crea_una_imagen_similar_a_la_q_Nano_Banana_2_00844.jpg'
@@ -175,7 +176,8 @@ export default function KineticNav({ light, toggle, homePath }) {
       <header className="kn-header">
         <div className="kn-header-inner">
           <Link to={homePath || '/acctual'} className="kn-logo">
-            <img src={wantssLogo} alt="WANTSS" className="kn-logo-img" />
+            <img src={intelinxLogoDark} alt="Intelinx" className="kn-logo-img kn-logo-img--for-dark" />
+            <img src={intelinxLogoLight} alt="Intelinx" className="kn-logo-img kn-logo-img--for-light" />
           </Link>
           <div className="kn-header-right">
             <button className="wts-theme-toggle" onClick={toggle} aria-label="Toggle theme" style={{ position: 'relative' }}>
@@ -229,7 +231,7 @@ export default function KineticNav({ light, toggle, homePath }) {
           {/* Links */}
           <div className="kn-links-wrap">
             <div className="kn-menu-logo" data-menu-fade>
-              <img src={wantssLogo} alt="WANTSS" className="kn-logo-img kn-logo-img--lg" />
+              <img src={intelinxLogoDark} alt="Intelinx" className="kn-logo-img kn-logo-img--lg" />
             </div>
             <ul className="kn-menu-list">
               {defaultLinks.map((link, i) => (

@@ -73,6 +73,14 @@
   width: auto;
 }
 
+/* Fit the wide wordmark logo inside the 64px header bar */
+.kn-header .kn-logo-img { height: 44px; }
+
+/* Theme-aware logo swap: white-text logo on dark theme, dark-text on light */
+.kn-logo-img--for-light { display: none; }
+.wts-page--light .kn-logo-img--for-dark { display: none; }
+.wts-page--light .kn-logo-img--for-light { display: block; }
+
 .kn-header-right {
   display: flex;
   align-items: center;

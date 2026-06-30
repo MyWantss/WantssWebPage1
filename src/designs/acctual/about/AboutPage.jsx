@@ -3,7 +3,7 @@ import { ThemeContext } from '../ThemeContext'
 import KineticNav from '../KineticNav'
 import Footer from '../Footer'
 import Cursor from '../Cursor'
-import '../Wantss.css'
+import '../Intelinx.css'
 import './AboutPage.css'
 
 export default function AboutPage() {
@@ -22,7 +22,7 @@ export default function AboutPage() {
         <section className="about-hero">
           <div className="about-hero-inner">
             <h1 className="about-hero-title">
-              About <span style={{ color: 'var(--accent)' }}>Wantss</span>
+              About <span style={{ color: 'var(--accent)' }}>Intelinx</span>
             </h1>
             <p className="about-hero-sub">
               Content coming soon. This page will tell the story behind the system and the people building it.
