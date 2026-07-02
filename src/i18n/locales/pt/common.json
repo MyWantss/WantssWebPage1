@@ -1,0 +1,28 @@
+{
+  "cta": {
+    "explorePartnership": "Explorar uma parceria",
+    "explorePartnershipLower": "Explorar uma parceria"
+  },
+  "nav": {
+    "system": "O sistema",
+    "results": "Resultados",
+    "useCases": "Casos de uso",
+    "partnership": "Parceria",
+    "about": "Sobre",
+    "contact": "Contato",
+    "menu": "Menu",
+    "close": "Fechar"
+  },
+  "footer": {
+    "desc": "Infraestrutura de pesquisa e crescimento com IA para B2B.",
+    "company": "Empresa",
+    "infrastructure": "Infraestrutura",
+    "results": "Resultados",
+    "useCases": "Casos de uso",
+    "about": "Sobre",
+    "connect": "Conectar",
+    "contact": "Contato",
+    "linkedin": "LinkedIn"
+  },
+  "limitedAvailability": "Disponibilidade limitada"
+}

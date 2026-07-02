@@ -1,0 +1,125 @@
+{
+  "meta": {
+    "title": "Intelinx — Infrastructure d’acquisition de clients",
+    "description": "Intelinx est une infrastructure d’acquisition de clients propulsée par l’IA pour le B2B — détectez les bonnes entreprises, recherchez-les et priorisez-les, puis amorcez les bonnes conversations au bon moment."
+  },
+  "hero": {
+    "title": "Les vraies occasions ne frappent pas simplement à votre porte.",
+    "titleAccent": "Elles doivent être détectées, comprises et abordées avec précision",
+    "sub": "Un système de prospection sortante clé en main qui transforme les signaux du marché en approches stratégiques.",
+    "micro": "Un partenaire privé pour la détection d’occasions et l’acquisition de clients"
+  },
+  "notif": {
+    "titleAccent": "Voici à quoi ressemble",
+    "titleRest": "une occasion en mouvement",
+    "body": "Nous repérons les bonnes entreprises, bâtissons le contexte autour d’elles et amorçons des conversations pertinentes.",
+    "bodyAccent": "Pour que vous interveniez lorsqu’il y a un réel intérêt."
+  },
+  "differentiators": {
+    "title": "La réalité derrière la croissance",
+    "items": [
+      { "title": "Les occasions n’attendent pas", "desc": "Plus vous les voyez tôt, plus elles sont faciles à gagner." },
+      { "title": "Le contexte améliore chaque message", "desc": "Un message fort fonctionne mieux lorsqu’il est appuyé par un contexte réel." },
+      { "title": "La rapidité change les résultats", "desc": "Plus vous identifiez et agissez rapidement, moins vous perdez d’occasions." },
+      { "title": "Les systèmes créent la constance", "desc": "La croissance devient plus fiable lorsque l’acquisition fonctionne comme un système." }
+    ]
+  },
+  "transformation": {
+    "title": "Ce que ce système",
+    "titleAccent": "rend possible",
+    "beforeTitle": "Avant",
+    "afterTitle": "Après",
+    "before": [
+      "Prospection manuelle",
+      "Messages génériques",
+      "Génération de prospects lente",
+      "Pipeline imprévisible",
+      "Aucun système de prospection sortante"
+    ],
+    "after": [
+      "Infrastructure d’acquisition de clients",
+      "Renseignement continu sur les prospects",
+      "Conversations fondées sur les signaux",
+      "Moteur de prospection sortante évolutif",
+      "Flux d’occasions prévisible"
+    ]
+  },
+  "midCta": {
+    "title": "Voyez comment cela pourrait fonctionner",
+    "titleAccent": "pour votre entreprise",
+    "desc": "Chaque partenariat est conçu autour de votre marché, de votre processus de vente et de vos priorités de croissance. Explorons ensemble si c’est le bon match.",
+    "note": "Aucun engagement. Aucune présentation de vente. Simplement une conversation ciblée."
+  },
+  "pipeline": {
+    "title": "Du signal à la conversation",
+    "subtitle": "Tout le nécessaire pour repérer la demande, bâtir le contexte et agir au bon moment.",
+    "footer": "Chaque couche renforce la suivante.",
+    "steps": [
+      { "category": "Signaux", "title": "Signaux du marché", "content": "Surveille en continu l’activité du marché pour faire ressortir les entreprises qui correspondent au profil de client idéal." },
+      { "category": "Recherche", "title": "Moteur de recherche", "content": "Bâtit un renseignement structuré autour des clients potentiels avant qu’une conversation ne commence." },
+      { "category": "Renseignement", "title": "Renseignement sur les occasions", "content": "Évalue la pertinence et détermine quelles entreprises représentent les plus fortes occasions d’acquisition." },
+      { "category": "Activation", "title": "Activation", "content": "Amorce des conversations hautement pertinentes grâce à une personnalisation et à un moment guidés par les signaux." },
+      { "category": "Pipeline", "title": "Conversion", "content": "Transforme les conversations qualifiées en occasions actives, en rendez-vous et en dynamique de pipeline." }
+    ]
+  },
+  "problem": {
+    "title": "Le problème n’est pas l’effort",
+    "titleAccent": "C’est le moment",
+    "cards": [
+      { "title": "L’inbound est imprévisible", "description": "Attendre les prospects entrants rend la croissance du pipeline lente et peu fiable." },
+      { "title": "De la prospection sans précision", "description": "Des milliers de courriels sont envoyés sans savoir quelles entreprises ont réellement besoin du service." },
+      { "title": "Les ventes manquent de systèmes de renseignement", "description": "On contacte des prospects sans recherche, sans contexte ni signaux indiquant une réelle occasion." },
+      { "title": "Un pipeline fragile", "description": "L’acquisition de clients dépend de campagnes occasionnelles plutôt que d’un système continu." },
+      { "title": "Des signaux d’occasion manqués", "description": "Des entreprises qui pourraient devenir d’excellents clients restent invisibles, faute d’un système qui surveille le marché." }
+    ]
+  },
+  "featured": {
+    "label": "Le système en action",
+    "title": "Conçu pour votre marché",
+    "signalsLabel": "Signaux détectés",
+    "tagSignal": "Signal",
+    "tagActivated": "Message activé",
+    "seeFull": "Voir le cas d’usage complet",
+    "moreLabel": "Aussi conçu pour"
+  },
+  "access": {
+    "label": "Accéder au système",
+    "title": "CONÇU",
+    "titleAccent": "POUR VOUS",
+    "intro": "DE LA DÉTECTION DU SIGNAL À LA CONVERSATION RÉSERVÉE",
+    "scarcity": "Seulement 3 places restantes avant la capacité maximale",
+    "startingAt": "À partir de",
+    "recommended": "Recommandé",
+    "plan6": {
+      "badge": "6 mois",
+      "billing": "Facturé tous les six mois · minimum de 6 mois",
+      "desc": "Système de prospection sortante complet — constitution de listes, rédaction, infrastructure et optimisation."
+    },
+    "plan12": {
+      "badge": "12 mois",
+      "billing": "Facturé annuellement · engagement de 12 mois",
+      "savings": "Économisez 6 600 $ par rapport au tarif de 6 mois",
+      "desc": "Tout ce qui est inclus dans le forfait de 6 mois, avec une plus longue période pour composer les résultats. Le meilleur rapport qualité-prix pour un pipeline soutenu."
+    },
+    "guaranteeTitle": "Garantie de remboursement de 30 jours",
+    "guaranteeDesc": "Si vous n’êtes pas satisfait du système et de la stratégie livrés dans vos 30 premiers jours, vous êtes intégralement remboursé.",
+    "guaranteeNote": "Sans aucune question."
+  },
+  "founder": {
+    "label": "Qui est derrière tout ça",
+    "title": "Bâti par un opérateur",
+    "subtitle": "Intelinx a été créé par quelqu’un qui a bâti, fait croître et vendu dans plusieurs secteurs — et qui applique désormais l’IA à la partie la plus difficile de la croissance : trouver les bons clients au bon moment.",
+    "role": "Fondateur et architecte de systèmes d’IA · Montréal, Canada",
+    "bio": "Après deux décennies à bâtir et à faire croître des entreprises — gérer des équipes, faire augmenter les revenus, comprendre ce qui pousse les gens à acheter — j’ai réalisé que la partie la plus difficile était toujours la même : trouver la bonne conversation avec la bonne personne au bon moment. J’ai donc bâti un système qui fait exactement cela. Intelinx, c’est ce que j’aurais aimé avoir dès le premier jour.",
+    "stat1num": "20+",
+    "stat1label": "Années à bâtir des entreprises",
+    "stat2num": "7",
+    "stat2label": "Entreprises fondées",
+    "languages": "Anglais · Espagnol · Français",
+    "languagesLabel": "Langues"
+  },
+  "finalCta": {
+    "title": "Prêt à transformer l’acquisition de clients en une infrastructure structurée?",
+    "note": "Seul un petit nombre de systèmes sont déployés à la fois."
+  }
+}

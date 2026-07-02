@@ -1,15 +1,11 @@
 import { useEffect, useRef } from 'react'
-import { Link } from 'react-router-dom'
-import { industries } from './industryData'
+import { useTranslation } from 'react-i18next'
+import { getIndustries, FEATURED_SLUGS } from './industryData'
+import { LangLink, useLang } from '../../../i18n/routing'
 import { GlowingEffect } from '../GlowingEffect'
 import FloatingElements from '../FloatingElements'
 import DottedSurface from '../DottedSurface'
 import './FeaturedUseCases.css'
-
-const FEATURED_SLUGS = ['b2b-saas', 'financial-services', 'recruitment']
-
-const featured = FEATURED_SLUGS.map(s => industries.find(i => i.slug === s)).filter(Boolean)
-const remaining = industries.filter(i => !FEATURED_SLUGS.includes(i.slug))
 
 function useFadeIn(threshold = 0.15) {
   const ref = useRef(null)
@@ -27,15 +23,21 @@ function useFadeIn(threshold = 0.15) {
 }
 
 export default function FeaturedUseCases() {
+  const { t } = useTranslation()
+  const { lang } = useLang()
   const ref = useFadeIn()
+
+  const industries = getIndustries(lang)
+  const featured = FEATURED_SLUGS.map(s => industries.find(i => i.slug === s)).filter(Boolean)
+  const remaining = industries.filter(i => !FEATURED_SLUGS.includes(i.slug))
 
   return (
     <section id="use-cases" className="wts-featured" ref={ref} style={{ position: 'relative', overflow: 'hidden' }}>
       <DottedSurface className="wts-featured-dots" color={[0.659, 0.333, 0.969]} />
       <FloatingElements section="industries" />
       <div className="wts-featured-inner fade-up">
-        <p className="wts-section-label">The System in Action</p>
-        <h2 className="wts-section-big-title">Built for Your Market</h2>
+        <p className="wts-section-label">{t('home:featured.label')}</p>
+        <h2 className="wts-section-big-title">{t('home:featured.title')}</h2>
 
         {/* Featured cards */}
         <div className="wts-featured-grid">
@@ -51,7 +53,7 @@ export default function FeaturedUseCases() {
 
               {/* Signals */}
               <div>
-                <p className="wts-featured-signals-label">Signals Detected</p>
+                <p className="wts-featured-signals-label">{t('home:featured.signalsLabel')}</p>
                 <div className="wts-featured-signals">
                   {ind.signals.slice(0, 3).map((sig, i) => (
                     <span className="wts-featured-signal-chip" key={i}>{sig}</span>
@@ -62,12 +64,12 @@ export default function FeaturedUseCases() {
               {/* Example Activation */}
               <div className="wts-featured-activation">
                 <div className="wts-featured-activation-block">
-                  <span className="wts-featured-activation-tag">Signal</span>
+                  <span className="wts-featured-activation-tag">{t('home:featured.tagSignal')}</span>
                   <p className="wts-featured-activation-text">{ind.exampleActivation.context}</p>
                 </div>
                 <hr className="wts-featured-activation-divider" />
                 <div className="wts-featured-activation-block">
-                  <span className="wts-featured-activation-tag">Activated Message</span>
+                  <span className="wts-featured-activation-tag">{t('home:featured.tagActivated')}</span>
                   <p className="wts-featured-activation-text">{ind.exampleActivation.message}</p>
                 </div>
               </div>
@@ -80,22 +82,22 @@ export default function FeaturedUseCases() {
               </div>
 
               {/* Link */}
-              <Link to={`/use-cases/${ind.slug}`} className="wts-featured-card-link">
-                See full use case <span className="wts-featured-card-link-arrow">→</span>
-              </Link>
+              <LangLink to={`/use-cases/${ind.slug}`} className="wts-featured-card-link">
+                {t('home:featured.seeFull')} <span className="wts-featured-card-link-arrow">→</span>
+              </LangLink>
             </div>
           ))}
         </div>
 
         {/* Secondary pills */}
         <div className="wts-featured-more">
-          <p className="wts-featured-more-label">Also built for</p>
+          <p className="wts-featured-more-label">{t('home:featured.moreLabel')}</p>
           <div className="wts-featured-more-grid">
             {remaining.map((ind) => (
-              <Link to={`/use-cases/${ind.slug}`} className="wts-featured-more-tag" key={ind.slug}>
+              <LangLink to={`/use-cases/${ind.slug}`} className="wts-featured-more-tag" key={ind.slug}>
                 <GlowingEffect spread={40} proximity={64} inactiveZone={0.01} borderWidth={2} disabled={false} />
                 {ind.label}
-              </Link>
+              </LangLink>
             ))}
           </div>
         </div>

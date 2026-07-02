@@ -1,13 +1,16 @@
 import { useState, useEffect } from 'react'
-import { useParams, Link, useLocation } from 'react-router-dom'
-import { Helmet } from 'react-helmet-async'
+import { useParams, useLocation } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import { ThemeContext } from '../ThemeContext'
 import KineticNav from '../KineticNav'
 import Footer from '../Footer'
 import Cursor from '../Cursor'
 import { GlowingEffect } from '../GlowingEffect'
-import { industryBySlug, industries } from './industryData'
+import { getIndustry } from './industryData'
+import { LangLink, useLang } from '../../../i18n/routing'
+import Seo from '../../../i18n/Seo'
 import '../Intelinx.css'
+import './IndustryPage.css'
 
 const CALENDLY_URL = 'https://calendly.com/wantss/explore-a-partnership-wantss'
 const openCalendly = (e) => {
@@ -18,14 +21,15 @@ const openCalendly = (e) => {
     window.open(CALENDLY_URL, '_blank')
   }
 }
-import './IndustryPage.css'
 
 export default function IndustryPage() {
   const { slug } = useParams()
+  const { t } = useTranslation()
+  const { lang } = useLang()
   const location = useLocation()
   const [light, setLight] = useState(false)
   const toggle = () => setLight(prev => !prev)
-  const data = industryBySlug[slug]
+  const data = getIndustry(lang, slug)
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -35,12 +39,12 @@ export default function IndustryPage() {
     return (
       <ThemeContext.Provider value={{ light, toggle }}>
         <div className={`wts-page ${light ? 'wts-page--light' : ''}`}>
-          <KineticNav light={light} toggle={toggle} homePath="/acctual" />
+          <KineticNav light={light} toggle={toggle} homePath="/" />
           <div className="ind-not-found">
-            <h1>Industry not found</h1>
-            <Link to="/acctual#use-cases" className="wts-btn">Back to Use Cases</Link>
+            <h1>{t('useCases:notFoundTitle')}</h1>
+            <LangLink to="/#use-cases" className="wts-btn">{t('useCases:backToUseCases')}</LangLink>
           </div>
-          <Footer homePath="/acctual" />
+          <Footer />
           <Cursor light={light} />
         </div>
       </ThemeContext.Provider>
@@ -48,47 +52,37 @@ export default function IndustryPage() {
   }
 
   const related = data.relatedUseCases
-    .map(s => industries.find(i => i.slug === s))
+    .map(s => getIndustry(lang, s))
     .filter(Boolean)
 
-  // Per-industry section labels with fallbacks to the defaults
+  // Per-industry section labels override the shared defaults.
   const labels = data.labels || {}
-  const icpLabel = labels.icp || 'Ideal Client Profile'
-  const signalsLabel = labels.signals || 'Signals the System Detects'
-  const researchesLabel = labels.researches || 'What the System Researches'
-  const activationLabel = labels.activation || 'Example Activation'
-  const impactLabel = labels.impact || 'What This Creates'
-
-  // ICP can be a generic [{ label, value }] array, or the legacy 4-field object
-  const icpItems = Array.isArray(data.icpProfile)
-    ? data.icpProfile
-    : [
-        { label: 'Company Size', value: data.icpProfile.companySize },
-        { label: 'Revenue Range', value: data.icpProfile.revenueRange },
-        { label: 'Team Maturity', value: data.icpProfile.teamMaturity },
-        { label: 'Buyer Roles', value: Array.isArray(data.icpProfile.buyerRoles) ? data.icpProfile.buyerRoles.join(', ') : data.icpProfile.buyerRoles },
-      ]
+  const icpLabel = labels.icp || t('useCases:labels.icp')
+  const signalsLabel = labels.signals || t('useCases:labels.signals')
+  const researchesLabel = labels.researches || t('useCases:labels.researches')
+  const activationLabel = labels.activation || t('useCases:labels.activation')
+  const impactLabel = labels.impact || t('useCases:labels.impact')
 
   const activation = data.exampleActivation
-  const contextLabel = activation.contextLabel || 'Context'
-  const messageLabel = activation.messageLabel || 'Message'
+  const contextLabel = activation.contextLabel || t('useCases:labels.context')
+  const messageLabel = activation.messageLabel || t('useCases:labels.message')
 
   return (
     <ThemeContext.Provider value={{ light, toggle }}>
-      <Helmet>
-        <title>{data.meta.title}</title>
-        <meta name="description" content={data.meta.description} />
-        <meta property="og:title" content={data.meta.ogTitle} />
-        <meta property="og:description" content={data.meta.ogDescription} />
-      </Helmet>
+      <Seo
+        title={data.meta.title}
+        description={data.meta.description}
+        ogTitle={data.meta.ogTitle}
+        ogDescription={data.meta.ogDescription}
+      />
       <div className={`wts-page ${light ? 'wts-page--light' : ''}`}>
-        <KineticNav light={light} toggle={toggle} homePath="/acctual" />
+        <KineticNav light={light} toggle={toggle} homePath="/" />
 
         {/* Breadcrumb */}
         <nav className="ind-breadcrumb">
-          <Link to="/acctual">Home</Link>
+          <LangLink to="/">{t('useCases:breadcrumbHome')}</LangLink>
           <span className="ind-breadcrumb-sep">/</span>
-          <Link to="/acctual#use-cases">Use Cases</Link>
+          <LangLink to="/#use-cases">{t('useCases:breadcrumbUseCases')}</LangLink>
           <span className="ind-breadcrumb-sep">/</span>
           <span className="ind-breadcrumb-current">{data.label}</span>
         </nav>
@@ -118,7 +112,7 @@ export default function IndustryPage() {
           <div className="ind-section-inner">
             <h2 className="ind-section-title">{icpLabel}</h2>
             <div className="ind-icp-grid">
-              {icpItems.map((item, i) => (
+              {data.icpProfile.map((item, i) => (
                 <div className="ind-icp-card" key={i} style={{ position: 'relative' }}>
                   <GlowingEffect spread={30} proximity={48} inactiveZone={0.01} borderWidth={2} disabled={false} />
                   <span className="ind-icp-label">{item.label}</span>
@@ -196,14 +190,14 @@ export default function IndustryPage() {
         {/* Related Use Cases */}
         <section className="ind-section">
           <div className="ind-section-inner">
-            <h2 className="ind-section-title">Related Use Cases</h2>
+            <h2 className="ind-section-title">{t('useCases:related')}</h2>
             <div className="ind-related-grid">
               {related.map(r => (
-                <Link to={`/use-cases/${r.slug}`} className="ind-related-card" key={r.slug} style={{ position: 'relative' }}>
+                <LangLink to={`/use-cases/${r.slug}`} className="ind-related-card" key={r.slug} style={{ position: 'relative' }}>
                   <GlowingEffect spread={30} proximity={48} inactiveZone={0.01} borderWidth={2} disabled={false} />
                   <h3>{r.label}</h3>
                   <p>{r.hero.subtitle}</p>
-                </Link>
+                </LangLink>
               ))}
             </div>
           </div>
@@ -220,7 +214,7 @@ export default function IndustryPage() {
           </div>
         </section>
 
-        <Footer homePath="/acctual" />
+        <Footer />
         <Cursor light={light} />
       </div>
     </ThemeContext.Provider>

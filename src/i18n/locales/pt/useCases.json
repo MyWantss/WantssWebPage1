@@ -1,0 +1,16 @@
+{
+  "breadcrumbHome": "Início",
+  "breadcrumbUseCases": "Casos de uso",
+  "related": "Casos de uso relacionados",
+  "notFoundTitle": "Caso de uso não encontrado",
+  "backToUseCases": "Voltar aos Casos de uso",
+  "labels": {
+    "icp": "Perfil de cliente ideal",
+    "signals": "Sinais que o sistema detecta",
+    "researches": "O que o sistema pesquisa",
+    "activation": "Exemplo de ativação",
+    "impact": "O que isso gera",
+    "context": "Contexto",
+    "message": "Mensagem"
+  }
+}

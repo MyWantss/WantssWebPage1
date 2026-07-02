@@ -1,0 +1,125 @@
+{
+  "meta": {
+    "title": "Intelinx — Infraestrutura de aquisição de clientes",
+    "description": "A Intelinx é uma infraestrutura de aquisição de clientes com IA para B2B: detecte as empresas certas, pesquise-as e priorize-as, e abra as conversas certas no momento certo."
+  },
+  "hero": {
+    "title": "As verdadeiras oportunidades não batem à sua porta sozinhas.",
+    "titleAccent": "Elas precisam ser detectadas, compreendidas e abordadas com precisão",
+    "sub": "Um sistema de prospecção outbound feito para você que transforma sinais de mercado em contato estratégico.",
+    "micro": "Um parceiro privado para a detecção de oportunidades e a aquisição de clientes"
+  },
+  "notif": {
+    "titleAccent": "Como é uma oportunidade",
+    "titleRest": "em movimento",
+    "body": "Identificamos as empresas certas, construímos contexto em torno delas e iniciamos conversas significativas.",
+    "bodyAccent": "Para que você entre em cena quando há interesse real."
+  },
+  "differentiators": {
+    "title": "A realidade por trás do crescimento",
+    "items": [
+      { "title": "As oportunidades não esperam", "desc": "Quanto antes você as enxerga, mais fácil é conquistá-las." },
+      { "title": "O contexto melhora cada mensagem", "desc": "Uma boa mensagem funciona melhor quando é sustentada por contexto real." },
+      { "title": "A velocidade muda os resultados", "desc": "Quanto mais rápido você identifica e age, menos oportunidades você perde." },
+      { "title": "Os sistemas criam consistência", "desc": "O crescimento se torna mais confiável quando a aquisição funciona como um sistema." }
+    ]
+  },
+  "transformation": {
+    "title": "O que este sistema",
+    "titleAccent": "torna possível",
+    "beforeTitle": "Antes",
+    "afterTitle": "Depois",
+    "before": [
+      "Prospecção manual",
+      "Mensagens genéricas",
+      "Geração de leads lenta",
+      "Pipeline imprevisível",
+      "Sem sistema de prospecção outbound"
+    ],
+    "after": [
+      "Infraestrutura de aquisição de clientes",
+      "Inteligência contínua sobre prospects",
+      "Conversas baseadas em sinais",
+      "Motor de prospecção outbound escalável",
+      "Fluxo de oportunidades previsível"
+    ]
+  },
+  "midCta": {
+    "title": "Descubra como isso poderia funcionar",
+    "titleAccent": "para o seu negócio",
+    "desc": "Cada parceria é desenhada em torno do seu mercado, do seu processo de vendas e das suas prioridades de crescimento. Vamos explorar se isso faz sentido para você.",
+    "note": "Sem compromisso. Sem apresentação de vendas. Apenas uma conversa focada."
+  },
+  "pipeline": {
+    "title": "Do sinal à conversa",
+    "subtitle": "Tudo o que é necessário para identificar demanda, construir contexto e agir no momento certo.",
+    "footer": "Cada camada fortalece a seguinte.",
+    "steps": [
+      { "category": "Sinais", "title": "Sinais de mercado", "content": "Monitora continuamente a atividade do mercado para encontrar empresas que correspondem ao perfil de cliente ideal." },
+      { "category": "Pesquisa", "title": "Motor de pesquisa", "content": "Constrói inteligência estruturada sobre clientes potenciais antes de iniciar qualquer conversa." },
+      { "category": "Inteligência", "title": "Inteligência de oportunidades", "content": "Avalia a relevância e identifica quais empresas representam as melhores oportunidades de aquisição." },
+      { "category": "Ativação", "title": "Ativação", "content": "Inicia conversas altamente relevantes usando personalização e timing baseados em sinais." },
+      { "category": "Pipeline", "title": "Conversão", "content": "Transforma conversas qualificadas em oportunidades ativas, reuniões e impulso para o pipeline." }
+    ]
+  },
+  "problem": {
+    "title": "O problema não é o esforço",
+    "titleAccent": "É o timing",
+    "cards": [
+      { "title": "O inbound é imprevisível", "description": "Esperar por leads de inbound torna o crescimento do pipeline lento e pouco confiável." },
+      { "title": "Contato sem precisão", "description": "Milhares de e-mails são enviados sem saber quais empresas realmente precisam do serviço." },
+      { "title": "Vendas sem sistemas de inteligência", "description": "Os prospects são contatados sem pesquisa, contexto ou sinais que indiquem uma oportunidade real." },
+      { "title": "Pipeline frágil", "description": "A aquisição de clientes depende de campanhas ocasionais em vez de um sistema contínuo." },
+      { "title": "Sinais de oportunidade perdidos", "description": "Empresas que poderiam se tornar grandes clientes permanecem invisíveis porque nenhum sistema monitora o mercado." }
+    ]
+  },
+  "featured": {
+    "label": "O sistema em ação",
+    "title": "Feito para o seu mercado",
+    "signalsLabel": "Sinais detectados",
+    "tagSignal": "Sinal",
+    "tagActivated": "Mensagem ativada",
+    "seeFull": "Ver caso de uso completo",
+    "moreLabel": "Também feito para"
+  },
+  "access": {
+    "label": "Acesse o sistema",
+    "title": "FEITO",
+    "titleAccent": "PARA VOCÊ",
+    "intro": "DA DETECÇÃO DE SINAIS À CONVERSA AGENDADA",
+    "scarcity": "Restam apenas 3 vagas até atingir a capacidade máxima",
+    "startingAt": "A partir de",
+    "recommended": "Recomendado",
+    "plan6": {
+      "badge": "6 meses",
+      "billing": "Faturado a cada seis meses · mínimo de 6 meses",
+      "desc": "Sistema de prospecção outbound completo: montagem de listas, copy, infraestrutura e otimização."
+    },
+    "plan12": {
+      "badge": "12 meses",
+      "billing": "Faturado anualmente · compromisso de 12 meses",
+      "savings": "Economize $6,600 em relação à tarifa de 6 meses",
+      "desc": "Tudo do plano de 6 meses, com mais tempo para que os resultados se acumulem. O melhor custo-benefício para um pipeline sustentado."
+    },
+    "guaranteeTitle": "Garantia de reembolso de 30 dias",
+    "guaranteeDesc": "Se você não ficar satisfeito com o sistema e a estratégia entregues nos seus primeiros 30 dias, recebe um reembolso completo.",
+    "guaranteeNote": "Sem perguntas."
+  },
+  "founder": {
+    "label": "Quem está por trás disso",
+    "title": "Criado por um operador",
+    "subtitle": "A Intelinx foi criada por alguém que construiu, escalou e vendeu em diferentes setores — e que agora aplica a IA à parte mais difícil do crescimento: encontrar os clientes certos no momento certo.",
+    "role": "Fundador e Arquiteto de Sistemas de IA · Montreal, Canadá",
+    "bio": "Depois de duas décadas construindo e escalando negócios — gerindo equipes, aumentando a receita, entendendo o que faz as pessoas comprarem — percebi que a parte mais difícil era sempre a mesma: encontrar a conversa certa, com a pessoa certa, no momento certo. Então construí um sistema que faz exatamente isso. A Intelinx é o que eu gostaria de ter tido desde o primeiro dia.",
+    "stat1num": "20+",
+    "stat1label": "Anos construindo negócios",
+    "stat2num": "7",
+    "stat2label": "Empresas fundadas",
+    "languages": "Inglês · Espanhol · Francês",
+    "languagesLabel": "Idiomas"
+  },
+  "finalCta": {
+    "title": "Pronto para transformar a aquisição de clientes em infraestrutura estruturada?",
+    "note": "Apenas um número reduzido de sistemas é implantado por vez."
+  }
+}

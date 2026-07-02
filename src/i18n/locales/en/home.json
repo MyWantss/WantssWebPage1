@@ -1,0 +1,125 @@
+{
+  "meta": {
+    "title": "Intelinx — Client Acquisition Infrastructure",
+    "description": "Intelinx is AI-powered client acquisition infrastructure for B2B — detect the right companies, research and prioritize them, and open the right conversations at the right time."
+  },
+  "hero": {
+    "title": "Real opportunities don't just knock on your door.",
+    "titleAccent": "They must be detected, understood, and approached with precision",
+    "sub": "A done-for-you outbound system that turns market signals into strategic outreach.",
+    "micro": "A private partner for opportunity detection and client acquisition"
+  },
+  "notif": {
+    "titleAccent": "What opportunity in motion",
+    "titleRest": "looks like",
+    "body": "We identify the right companies, build context around them, and initiate meaningful conversations.",
+    "bodyAccent": "So You Step In When There's Real Interest."
+  },
+  "differentiators": {
+    "title": "The Reality Behind Growth",
+    "items": [
+      { "title": "Opportunities Don't Wait", "desc": "The earlier you see them, the easier they are to win." },
+      { "title": "Context Improves Every Message", "desc": "A strong message works better when it is backed by real context." },
+      { "title": "Speed Changes Outcomes", "desc": "The faster you identify and act, the fewer opportunities you lose." },
+      { "title": "Systems Create Consistency", "desc": "Growth becomes more reliable when acquisition runs as a system." }
+    ]
+  },
+  "transformation": {
+    "title": "What This System",
+    "titleAccent": "Makes Possible",
+    "beforeTitle": "Before",
+    "afterTitle": "After",
+    "before": [
+      "Manual prospecting",
+      "Generic messaging",
+      "Slow lead generation",
+      "Unpredictable pipeline",
+      "No outbound system"
+    ],
+    "after": [
+      "Client acquisition infrastructure",
+      "Continuous prospect intelligence",
+      "Signal-based conversations",
+      "Scalable outbound engine",
+      "Predictable opportunity flow"
+    ]
+  },
+  "midCta": {
+    "title": "See how this could work",
+    "titleAccent": "for your business",
+    "desc": "Each partnership is designed around your market, your sales process, and your growth priorities. Let's explore whether this is the right fit.",
+    "note": "No commitment. No pitch deck. Just a focused conversation."
+  },
+  "pipeline": {
+    "title": "From Signal to Conversation",
+    "subtitle": "Everything needed to identify demand, build context, and act at the right time.",
+    "footer": "Each layer strengthens the next.",
+    "steps": [
+      { "category": "Signals", "title": "Market Signals", "content": "Continuously monitors market activity to surface companies that match the ideal client profile." },
+      { "category": "Research", "title": "Research Engine", "content": "Builds structured intelligence around potential clients before any conversation begins." },
+      { "category": "Intelligence", "title": "Opportunity Intelligence", "content": "Evaluates relevance and identifies which companies represent the strongest acquisition opportunities." },
+      { "category": "Activation", "title": "Activation", "content": "Initiates highly relevant conversations using signal-driven personalization and timing." },
+      { "category": "Pipeline", "title": "Conversion", "content": "Transforms qualified conversations into active opportunities, meetings and pipeline momentum." }
+    ]
+  },
+  "problem": {
+    "title": "The problem isn't effort",
+    "titleAccent": "It's timing",
+    "cards": [
+      { "title": "Inbound Is Unpredictable", "description": "Waiting for inbound leads makes pipeline growth slow and unreliable." },
+      { "title": "Outreach Without Precision", "description": "Thousands of emails are sent without knowing which companies actually need the service." },
+      { "title": "Sales Lacks Intelligence Systems", "description": "Prospects are contacted without research, context or signals that indicate real opportunity." },
+      { "title": "Fragile Pipeline", "description": "Client acquisition depends on occasional campaigns instead of a continuous system." },
+      { "title": "Opportunity Signals Missed", "description": "Companies that could become great clients remain invisible because no system is monitoring the market." }
+    ]
+  },
+  "featured": {
+    "label": "The System in Action",
+    "title": "Built for Your Market",
+    "signalsLabel": "Signals Detected",
+    "tagSignal": "Signal",
+    "tagActivated": "Activated Message",
+    "seeFull": "See full use case",
+    "moreLabel": "Also built for"
+  },
+  "access": {
+    "label": "Access the System",
+    "title": "BUILT",
+    "titleAccent": "FOR YOU",
+    "intro": "FROM SIGNAL DETECTION TO BOOKED CONVERSATION",
+    "scarcity": "Only 3 spots left until maximum capacity",
+    "startingAt": "Starting at",
+    "recommended": "Recommended",
+    "plan6": {
+      "badge": "6 months",
+      "billing": "Billed every six months · 6-month minimum",
+      "desc": "Full outbound system — list building, copy, infrastructure, and optimization."
+    },
+    "plan12": {
+      "badge": "12 months",
+      "billing": "Billed annually · 12-month commitment",
+      "savings": "Save $6,600 vs. 6-month rate",
+      "desc": "Everything in the 6-month plan, with a longer runway to compound results. Best value for sustained pipeline."
+    },
+    "guaranteeTitle": "30-day money-back guarantee",
+    "guaranteeDesc": "If you're not satisfied with the system and strategy delivered in your first 30 days, you get a full refund.",
+    "guaranteeNote": "No questions asked."
+  },
+  "founder": {
+    "label": "Who's Behind This",
+    "title": "Built by an Operator",
+    "subtitle": "Intelinx was created by someone who has built, scaled, and sold across industries — and now applies AI to the hardest part of growth: finding the right clients at the right time.",
+    "role": "Founder & AI Systems Architect · Montreal, Canada",
+    "bio": "After two decades of building and scaling businesses — managing teams, growing revenue, figuring out what makes people buy — I realized the hardest part was always the same: finding the right conversation with the right person at the right time. So I built a system that does exactly that. Intelinx is what I wish I'd had from day one.",
+    "stat1num": "20+",
+    "stat1label": "Years building businesses",
+    "stat2num": "7",
+    "stat2label": "Companies founded",
+    "languages": "English · Spanish · French",
+    "languagesLabel": "Languages"
+  },
+  "finalCta": {
+    "title": "Ready to turn client acquisition into structured infrastructure?",
+    "note": "Only a small number of systems are deployed at a time."
+  }
+}

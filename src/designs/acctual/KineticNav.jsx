@@ -1,11 +1,14 @@
 import { useEffect, useRef, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import gsap from 'gsap'
 import { CustomEase } from 'gsap/CustomEase'
 import './KineticNav.css'
 import intelinxLogoDark from '../../../assets/intelinx-logo-dark.png'
 import intelinxLogoLight from '../../../assets/intelinx-logo-light.png'
 import { GlowingEffect } from './GlowingEffect'
+import LanguageSwitcher from './LanguageSwitcher'
+import { LangLink, useLang, localizedPath, stripLangPrefix } from '../../i18n/routing'
 
 import menuImgSystem from '../../../assets/acctual/Menu/Crea_una_imagen_similar_a_la_q_Nano_Banana_2_00844.jpg'
 import menuImgResults from '../../../assets/acctual/Menu/Crea_una_imagen_similar_a_la_q_Nano_Banana_2_42464.jpg'
@@ -26,16 +29,17 @@ const openCalendly = (e) => {
   }
 }
 
-const defaultLinks = [
-  { label: 'The System',  href: '#the-system',  type: 'scroll', img: menuImgSystem },
-  { label: 'Results',     href: '#results',      type: 'scroll', img: menuImgResults },
-  { label: 'Use Cases',   href: '#use-cases',    type: 'scroll', img: menuImgUseCases },
-  { label: 'Partnership', href: '#partnership',   type: 'scroll', img: menuImgPartnership },
-  { label: 'About',       href: '/about',         type: 'route',  img: menuImgAbout },
-  { label: 'Contact',     href: '#',              type: 'calendly', img: menuImgContact },
+// Labels are resolved via common:nav.<key>; href/type/img are language-agnostic.
+const NAV_LINKS = [
+  { key: 'system',      href: '#the-system',  type: 'scroll',   img: menuImgSystem },
+  { key: 'results',     href: '#results',     type: 'scroll',   img: menuImgResults },
+  { key: 'useCases',    href: '#use-cases',   type: 'scroll',   img: menuImgUseCases },
+  { key: 'partnership', href: '#partnership', type: 'scroll',   img: menuImgPartnership },
+  { key: 'about',       href: '/about',       type: 'route',    img: menuImgAbout },
+  { key: 'contact',     href: '#',            type: 'calendly', img: menuImgContact },
 ]
 
-function MenuLink({ link, homePath, onClose }) {
+function MenuLink({ link, label, isHome, lang, onClose }) {
   const navigate = useNavigate()
 
   const handleClick = (e) => {
@@ -48,13 +52,13 @@ function MenuLink({ link, homePath, onClose }) {
     }
 
     if (link.type === 'route') {
-      setTimeout(() => navigate(link.href), 600)
+      setTimeout(() => navigate(localizedPath(link.href, lang)), 600)
       return
     }
 
-    // scroll type — if on a subpage, navigate home first
-    if (homePath) {
-      setTimeout(() => navigate('/' + link.href), 600)
+    // scroll type — if on a subpage, navigate home first, then let the hash scroll
+    if (!isHome) {
+      setTimeout(() => navigate(localizedPath('/' + link.href, lang)), 600)
       return
     }
 
@@ -67,15 +71,19 @@ function MenuLink({ link, homePath, onClose }) {
 
   return (
     <a href={link.href} className="kn-link" onClick={handleClick}>
-      <span className="kn-link-text">{link.label}</span>
+      <span className="kn-link-text">{label}</span>
       <div className="kn-link-bg" />
     </a>
   )
 }
 
-export default function KineticNav({ light, toggle, homePath }) {
+export default function KineticNav({ light, toggle }) {
   const containerRef = useRef(null)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const { t } = useTranslation()
+  const { lang } = useLang()
+  const { pathname } = useLocation()
+  const isHome = stripLangPrefix(pathname) === '/'
 
   /* ─── Hover: shape reveal ─── */
   useEffect(() => {
@@ -175,24 +183,25 @@ export default function KineticNav({ light, toggle, homePath }) {
       {/* ── Fixed header bar ── */}
       <header className="kn-header">
         <div className="kn-header-inner">
-          <Link to={homePath || '/acctual'} className="kn-logo">
+          <LangLink to="/" className="kn-logo">
             <img src={intelinxLogoDark} alt="Intelinx" className="kn-logo-img kn-logo-img--for-dark" />
             <img src={intelinxLogoLight} alt="Intelinx" className="kn-logo-img kn-logo-img--for-light" />
-          </Link>
+          </LangLink>
           <div className="kn-header-right">
+            <LanguageSwitcher />
             <button className="wts-theme-toggle" onClick={toggle} aria-label="Toggle theme" style={{ position: 'relative' }}>
               <GlowingEffect spread={30} proximity={48} inactiveZone={0.01} borderWidth={2} disabled={false} />
-              {light ? '\u263E' : '\u2600'}
+              {light ? '☾' : '☀'}
             </button>
             <a href="#" onClick={openCalendly} className="wts-btn-sm" style={{ position: 'relative' }}>
               <GlowingEffect spread={40} proximity={64} inactiveZone={0.01} borderWidth={2} disabled={false} />
-              Explore a Partnership
+              {t('common:cta.explorePartnership')}
             </a>
             <button className="kn-menu-btn" onClick={() => setIsMenuOpen((p) => !p)} style={{ position: 'relative' }}>
               <GlowingEffect spread={30} proximity={48} inactiveZone={0.01} borderWidth={2} disabled={false} />
               <div className="kn-btn-text">
-                <p>Menu</p>
-                <p>Close</p>
+                <p>{t('common:nav.menu')}</p>
+                <p>{t('common:nav.close')}</p>
               </div>
               <div className="kn-btn-icon-wrap">
                 <svg width="14" height="14" viewBox="0 0 16 16" fill="none" className="kn-btn-icon">
@@ -221,9 +230,9 @@ export default function KineticNav({ light, toggle, homePath }) {
 
           {/* Hover images — one per link */}
           <div className="kn-shapes">
-            {defaultLinks.map((link, i) => (
+            {NAV_LINKS.map((link, i) => (
               <div className={`kn-bg-shape kn-shape-${i + 1}`} key={i}>
-                <img className="shape-element" src={link.img} alt={link.label} />
+                <img className="shape-element" src={link.img} alt={t(`common:nav.${link.key}`)} />
               </div>
             ))}
           </div>
@@ -234,9 +243,15 @@ export default function KineticNav({ light, toggle, homePath }) {
               <img src={intelinxLogoDark} alt="Intelinx" className="kn-logo-img kn-logo-img--lg" />
             </div>
             <ul className="kn-menu-list">
-              {defaultLinks.map((link, i) => (
+              {NAV_LINKS.map((link, i) => (
                 <li className="kn-menu-item" data-shape={String(i + 1)} key={i}>
-                  <MenuLink link={link} homePath={homePath} onClose={() => setIsMenuOpen(false)} />
+                  <MenuLink
+                    link={link}
+                    label={t(`common:nav.${link.key}`)}
+                    isHome={isHome}
+                    lang={lang}
+                    onClose={() => setIsMenuOpen(false)}
+                  />
                 </li>
               ))}
             </ul>

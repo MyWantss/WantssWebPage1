@@ -1,8 +1,18 @@
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { motion, AnimatePresence } from 'framer-motion'
 import { AlertTriangle, TrendingDown, Users, BarChart2, DollarSign } from 'lucide-react'
 import { GlowingEffect } from './GlowingEffect'
 import './DisplayCards.css'
+
+// Icons + layout class per problem card, in the order of home:problem.cards.
+const cardMeta = [
+  { icon: <TrendingDown size={16} className="dc-icon-purple" />, className: 'dc-card--1' },
+  { icon: <AlertTriangle size={16} className="dc-icon-purple" />, className: 'dc-card--2' },
+  { icon: <BarChart2 size={16} className="dc-icon-blue" />, className: 'dc-card--3' },
+  { icon: <Users size={16} className="dc-icon-pink" />, className: 'dc-card--4' },
+  { icon: <DollarSign size={16} className="dc-icon-pink" />, className: 'dc-card--5' },
+]
 
 function DisplayCard({ className = '', icon, title, description, date, onClick }) {
   return (
@@ -19,47 +29,18 @@ function DisplayCard({ className = '', icon, title, description, date, onClick }
 }
 
 export default function DisplayCards({ cards }) {
+  const { t } = useTranslation()
   const [selectedCard, setSelectedCard] = useState(null)
 
-  const defaultCards = [
-    {
-      icon: <TrendingDown size={16} className="dc-icon-purple" />,
-      title: 'Inbound Is Unpredictable',
-      description: 'Waiting for inbound leads makes pipeline growth slow and unreliable.',
-      date: '',
-      className: 'dc-card--1',
-    },
-    {
-      icon: <AlertTriangle size={16} className="dc-icon-purple" />,
-      title: 'Outreach Without Precision',
-      description: 'Thousands of emails are sent without knowing which companies actually need the service.',
-      date: '',
-      className: 'dc-card--2',
-    },
-    {
-      icon: <BarChart2 size={16} className="dc-icon-blue" />,
-      title: 'Sales Lacks Intelligence Systems',
-      description: 'Prospects are contacted without research, context or signals that indicate real opportunity.',
-      date: '',
-      className: 'dc-card--3',
-    },
-    {
-      icon: <Users size={16} className="dc-icon-pink" />,
-      title: 'Fragile Pipeline',
-      description: 'Client acquisition depends on occasional campaigns instead of a continuous system.',
-      date: '',
-      className: 'dc-card--4',
-    },
-    {
-      icon: <DollarSign size={16} className="dc-icon-pink" />,
-      title: 'Opportunity Signals Missed',
-      description: 'Companies that could become great clients remain invisible because no system is monitoring the market.',
-      date: '',
-      className: 'dc-card--5',
-    },
-  ]
+  const translatedCards = t('home:problem.cards', { returnObjects: true }).map((c, i) => ({
+    icon: cardMeta[i]?.icon,
+    title: c.title,
+    description: c.description,
+    date: '',
+    className: cardMeta[i]?.className,
+  }))
 
-  const displayCards = cards || defaultCards
+  const displayCards = cards || translatedCards
 
   return (
     <>

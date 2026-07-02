@@ -1,8 +1,10 @@
-import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
+import { LangLink } from '../../i18n/routing'
 import intelinxLogoDark from '../../../assets/intelinx-logo-dark.png'
 import intelinxLogoLight from '../../../assets/intelinx-logo-light.png'
 
-export default function Footer({ homePath = '/acctual' }) {
+export default function Footer() {
+  const { t } = useTranslation()
   return (
     <footer className="wts-footer">
       <div className="wts-footer-inner">
@@ -12,21 +14,21 @@ export default function Footer({ homePath = '/acctual' }) {
             <img src={intelinxLogoLight} alt="Intelinx" className="kn-logo-img kn-logo-img--for-light" />
           </a>
           <p className="wts-footer-desc">
-            AI Research and Growth Infrastructure for B2B.
+            {t('common:footer.desc')}
           </p>
           <p className="wts-footer-copy">&copy; {new Date().getFullYear()} Intelinx</p>
         </div>
         <div className="wts-footer-col">
-          <h4>Company</h4>
-          <Link to={homePath}>Infrastructure</Link>
-          <Link to={homePath}>Results</Link>
-          <Link to={`${homePath}#use-cases`}>Use Cases</Link>
-          <Link to={homePath}>About</Link>
+          <h4>{t('common:footer.company')}</h4>
+          <LangLink to="/#the-system">{t('common:footer.infrastructure')}</LangLink>
+          <LangLink to="/#results">{t('common:footer.results')}</LangLink>
+          <LangLink to="/#use-cases">{t('common:footer.useCases')}</LangLink>
+          <LangLink to="/about">{t('common:footer.about')}</LangLink>
         </div>
         <div className="wts-footer-col">
-          <h4>Connect</h4>
-          <a href="#">Contact</a>
-          <a href="#">LinkedIn</a>
+          <h4>{t('common:footer.connect')}</h4>
+          <a href="#">{t('common:footer.contact')}</a>
+          <a href="#">{t('common:footer.linkedin')}</a>
         </div>
       </div>
     </footer>

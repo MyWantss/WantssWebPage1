@@ -1,0 +1,16 @@
+{
+  "breadcrumbHome": "Home",
+  "breadcrumbUseCases": "Use Cases",
+  "related": "Related Use Cases",
+  "notFoundTitle": "Use case not found",
+  "backToUseCases": "Back to Use Cases",
+  "labels": {
+    "icp": "Ideal Client Profile",
+    "signals": "Signals the System Detects",
+    "researches": "What the System Researches",
+    "activation": "Example Activation",
+    "impact": "What This Creates",
+    "context": "Context",
+    "message": "Message"
+  }
+}

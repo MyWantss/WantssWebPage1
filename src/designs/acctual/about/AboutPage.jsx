@@ -1,12 +1,15 @@
 import { useState, useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
 import { ThemeContext } from '../ThemeContext'
 import KineticNav from '../KineticNav'
 import Footer from '../Footer'
 import Cursor from '../Cursor'
+import Seo from '../../../i18n/Seo'
 import '../Intelinx.css'
 import './AboutPage.css'
 
 export default function AboutPage() {
+  const { t } = useTranslation()
   const [light, setLight] = useState(false)
   const toggle = () => setLight(prev => !prev)
 
@@ -16,16 +19,17 @@ export default function AboutPage() {
 
   return (
     <ThemeContext.Provider value={{ light, toggle }}>
+      <Seo title={t('about:meta.title')} description={t('about:meta.description')} />
       <div className={`wts-page ${light ? 'wts-page--light' : ''}`}>
         <KineticNav light={light} toggle={toggle} homePath="/" />
 
         <section className="about-hero">
           <div className="about-hero-inner">
             <h1 className="about-hero-title">
-              About <span style={{ color: 'var(--accent)' }}>Intelinx</span>
+              {t('about:hero.titleLead')} <span style={{ color: 'var(--accent)' }}>{t('about:hero.titleBrand')}</span>
             </h1>
             <p className="about-hero-sub">
-              Content coming soon. This page will tell the story behind the system and the people building it.
+              {t('about:hero.subtitle')}
             </p>
           </div>
         </section>

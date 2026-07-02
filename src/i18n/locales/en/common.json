@@ -1,0 +1,28 @@
+{
+  "cta": {
+    "explorePartnership": "Explore a Partnership",
+    "explorePartnershipLower": "Explore a partnership"
+  },
+  "nav": {
+    "system": "The System",
+    "results": "Results",
+    "useCases": "Use Cases",
+    "partnership": "Partnership",
+    "about": "About",
+    "contact": "Contact",
+    "menu": "Menu",
+    "close": "Close"
+  },
+  "footer": {
+    "desc": "AI Research and Growth Infrastructure for B2B.",
+    "company": "Company",
+    "infrastructure": "Infrastructure",
+    "results": "Results",
+    "useCases": "Use Cases",
+    "about": "About",
+    "connect": "Connect",
+    "contact": "Contact",
+    "linkedin": "LinkedIn"
+  },
+  "limitedAvailability": "Limited Availability"
+}

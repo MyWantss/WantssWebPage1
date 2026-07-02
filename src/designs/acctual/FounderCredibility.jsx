@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import { useTranslation } from 'react-i18next'
 import { GlowingEffect } from './GlowingEffect'
 import founderPhoto from '../../../assets/acctual/Profile_Pic/ChatGPT Image Jun 30, 2026, 03_01_57 PM.png'
 import './FounderCredibility.css'
@@ -19,15 +20,16 @@ function useFadeIn(threshold = 0.15) {
 }
 
 export default function FounderCredibility() {
+  const { t } = useTranslation()
   const ref = useFadeIn()
 
   return (
     <section className="wts-founder" ref={ref}>
       <div className="wts-founder-inner fade-up">
-        <p className="wts-section-label">Who's Behind This</p>
-        <h2 className="wts-section-big-title" style={{ marginBottom: '12px' }}>Built by an Operator</h2>
+        <p className="wts-section-label">{t('home:founder.label')}</p>
+        <h2 className="wts-section-big-title" style={{ marginBottom: '12px' }}>{t('home:founder.title')}</h2>
         <p className="wts-founder-subtitle">
-          Intelinx was created by someone who has built, scaled, and sold across industries — and now applies AI to the hardest part of growth: finding the right clients at the right time.
+          {t('home:founder.subtitle')}
         </p>
 
         {/* Bio card */}
@@ -38,23 +40,23 @@ export default function FounderCredibility() {
 
           <div className="wts-founder-info">
             <h3 className="wts-founder-name">José Manuel Duque</h3>
-            <p className="wts-founder-role">Founder & AI Systems Architect · Montreal, Canada</p>
+            <p className="wts-founder-role">{t('home:founder.role')}</p>
             <p className="wts-founder-bio">
-              After two decades of building and scaling businesses — managing teams, growing revenue, figuring out what makes people buy — I realized the hardest part was always the same: finding the right conversation with the right person at the right time. So I built a system that does exactly that. Intelinx is what I wish I'd had from day one.
+              {t('home:founder.bio')}
             </p>
 
             <div className="wts-founder-stats">
               <div className="wts-founder-stat">
-                <span className="wts-founder-stat-num">20+</span>
-                <span className="wts-founder-stat-label">Years building businesses</span>
+                <span className="wts-founder-stat-num">{t('home:founder.stat1num')}</span>
+                <span className="wts-founder-stat-label">{t('home:founder.stat1label')}</span>
               </div>
               <div className="wts-founder-stat">
-                <span className="wts-founder-stat-num">7</span>
-                <span className="wts-founder-stat-label">Companies founded</span>
+                <span className="wts-founder-stat-num">{t('home:founder.stat2num')}</span>
+                <span className="wts-founder-stat-label">{t('home:founder.stat2label')}</span>
               </div>
               <div className="wts-founder-stat" style={{ marginLeft: '40px', textAlign: 'center' }}>
-                <span className="wts-founder-stat-num wts-founder-stat-num--accent">English &nbsp;·&nbsp; Spanish &nbsp;·&nbsp; French</span>
-                <span className="wts-founder-stat-label">Languages</span>
+                <span className="wts-founder-stat-num wts-founder-stat-num--accent">{t('home:founder.languages')}</span>
+                <span className="wts-founder-stat-label">{t('home:founder.languagesLabel')}</span>
               </div>
             </div>
           </div>

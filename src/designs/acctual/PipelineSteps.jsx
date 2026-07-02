@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import { useTranslation } from 'react-i18next'
 import { GlowingEffect } from './GlowingEffect'
 import FloatingElements from './FloatingElements'
 import './PipelineSteps.css'
@@ -19,6 +20,7 @@ function useFadeIn(threshold = 0.1) {
 }
 
 export default function PipelineSteps({ steps }) {
+  const { t } = useTranslation()
   const ref = useFadeIn()
 
   return (
@@ -26,9 +28,9 @@ export default function PipelineSteps({ steps }) {
       <FloatingElements section="process-orbital" />
 
       <div className="wts-pipeline-header">
-        <h2 className="wts-section-big-title" style={{ marginBottom: '8px' }}>From Signal to Conversation</h2>
+        <h2 className="wts-section-big-title" style={{ marginBottom: '8px' }}>{t('home:pipeline.title')}</h2>
         <p className="wts-pipeline-subtitle">
-          Everything needed to identify demand, build context, and act at the right time.
+          {t('home:pipeline.subtitle')}
         </p>
       </div>
 
@@ -54,7 +56,7 @@ export default function PipelineSteps({ steps }) {
         })}
       </div>
 
-      <p className="wts-pipeline-footer">Each layer strengthens the next.</p>
+      <p className="wts-pipeline-footer">{t('home:pipeline.footer')}</p>
     </section>
   )
 }
