@@ -66,13 +66,53 @@ export default function ScrollScrubHero({
     }
   }, [smooth, isTouch])
 
-  // Touch: kick off looped playback (the autoPlay attribute alone may not fire
-  // after the client-side toggle, so call play() explicitly; ignore rejections).
+  // Touch: kick off looped playback robustly. iOS only autoplays muted inline
+  // video when the `muted` ATTRIBUTE is present (React sets the property, not
+  // always the attribute), and it silently rejects play() if nothing is
+  // buffered yet — so we force muted, retry as the video loads, and, as a last
+  // resort, play on the first user gesture (which always unblocks playback).
   useEffect(() => {
     if (!isTouch) return
     const v = videoRef.current
     if (!v) return
-    v.play?.().catch(() => {})
+
+    v.muted = true
+    v.defaultMuted = true
+    v.setAttribute('muted', '')
+    v.setAttribute('playsinline', '')
+
+    const tryPlay = () => {
+      if (!v.paused) return
+      const r = v.play()
+      if (r && r.catch) r.catch(() => {})
+    }
+
+    tryPlay()
+    v.load()               // nudge iOS to actually fetch frame data
+    tryPlay()
+
+    v.addEventListener('loadeddata', tryPlay)
+    v.addEventListener('canplay', tryPlay)
+
+    // Last resort: the first user gesture always unblocks playback.
+    const onGesture = () => {
+      tryPlay()
+      if (!v.paused) removeGesture()
+    }
+    const removeGesture = () => {
+      window.removeEventListener('touchstart', onGesture)
+      window.removeEventListener('scroll', onGesture)
+      window.removeEventListener('click', onGesture)
+    }
+    window.addEventListener('touchstart', onGesture, { passive: true })
+    window.addEventListener('scroll', onGesture, { passive: true })
+    window.addEventListener('click', onGesture)
+
+    return () => {
+      v.removeEventListener('loadeddata', tryPlay)
+      v.removeEventListener('canplay', tryPlay)
+      removeGesture()
+    }
   }, [isTouch])
 
   return (
