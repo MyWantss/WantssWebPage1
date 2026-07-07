@@ -4,6 +4,9 @@ import './Intelinx.css'
 import heroScrub from '../../../assets/acctual/hero-scrub.mp4'
 import heroRocketScrub from '../../../assets/acctual/hero-rocket-scrub.mp4'
 import ctaScrub from '../../../assets/acctual/cta-scrub.mp4'
+import heroScrubPoster from '../../../assets/acctual/hero-scrub-poster.jpg'
+import heroRocketScrubPoster from '../../../assets/acctual/hero-rocket-scrub-poster.jpg'
+import ctaScrubPoster from '../../../assets/acctual/cta-scrub-poster.jpg'
 import DisplayCards from './DisplayCards'
 import Cursor from './Cursor'
 import { GlowingEffect } from './GlowingEffect'
@@ -55,7 +58,7 @@ function useFadeIn(threshold = 0.15) {
 function Hero() {
   const { t } = useTranslation()
   return (
-    <ScrollScrubHero videoSrc={heroRocketScrub} scrollHeight="240vh" overlayOpacity={0.5}>
+    <ScrollScrubHero videoSrc={heroRocketScrub} poster={heroRocketScrubPoster} scrollHeight="240vh" overlayOpacity={0.5}>
       <div className="ss-textwrap">
         <h1 className="wts-hero-title" style={{ color: '#fff' }}>
           {t('home:hero.title')}<br/><span style={{ color: 'var(--accent)' }}>{t('home:hero.titleAccent')}</span>
@@ -289,7 +292,7 @@ function Differentiators() {
 function MidCTA() {
   const { t } = useTranslation()
   return (
-    <ScrollScrubHero videoSrc={heroScrub} scrollHeight="220vh" overlayOpacity={0.55}>
+    <ScrollScrubHero videoSrc={heroScrub} poster={heroScrubPoster} scrollHeight="220vh" overlayOpacity={0.55}>
       <div className="ss-textwrap">
         <h2 className="wts-mid-cta-title" style={{ color: '#fff' }}>
           {t('home:midCta.title')}<br/><span style={{ color: 'var(--accent)' }}>{t('home:midCta.titleAccent')}</span>
@@ -309,7 +312,7 @@ function MidCTA() {
 function FinalCTA() {
   const { t } = useTranslation()
   return (
-    <ScrollScrubHero videoSrc={ctaScrub} scrollHeight="220vh" overlayOpacity={0.55}>
+    <ScrollScrubHero videoSrc={ctaScrub} poster={ctaScrubPoster} scrollHeight="220vh" overlayOpacity={0.55}>
       <div className="ss-textwrap">
         <h2 className="wts-cta-final-title" style={{ color: '#fff' }}>{t('home:finalCta.title')}</h2>
         <a href="#" onClick={openCalendly} className="wts-btn" style={{ position: 'relative' }}>
