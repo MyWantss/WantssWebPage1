@@ -10,12 +10,12 @@ import { GlowingEffect } from './GlowingEffect'
 import LanguageSwitcher from './LanguageSwitcher'
 import { LangLink, useLang, localizedPath, stripLangPrefix } from '../../i18n/routing'
 
-import menuImgSystem from '../../../assets/acctual/Menu/Crea_una_imagen_similar_a_la_q_Nano_Banana_2_00844.jpg'
-import menuImgResults from '../../../assets/acctual/Menu/Crea_una_imagen_similar_a_la_q_Nano_Banana_2_42464.jpg'
-import menuImgUseCases from '../../../assets/acctual/Menu/Obscurece_el_fondo_de_la_image_Nano_Banana_2_53798.jpg'
-import menuImgPartnership from '../../../assets/acctual/Menu/Regrgale_mi_logotipo_en_alguna_Nano_Banana_2_43997.jpg'
-import menuImgAbout from '../../../assets/acctual/Menu/Crea_una_imagen_similar_a_la_q_Nano_Banana_2_63684.jpg'
-import menuImgContact from '../../../assets/acctual/Menu/Agrega_el_logotipo_en_colores__Nano_Banana_2_69920.jpg'
+import menuImgSystem from '../../../assets/acctual/Menu/ChatGPT Image Jul 7, 2026, 11_30_24 AM.png'
+import menuImgResults from '../../../assets/acctual/Menu/ChatGPT Image Jul 7, 2026, 11_25_29 AM.png'
+import menuImgUseCases from '../../../assets/acctual/Menu/ChatGPT Image Jul 7, 2026, 02_23_19 PM.png'
+import menuImgPartnership from '../../../assets/acctual/Menu/ChatGPT Image Jul 7, 2026, 02_38_02 PM.png'
+import menuImgAbout from '../../../assets/acctual/Menu/8411abc0-d60d-4d97-b177-f792e769459c.png'
+import menuImgContact from '../../../assets/acctual/Menu/ChatGPT Image Jul 7, 2026, 02_46_54 PM.png'
 
 gsap.registerPlugin(CustomEase)
 

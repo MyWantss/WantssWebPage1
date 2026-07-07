@@ -4,10 +4,10 @@
     "description": "Intelinx es infraestructura de adquisición de clientes con IA para B2B: detecta las empresas correctas, investígalas y priorízalas, y abre las conversaciones correctas en el momento correcto."
   },
   "hero": {
-    "title": "Las verdaderas oportunidades no llegan solas a tocar tu puerta.",
-    "titleAccent": "Hay que detectarlas, entenderlas y abordarlas con precisión",
+    "title": "Las oportunidades no tocan la puerta.",
+    "titleAccent": "Las encontramos primero.",
     "sub": "Un sistema de prospección llave en mano que convierte las señales del mercado en contacto estratégico.",
-    "micro": "Un socio privado para la detección de oportunidades y la adquisición de clientes"
+    "micro": "Trabajamos con un puñado de clientes a la vez"
   },
   "notif": {
     "titleAccent": "Cómo se ve una oportunidad",
@@ -18,10 +18,22 @@
   "differentiators": {
     "title": "La realidad detrás del crecimiento",
     "items": [
-      { "title": "Las oportunidades no esperan", "desc": "Entre más pronto las ves, más fácil es ganarlas." },
-      { "title": "El contexto mejora cada mensaje", "desc": "Un buen mensaje funciona mejor cuando está respaldado por contexto real." },
-      { "title": "La velocidad cambia los resultados", "desc": "Entre más rápido identificas y actúas, menos oportunidades pierdes." },
-      { "title": "Los sistemas crean consistencia", "desc": "El crecimiento se vuelve más confiable cuando la adquisición funciona como un sistema." }
+      {
+        "title": "Las oportunidades no esperan",
+        "desc": "Entre más pronto las ves, más fácil es ganarlas."
+      },
+      {
+        "title": "El contexto mejora cada mensaje",
+        "desc": "Un buen mensaje funciona mejor cuando está respaldado por contexto real."
+      },
+      {
+        "title": "La velocidad cambia los resultados",
+        "desc": "Entre más rápido identificas y actúas, menos oportunidades pierdes."
+      },
+      {
+        "title": "Los sistemas crean consistencia",
+        "desc": "El crecimiento se vuelve más confiable cuando la adquisición funciona como un sistema."
+      }
     ]
   },
   "transformation": {
@@ -55,22 +67,57 @@
     "subtitle": "Todo lo necesario para identificar demanda, construir contexto y actuar en el momento correcto.",
     "footer": "Cada capa fortalece a la siguiente.",
     "steps": [
-      { "category": "Señales", "title": "Señales del mercado", "content": "Monitorea continuamente la actividad del mercado para encontrar empresas que coinciden con el perfil de cliente ideal." },
-      { "category": "Investigación", "title": "Motor de investigación", "content": "Construye inteligencia estructurada sobre clientes potenciales antes de iniciar cualquier conversación." },
-      { "category": "Inteligencia", "title": "Inteligencia de oportunidades", "content": "Evalúa la relevancia e identifica qué empresas representan las mejores oportunidades de adquisición." },
-      { "category": "Activación", "title": "Activación", "content": "Inicia conversaciones altamente relevantes usando personalización y timing basados en señales." },
-      { "category": "Pipeline", "title": "Conversión", "content": "Transforma las conversaciones calificadas en oportunidades activas, reuniones e impulso para el pipeline." }
+      {
+        "category": "Señales",
+        "title": "Señales del mercado",
+        "content": "Monitorea continuamente la actividad del mercado para encontrar empresas que coinciden con el perfil de cliente ideal."
+      },
+      {
+        "category": "Investigación",
+        "title": "Motor de investigación",
+        "content": "Construye inteligencia estructurada sobre clientes potenciales antes de iniciar cualquier conversación."
+      },
+      {
+        "category": "Inteligencia",
+        "title": "Inteligencia de oportunidades",
+        "content": "Evalúa la relevancia e identifica qué empresas representan las mejores oportunidades de adquisición."
+      },
+      {
+        "category": "Activación",
+        "title": "Activación",
+        "content": "Inicia conversaciones altamente relevantes usando personalización y timing basados en señales."
+      },
+      {
+        "category": "Pipeline",
+        "title": "Conversión",
+        "content": "Transforma las conversaciones calificadas en oportunidades activas, reuniones e impulso para el pipeline."
+      }
     ]
   },
   "problem": {
     "title": "El problema no es el esfuerzo",
     "titleAccent": "Es el timing",
     "cards": [
-      { "title": "El inbound es impredecible", "description": "Esperar leads de inbound hace que el crecimiento del pipeline sea lento y poco confiable." },
-      { "title": "Contacto sin precisión", "description": "Se envían miles de correos sin saber qué empresas realmente necesitan el servicio." },
-      { "title": "Ventas sin sistemas de inteligencia", "description": "Se contacta a los prospectos sin investigación, contexto ni señales que indiquen una oportunidad real." },
-      { "title": "Pipeline frágil", "description": "La adquisición de clientes depende de campañas ocasionales en lugar de un sistema continuo." },
-      { "title": "Señales de oportunidad perdidas", "description": "Empresas que podrían volverse grandes clientes permanecen invisibles porque ningún sistema monitorea el mercado." }
+      {
+        "title": "El inbound es impredecible",
+        "description": "Esperar leads de inbound hace que el crecimiento del pipeline sea lento y poco confiable."
+      },
+      {
+        "title": "Contacto sin precisión",
+        "description": "Se envían miles de correos sin saber qué empresas realmente necesitan el servicio."
+      },
+      {
+        "title": "Ventas sin sistemas de inteligencia",
+        "description": "Se contacta a los prospectos sin investigación, contexto ni señales que indiquen una oportunidad real."
+      },
+      {
+        "title": "Pipeline frágil",
+        "description": "La adquisición de clientes depende de campañas ocasionales en lugar de un sistema continuo."
+      },
+      {
+        "title": "Señales de oportunidad perdidas",
+        "description": "Empresas que podrían volverse grandes clientes permanecen invisibles porque ningún sistema monitorea el mercado."
+      }
     ]
   },
   "featured": {

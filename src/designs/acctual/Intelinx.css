@@ -23,7 +23,7 @@
   color: var(--text);
   background: var(--bg);
   line-height: 1.55;
-  overflow-x: hidden;
+  overflow-x: clip; /* clip (not hidden) so descendant position:sticky still works */
   transition: background 0.3s ease, color 0.3s ease;
   cursor: none;
 }
@@ -87,18 +87,72 @@
   transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.6s ease;
 }
 
-@media (max-width: 1400px) {
-  .wts-diff .float-element,
-  .wts-process-orbital .float-element,
-  .wts-cta-final .float-element,
-  .wts-access .float-element {
-    transform: scale(0.6);
+/*
+ * Decorative floaters are pinned to the viewport's side gutters while the
+ * content is centered, so as the window narrows they drift over the headings.
+ * Rather than hide them, we shrink them and anchor the scale to the OUTER edge
+ * (transform-origin left/right) so they tuck back into the gutter and keep clear
+ * of the centered text — staying visible but out of the way. Only on genuinely
+ * narrow screens (<1100px) do we slide them out entirely.
+ *
+ * NOTE: the pipeline section's class is .wts-pipeline (NOT .wts-process-orbital).
+ * The previous rules referenced .wts-process-orbital, which doesn't exist in the
+ * markup, so the Gmail/Outlook pipeline floaters were never being managed at all.
+ */
+@media (max-width: 1800px) and (min-width: 1101px) {
+  .wts-diff .floater-side-left,
+  .wts-pipeline .floater-side-left,
+  .wts-cta-final .floater-side-left,
+  .wts-access .floater-side-left {
+    transform: scale(0.62);
+    transform-origin: left center;
+  }
+  .wts-diff .floater-side-right,
+  .wts-pipeline .floater-side-right,
+  .wts-cta-final .floater-side-right,
+  .wts-access .floater-side-right {
+    transform: scale(0.62);
+    transform-origin: right center;
+  }
+}
+
+@media (max-width: 1450px) and (min-width: 1101px) {
+  .wts-diff .floater-side-left,
+  .wts-pipeline .floater-side-left,
+  .wts-cta-final .floater-side-left,
+  .wts-access .floater-side-left {
+    transform: scale(0.46);
+    transform-origin: left center;
+  }
+  .wts-diff .floater-side-right,
+  .wts-pipeline .floater-side-right,
+  .wts-cta-final .floater-side-right,
+  .wts-access .floater-side-right {
+    transform: scale(0.46);
+    transform-origin: right center;
+  }
+}
+
+@media (max-width: 1250px) and (min-width: 1101px) {
+  .wts-diff .floater-side-left,
+  .wts-pipeline .floater-side-left,
+  .wts-cta-final .floater-side-left,
+  .wts-access .floater-side-left {
+    transform: scale(0.38);
+    transform-origin: left center;
+  }
+  .wts-diff .floater-side-right,
+  .wts-pipeline .floater-side-right,
+  .wts-cta-final .floater-side-right,
+  .wts-access .floater-side-right {
+    transform: scale(0.38);
+    transform-origin: right center;
   }
 }
 
 @media (max-width: 1100px) {
   .wts-diff .floater-side-left,
-  .wts-process-orbital .floater-side-left,
+  .wts-pipeline .floater-side-left,
   .wts-cta-final .floater-side-left,
   .wts-access .floater-side-left {
     transform: translateX(-180%);
@@ -106,7 +160,7 @@
   }
 
   .wts-diff .floater-side-right,
-  .wts-process-orbital .floater-side-right,
+  .wts-pipeline .floater-side-right,
   .wts-cta-final .floater-side-right,
   .wts-access .floater-side-right {
     transform: translateX(180%);
@@ -133,7 +187,7 @@
   }
 
   .kn-header .kn-logo-img {
-    height: 30px;
+    height: 24px;
   }
 }
 
@@ -398,6 +452,48 @@
   overflow: hidden;
 }
 
+/* ── Smooth-scroll hero (reveal on scroll) ── */
+.wts-hero-scroll {
+  position: relative;
+  width: 100%;
+}
+
+.wts-hero-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 140px 24px 80px;
+}
+
+.wts-hero-clip {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  will-change: clip-path;
+}
+
+/* Hero text section, below the scroll reveal */
+.wts-hero-text {
+  position: relative;
+  text-align: center;
+  padding: 100px 24px 120px;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
 .wts-hero-content {
   position: relative;
   z-index: 3;
@@ -405,7 +501,7 @@
 
 .wts-hero-title {
   font-family: 'Outfit', sans-serif;
-  font-size: clamp(42px, 6vw, 72px);
+  font-size: clamp(32px, 4.4vw, 54px);
   font-weight: 700;
   line-height: 1.05;
   letter-spacing: -0.03em;
@@ -423,7 +519,7 @@
   margin-top: 24px;
   margin-bottom: 32px;
   line-height: 1.7;
-  max-width: 800px;
+  max-width: 920px;
   margin-left: auto;
   margin-right: auto;
   font-family: 'Inter', sans-serif;

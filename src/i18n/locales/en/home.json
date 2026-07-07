@@ -4,10 +4,10 @@
     "description": "Intelinx is AI-powered client acquisition infrastructure for B2B — detect the right companies, research and prioritize them, and open the right conversations at the right time."
   },
   "hero": {
-    "title": "Real opportunities don't just knock on your door.",
-    "titleAccent": "They must be detected, understood, and approached with precision",
+    "title": "Opportunities don't knock.",
+    "titleAccent": "We find them first.",
     "sub": "A done-for-you outbound system that turns market signals into strategic outreach.",
-    "micro": "A private partner for opportunity detection and client acquisition"
+    "micro": "We work with a handful of clients at a time"
   },
   "notif": {
     "titleAccent": "What opportunity in motion",
@@ -18,10 +18,22 @@
   "differentiators": {
     "title": "The Reality Behind Growth",
     "items": [
-      { "title": "Opportunities Don't Wait", "desc": "The earlier you see them, the easier they are to win." },
-      { "title": "Context Improves Every Message", "desc": "A strong message works better when it is backed by real context." },
-      { "title": "Speed Changes Outcomes", "desc": "The faster you identify and act, the fewer opportunities you lose." },
-      { "title": "Systems Create Consistency", "desc": "Growth becomes more reliable when acquisition runs as a system." }
+      {
+        "title": "Opportunities Don't Wait",
+        "desc": "The earlier you see them, the easier they are to win."
+      },
+      {
+        "title": "Context Improves Every Message",
+        "desc": "A strong message works better when it is backed by real context."
+      },
+      {
+        "title": "Speed Changes Outcomes",
+        "desc": "The faster you identify and act, the fewer opportunities you lose."
+      },
+      {
+        "title": "Systems Create Consistency",
+        "desc": "Growth becomes more reliable when acquisition runs as a system."
+      }
     ]
   },
   "transformation": {
@@ -55,22 +67,57 @@
     "subtitle": "Everything needed to identify demand, build context, and act at the right time.",
     "footer": "Each layer strengthens the next.",
     "steps": [
-      { "category": "Signals", "title": "Market Signals", "content": "Continuously monitors market activity to surface companies that match the ideal client profile." },
-      { "category": "Research", "title": "Research Engine", "content": "Builds structured intelligence around potential clients before any conversation begins." },
-      { "category": "Intelligence", "title": "Opportunity Intelligence", "content": "Evaluates relevance and identifies which companies represent the strongest acquisition opportunities." },
-      { "category": "Activation", "title": "Activation", "content": "Initiates highly relevant conversations using signal-driven personalization and timing." },
-      { "category": "Pipeline", "title": "Conversion", "content": "Transforms qualified conversations into active opportunities, meetings and pipeline momentum." }
+      {
+        "category": "Signals",
+        "title": "Market Signals",
+        "content": "Continuously monitors market activity to surface companies that match the ideal client profile."
+      },
+      {
+        "category": "Research",
+        "title": "Research Engine",
+        "content": "Builds structured intelligence around potential clients before any conversation begins."
+      },
+      {
+        "category": "Intelligence",
+        "title": "Opportunity Intelligence",
+        "content": "Evaluates relevance and identifies which companies represent the strongest acquisition opportunities."
+      },
+      {
+        "category": "Activation",
+        "title": "Activation",
+        "content": "Initiates highly relevant conversations using signal-driven personalization and timing."
+      },
+      {
+        "category": "Pipeline",
+        "title": "Conversion",
+        "content": "Transforms qualified conversations into active opportunities, meetings and pipeline momentum."
+      }
     ]
   },
   "problem": {
     "title": "The problem isn't effort",
     "titleAccent": "It's timing",
     "cards": [
-      { "title": "Inbound Is Unpredictable", "description": "Waiting for inbound leads makes pipeline growth slow and unreliable." },
-      { "title": "Outreach Without Precision", "description": "Thousands of emails are sent without knowing which companies actually need the service." },
-      { "title": "Sales Lacks Intelligence Systems", "description": "Prospects are contacted without research, context or signals that indicate real opportunity." },
-      { "title": "Fragile Pipeline", "description": "Client acquisition depends on occasional campaigns instead of a continuous system." },
-      { "title": "Opportunity Signals Missed", "description": "Companies that could become great clients remain invisible because no system is monitoring the market." }
+      {
+        "title": "Inbound Is Unpredictable",
+        "description": "Waiting for inbound leads makes pipeline growth slow and unreliable."
+      },
+      {
+        "title": "Outreach Without Precision",
+        "description": "Thousands of emails are sent without knowing which companies actually need the service."
+      },
+      {
+        "title": "Sales Lacks Intelligence Systems",
+        "description": "Prospects are contacted without research, context or signals that indicate real opportunity."
+      },
+      {
+        "title": "Fragile Pipeline",
+        "description": "Client acquisition depends on occasional campaigns instead of a continuous system."
+      },
+      {
+        "title": "Opportunity Signals Missed",
+        "description": "Companies that could become great clients remain invisible because no system is monitoring the market."
+      }
     ]
   },
   "featured": {

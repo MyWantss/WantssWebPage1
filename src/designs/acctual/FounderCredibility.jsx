@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 import { GlowingEffect } from './GlowingEffect'
+import AnimatedGradientBackground from './AnimatedGradientBackground'
 import founderPhoto from '../../../assets/acctual/Profile_Pic/ChatGPT Image Jun 30, 2026, 03_01_57 PM.png'
 import './FounderCredibility.css'
 
@@ -25,7 +26,16 @@ export default function FounderCredibility() {
 
   return (
     <section className="wts-founder" ref={ref}>
-      <div className="wts-founder-inner fade-up">
+      <AnimatedGradientBackground
+        startingGap={120}
+        Breathing={true}
+        breathingRange={8}
+        animationSpeed={0.015}
+        gradientColors={['#09090b', '#1a0a2e', '#5B6BF5', '#A855F7', '#EC4899', '#A855F7', '#09090b']}
+        gradientStops={[30, 48, 60, 70, 80, 90, 100]}
+        topOffset={10}
+      />
+      <div className="wts-founder-inner fade-up" style={{ position: 'relative', zIndex: 1 }}>
         <p className="wts-section-label">{t('home:founder.label')}</p>
         <h2 className="wts-section-big-title" style={{ marginBottom: '12px' }}>{t('home:founder.title')}</h2>
         <p className="wts-founder-subtitle">

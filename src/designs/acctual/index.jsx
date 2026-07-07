@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import './Intelinx.css'
-import heroVideo from '../../../assets/acctual/11 (2)(2).mp4'
+import heroScrub from '../../../assets/acctual/hero-scrub.mp4'
+import heroRocketScrub from '../../../assets/acctual/hero-rocket-scrub.mp4'
+import ctaScrub from '../../../assets/acctual/cta-scrub.mp4'
 import DisplayCards from './DisplayCards'
 import Cursor from './Cursor'
 import { GlowingEffect } from './GlowingEffect'
@@ -16,6 +18,7 @@ import FounderCredibility from './FounderCredibility'
 import DottedSurface from './DottedSurface'
 import Seo from '../../i18n/Seo'
 import { motion, AnimatePresence } from 'framer-motion'
+import ScrollScrubHero from './ScrollScrubHero'
 import { Calendar, Code, FileText, User, Clock } from 'lucide-react'
 import { ThemeContext } from './ThemeContext'
 
@@ -48,38 +51,25 @@ function useFadeIn(threshold = 0.15) {
   return ref
 }
 
-/* ─── Hero ─── */
+/* ─── Hero (scroll-scrubbed rocket video) ─── */
 function Hero() {
   const { t } = useTranslation()
-  const ref = useFadeIn(0.1)
   return (
-    <section className="wts-hero" ref={ref}>
-      <video
-        className="wts-hero-video"
-        src={heroVideo}
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
-      />
-      <div className="wts-hero-overlay" />
-      <FloatingElements section="hero" />
-
-      <div className="wts-hero-content fade-up">
-        <h1 className="wts-hero-title">
-          {t('home:hero.title')}<br/><span>{t('home:hero.titleAccent')}</span>
+    <ScrollScrubHero videoSrc={heroRocketScrub} scrollHeight="240vh" overlayOpacity={0.5}>
+      <div className="ss-textwrap">
+        <h1 className="wts-hero-title" style={{ color: '#fff' }}>
+          {t('home:hero.title')}<br/><span style={{ color: 'var(--accent)' }}>{t('home:hero.titleAccent')}</span>
         </h1>
-        <p className="wts-hero-sub">{t('home:hero.sub')}</p>
-        <div style={{ marginTop: '120px' }}>
+        <p className="wts-hero-sub" style={{ color: 'rgba(255, 255, 255, 0.9)' }}>{t('home:hero.sub')}</p>
+        <div style={{ marginTop: '32px' }}>
           <a href="#" onClick={openCalendly} className="wts-btn" style={{ position: 'relative' }}>
             <GlowingEffect spread={40} proximity={64} inactiveZone={0.01} borderWidth={2} disabled={false} />
             {t('common:cta.explorePartnership')}
           </a>
-          <p className="wts-hero-micro">{t('home:hero.micro')}</p>
+          <p className="wts-hero-micro" style={{ marginTop: '14px' }}>{t('home:hero.micro')}</p>
         </div>
       </div>
-    </section>
+    </ScrollScrubHero>
   )
 }
 
@@ -92,8 +82,8 @@ import floater6 from './floaters/floater-6.png'
 import floater8 from './floaters/floater-8.png'
 
 const notificationItems = [
-  { src: floater1, alt: 'New Sales Opportunity', from: 'right', width: '620px' },
-  { src: floater5, alt: 'New Meeting Scheduled', from: 'left', width: '650px', extraSpace: 40 },
+  { src: floater1, alt: 'New Sales Opportunity', from: 'right', width: '465px', extraSpace: 40 },
+  { src: floater5, alt: 'New Meeting Scheduled', from: 'left', width: '465px', extraSpace: 120 },
   { src: floater2, alt: 'AI Lead Analysis', from: 'left', width: '768px', extraSpace: 90 },
   { src: floater6, alt: 'AI Prospect Identified', from: 'right', width: '820px', extraSpace: -140 },
   { src: floater8, alt: 'Market Signal Detected', from: 'left', width: '820px', extraSpace: -90 },
@@ -295,53 +285,41 @@ function Differentiators() {
   )
 }
 
-/* ─── Mid CTA ─── */
+/* ─── Mid CTA (scroll-scrubbed video background) ─── */
 function MidCTA() {
   const { t } = useTranslation()
-  const ref = useFadeIn()
   return (
-    <section className="wts-mid-cta" ref={ref} style={{ position: 'relative', overflow: 'hidden' }}>
-      <DottedSurface className="wts-mid-cta-dots" color={[0.659, 0.333, 0.969]} />
-      <div className="wts-mid-cta-inner fade-up" style={{ position: 'relative', zIndex: 1 }}>
-        <h2 className="wts-mid-cta-title">
+    <ScrollScrubHero videoSrc={heroScrub} scrollHeight="220vh" overlayOpacity={0.55}>
+      <div className="ss-textwrap">
+        <h2 className="wts-mid-cta-title" style={{ color: '#fff' }}>
           {t('home:midCta.title')}<br/><span style={{ color: 'var(--accent)' }}>{t('home:midCta.titleAccent')}</span>
         </h2>
-        <p className="wts-mid-cta-desc">{t('home:midCta.desc')}</p>
+        <p className="wts-mid-cta-desc" style={{ color: 'rgba(255, 255, 255, 0.85)' }}>{t('home:midCta.desc')}</p>
         <a href="#" onClick={openCalendly} className="wts-btn" style={{ position: 'relative' }}>
           <GlowingEffect spread={40} proximity={64} inactiveZone={0.01} borderWidth={2} disabled={false} />
           {t('common:cta.explorePartnership')}
         </a>
-        <p className="wts-mid-cta-note">{t('home:midCta.note')}</p>
+        <p className="wts-mid-cta-note" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>{t('home:midCta.note')}</p>
       </div>
-    </section>
+    </ScrollScrubHero>
   )
 }
 
-/* ─── Final CTA ─── */
+/* ─── Final CTA (scroll-scrubbed video background) ─── */
 function FinalCTA() {
   const { t } = useTranslation()
-  const ref = useFadeIn()
   return (
-    <section className="wts-cta-final" ref={ref} style={{ position: 'relative', overflow: 'hidden' }}>
-      <AnimatedGradientBackground
-        startingGap={120}
-        Breathing={true}
-        breathingRange={8}
-        animationSpeed={0.015}
-        gradientColors={['#09090b', '#1a0a2e', '#5B6BF5', '#A855F7', '#EC4899', '#A855F7', '#09090b']}
-        gradientStops={[30, 48, 60, 70, 80, 90, 100]}
-        topOffset={10}
-      />
-      <div className="wts-cta-final-inner fade-up" style={{ position: 'relative', zIndex: 1 }}>
-        <h2 className="wts-cta-final-title">{t('home:finalCta.title')}</h2>
+    <ScrollScrubHero videoSrc={ctaScrub} scrollHeight="220vh" overlayOpacity={0.55}>
+      <div className="ss-textwrap">
+        <h2 className="wts-cta-final-title" style={{ color: '#fff' }}>{t('home:finalCta.title')}</h2>
         <a href="#" onClick={openCalendly} className="wts-btn" style={{ position: 'relative' }}>
           <GlowingEffect spread={40} proximity={64} inactiveZone={0.01} borderWidth={2} disabled={false} />
           {t('common:cta.explorePartnership')}
         </a>
         <p style={{ marginTop: '24px', color: 'var(--accent)', fontSize: '14px', fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase' }}>{t('common:limitedAvailability')}</p>
-        <p style={{ marginTop: '6px', color: 'var(--muted)', fontSize: '13px' }}>{t('home:finalCta.note')}</p>
+        <p style={{ marginTop: '6px', color: 'rgba(255, 255, 255, 0.7)', fontSize: '13px' }}>{t('home:finalCta.note')}</p>
       </div>
-    </section>
+    </ScrollScrubHero>
   )
 }
 

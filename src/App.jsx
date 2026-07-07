@@ -1,5 +1,5 @@
 import { Suspense, lazy, useEffect } from 'react'
-import { BrowserRouter, Routes, Route, useParams, Navigate } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, useParams, Navigate, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import './i18n'
 import { DEFAULT_LANG, PREFIXED_LANGS, STORAGE_KEY } from './i18n/config'
@@ -24,6 +24,31 @@ function Loading() {
       LOADING...
     </div>
   )
+}
+
+// React Router doesn't scroll to a #hash on client-side navigation, so any
+// in-page anchor (footer menu, etc.) would just change the URL without moving.
+// This watches the location hash and smooth-scrolls to the matching element,
+// retrying briefly while lazy-loaded route content mounts.
+function ScrollToHashElement() {
+  const { hash, pathname } = useLocation()
+  useEffect(() => {
+    if (!hash) return
+    const id = decodeURIComponent(hash.slice(1))
+    let tries = 0
+    let timer
+    const tryScroll = () => {
+      const el = document.getElementById(id)
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' })
+        return
+      }
+      if (tries++ < 25) timer = setTimeout(tryScroll, 100)
+    }
+    timer = setTimeout(tryScroll, 120)
+    return () => clearTimeout(timer)
+  }, [hash, pathname])
+  return null
 }
 
 // Keeps i18next in sync with the language prefix in the URL. An unknown prefix
@@ -58,6 +83,7 @@ function RootRedirect({ children }) {
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToHashElement />
       <Suspense fallback={<Loading />}>
         <Routes>
           {/* English (default, no prefix) */}

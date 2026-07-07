@@ -4,10 +4,10 @@
     "description": "Intelinx est une infrastructure d’acquisition de clients propulsée par l’IA pour le B2B — détectez les bonnes entreprises, recherchez-les et priorisez-les, puis amorcez les bonnes conversations au bon moment."
   },
   "hero": {
-    "title": "Les vraies occasions ne frappent pas simplement à votre porte.",
-    "titleAccent": "Elles doivent être détectées, comprises et abordées avec précision",
-    "sub": "Un système de prospection sortante clé en main qui transforme les signaux du marché en approches stratégiques.",
-    "micro": "Un partenaire privé pour la détection d’occasions et l’acquisition de clients"
+    "title": "Les opportunités ne frappent pas à votre porte.",
+    "titleAccent": "Nous les repérons en premier.",
+    "sub": "Un système de prospection clé en main qui transforme les signaux du marché en prises de contact stratégiques.",
+    "micro": "Nous ne travaillons qu'avec une poignée de clients à la fois."
   },
   "notif": {
     "titleAccent": "Voici à quoi ressemble",
@@ -18,10 +18,22 @@
   "differentiators": {
     "title": "La réalité derrière la croissance",
     "items": [
-      { "title": "Les occasions n’attendent pas", "desc": "Plus vous les voyez tôt, plus elles sont faciles à gagner." },
-      { "title": "Le contexte améliore chaque message", "desc": "Un message fort fonctionne mieux lorsqu’il est appuyé par un contexte réel." },
-      { "title": "La rapidité change les résultats", "desc": "Plus vous identifiez et agissez rapidement, moins vous perdez d’occasions." },
-      { "title": "Les systèmes créent la constance", "desc": "La croissance devient plus fiable lorsque l’acquisition fonctionne comme un système." }
+      {
+        "title": "Les occasions n’attendent pas",
+        "desc": "Plus vous les voyez tôt, plus elles sont faciles à gagner."
+      },
+      {
+        "title": "Le contexte améliore chaque message",
+        "desc": "Un message fort fonctionne mieux lorsqu’il est appuyé par un contexte réel."
+      },
+      {
+        "title": "La rapidité change les résultats",
+        "desc": "Plus vous identifiez et agissez rapidement, moins vous perdez d’occasions."
+      },
+      {
+        "title": "Les systèmes créent la constance",
+        "desc": "La croissance devient plus fiable lorsque l’acquisition fonctionne comme un système."
+      }
     ]
   },
   "transformation": {
@@ -55,22 +67,57 @@
     "subtitle": "Tout le nécessaire pour repérer la demande, bâtir le contexte et agir au bon moment.",
     "footer": "Chaque couche renforce la suivante.",
     "steps": [
-      { "category": "Signaux", "title": "Signaux du marché", "content": "Surveille en continu l’activité du marché pour faire ressortir les entreprises qui correspondent au profil de client idéal." },
-      { "category": "Recherche", "title": "Moteur de recherche", "content": "Bâtit un renseignement structuré autour des clients potentiels avant qu’une conversation ne commence." },
-      { "category": "Renseignement", "title": "Renseignement sur les occasions", "content": "Évalue la pertinence et détermine quelles entreprises représentent les plus fortes occasions d’acquisition." },
-      { "category": "Activation", "title": "Activation", "content": "Amorce des conversations hautement pertinentes grâce à une personnalisation et à un moment guidés par les signaux." },
-      { "category": "Pipeline", "title": "Conversion", "content": "Transforme les conversations qualifiées en occasions actives, en rendez-vous et en dynamique de pipeline." }
+      {
+        "category": "Signaux",
+        "title": "Signaux du marché",
+        "content": "Surveille en continu l’activité du marché pour faire ressortir les entreprises qui correspondent au profil de client idéal."
+      },
+      {
+        "category": "Recherche",
+        "title": "Moteur de recherche",
+        "content": "Bâtit un renseignement structuré autour des clients potentiels avant qu’une conversation ne commence."
+      },
+      {
+        "category": "Renseignement",
+        "title": "Renseignement sur les occasions",
+        "content": "Évalue la pertinence et détermine quelles entreprises représentent les plus fortes occasions d’acquisition."
+      },
+      {
+        "category": "Activation",
+        "title": "Activation",
+        "content": "Amorce des conversations hautement pertinentes grâce à une personnalisation et à un moment guidés par les signaux."
+      },
+      {
+        "category": "Pipeline",
+        "title": "Conversion",
+        "content": "Transforme les conversations qualifiées en occasions actives, en rendez-vous et en dynamique de pipeline."
+      }
     ]
   },
   "problem": {
     "title": "Le problème n’est pas l’effort",
     "titleAccent": "C’est le moment",
     "cards": [
-      { "title": "L’inbound est imprévisible", "description": "Attendre les prospects entrants rend la croissance du pipeline lente et peu fiable." },
-      { "title": "De la prospection sans précision", "description": "Des milliers de courriels sont envoyés sans savoir quelles entreprises ont réellement besoin du service." },
-      { "title": "Les ventes manquent de systèmes de renseignement", "description": "On contacte des prospects sans recherche, sans contexte ni signaux indiquant une réelle occasion." },
-      { "title": "Un pipeline fragile", "description": "L’acquisition de clients dépend de campagnes occasionnelles plutôt que d’un système continu." },
-      { "title": "Des signaux d’occasion manqués", "description": "Des entreprises qui pourraient devenir d’excellents clients restent invisibles, faute d’un système qui surveille le marché." }
+      {
+        "title": "L’inbound est imprévisible",
+        "description": "Attendre les prospects entrants rend la croissance du pipeline lente et peu fiable."
+      },
+      {
+        "title": "De la prospection sans précision",
+        "description": "Des milliers de courriels sont envoyés sans savoir quelles entreprises ont réellement besoin du service."
+      },
+      {
+        "title": "Les ventes manquent de systèmes de renseignement",
+        "description": "On contacte des prospects sans recherche, sans contexte ni signaux indiquant une réelle occasion."
+      },
+      {
+        "title": "Un pipeline fragile",
+        "description": "L’acquisition de clients dépend de campagnes occasionnelles plutôt que d’un système continu."
+      },
+      {
+        "title": "Des signaux d’occasion manqués",
+        "description": "Des entreprises qui pourraient devenir d’excellents clients restent invisibles, faute d’un système qui surveille le marché."
+      }
     ]
   },
   "featured": {
