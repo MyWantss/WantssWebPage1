@@ -29,6 +29,12 @@ function useFadeIn(threshold = 0.15) {
   return ref
 }
 
+const STEPS = [
+  { key: 'step1', hasNote: true },
+  { key: 'step2', hasNote: false },
+  { key: 'step3', hasNote: true },
+]
+
 export default function AccessSystem() {
   const { t } = useTranslation()
   const ref = useFadeIn()
@@ -54,51 +60,38 @@ export default function AccessSystem() {
         <p className="wts-access-intro">
           {t('home:access.intro')}
         </p>
-        <p className="wts-access-scarcity">{t('home:access.scarcity')}</p>
 
-        {/* Pricing plans grid */}
-        <div className="wts-access-plans-grid">
-          {/* 6-month plan */}
-          <div className="wts-access-plan-card" style={{ position: 'relative', cursor: 'default' }}>
-            <GlowingEffect spread={40} proximity={64} inactiveZone={0.01} borderWidth={2} disabled={false} />
-            <span className="wts-access-badge">{t('home:access.plan6.badge')}</span>
-            <span className="wts-access-plan-from">{t('home:access.startingAt')}</span>
-            <div className="wts-access-plan-price">$5,500<span className="wts-access-plan-mo">/mo</span></div>
-            <p className="wts-access-plan-billing">{t('home:access.plan6.billing')}</p>
-            <p className="wts-access-plan-desc">
-              {t('home:access.plan6.desc')}
-            </p>
-            <a href="#" onClick={openCalendly} className="wts-access-cta wts-access-cta--center" style={{ position: 'relative' }}>
+        {/* Engagement ladder */}
+        <div className="wts-access-ladder">
+          {STEPS.map(({ key, hasNote }, i) => (
+            <div className="wts-access-step" key={key} style={{ position: 'relative' }}>
               <GlowingEffect spread={40} proximity={64} inactiveZone={0.01} borderWidth={2} disabled={false} />
-              {t('common:cta.explorePartnershipLower')}
-            </a>
-          </div>
-
-          {/* 12-month plan — recommended */}
-          <div className="wts-access-plan-card wts-access-plan-card--featured" style={{ position: 'relative', cursor: 'default' }}>
-            <GlowingEffect spread={40} proximity={64} inactiveZone={0.01} borderWidth={2} disabled={false} />
-            <span className="wts-access-recommended">{t('home:access.recommended')}</span>
-            <span className="wts-access-badge">{t('home:access.plan12.badge')}</span>
-            <span className="wts-access-plan-from">{t('home:access.startingAt')}</span>
-            <div className="wts-access-plan-price">$4,950<span className="wts-access-plan-mo">/mo</span></div>
-            <p className="wts-access-plan-billing">{t('home:access.plan12.billing')}</p>
-            <span className="wts-access-plan-savings">{t('home:access.plan12.savings')}</span>
-            <p className="wts-access-plan-desc">
-              {t('home:access.plan12.desc')}
-            </p>
-            <a href="#" onClick={openCalendly} className="wts-access-cta wts-access-cta--filled wts-access-cta--center" style={{ position: 'relative' }}>
-              <GlowingEffect spread={40} proximity={64} inactiveZone={0.01} borderWidth={2} disabled={false} />
-              {t('common:cta.explorePartnershipLower')}
-            </a>
-          </div>
+              <div className="wts-access-step-index">
+                <span className="wts-access-step-num">{String(i + 1).padStart(2, '0')}</span>
+                <span className="wts-access-step-tag">{t(`home:access.${key}.step`)}</span>
+              </div>
+              <div className="wts-access-step-body">
+                <div className="wts-access-step-head">
+                  <h3 className="wts-access-step-name">{t(`home:access.${key}.name`)}</h3>
+                  <span className="wts-access-badge wts-access-step-duration">{t(`home:access.${key}.duration`)}</span>
+                </div>
+                <p className="wts-access-step-desc">{t(`home:access.${key}.desc`)}</p>
+                <div className="wts-access-step-price">{t(`home:access.${key}.price`)}</div>
+                {hasNote && (
+                  <p className="wts-access-step-note">{t(`home:access.${key}.note`)}</p>
+                )}
+              </div>
+            </div>
+          ))}
         </div>
 
-        {/* Money-back guarantee */}
-        <div className="wts-access-guarantee-bottom">
-          <div className="wts-access-guarantee-badge">
-            <span className="wts-access-guarantee-title">{t('home:access.guaranteeTitle')}</span>
-            <span className="wts-access-guarantee-desc">{t('home:access.guaranteeDesc')}<br />{t('home:access.guaranteeNote')}</span>
-          </div>
+        {/* CTA */}
+        <div className="wts-access-cta-wrap">
+          <a href="#" onClick={openCalendly} className="wts-access-cta wts-access-cta--filled" style={{ position: 'relative' }}>
+            <GlowingEffect spread={40} proximity={64} inactiveZone={0.01} borderWidth={2} disabled={false} />
+            {t('home:access.cta')}
+          </a>
+          <p className="wts-access-cta-note">{t('home:access.ctaNote')}</p>
         </div>
       </div>
     </section>

@@ -130,27 +130,35 @@
     "moreLabel": "Aussi conçu pour"
   },
   "access": {
-    "label": "Accéder au système",
+    "label": "Par où commencer",
     "title": "CONÇU",
     "titleAccent": "POUR VOUS",
-    "intro": "DE LA DÉTECTION DU SIGNAL À LA CONVERSATION RÉSERVÉE",
-    "scarcity": "Seulement 3 places restantes avant la capacité maximale",
-    "startingAt": "À partir de",
-    "recommended": "Recommandé",
-    "plan6": {
-      "badge": "6 mois",
-      "billing": "Facturé tous les six mois · minimum de 6 mois",
-      "desc": "Système de prospection sortante complet — constitution de listes, rédaction, infrastructure et optimisation."
+    "intro": "Pas de gros engagement d’entrée. On commence petit, on prouve que l’intelligence fonctionne, et on ne déploie que ce qui a fait ses preuves.",
+    "step1": {
+      "step": "Étape 1",
+      "name": "Sprint d’intelligence",
+      "duration": "2 semaines",
+      "desc": "25 à 30 fiches d’intelligence sur vos comptes cibles : les signaux détectés, les décideurs identifiés et l’angle d’approche que nous recommandons pour chacun.",
+      "price": "À partir de 2 000 $ US",
+      "note": "Garantie de remboursement de 30 jours : si les fiches n’aiguisent pas votre pipeline, vous êtes intégralement remboursé."
     },
-    "plan12": {
-      "badge": "12 mois",
-      "billing": "Facturé annuellement · engagement de 12 mois",
-      "savings": "Économisez 6 600 $ par rapport au tarif de 6 mois",
-      "desc": "Tout ce qui est inclus dans le forfait de 6 mois, avec une plus longue période pour composer les résultats. Le meilleur rapport qualité-prix pour un pipeline soutenu."
+    "step2": {
+      "step": "Étape 2",
+      "name": "Pilote d’activation",
+      "duration": "6–8 semaines",
+      "desc": "Une campagne de prospection ciblée sur les comptes issus du sprint, avec des indicateurs de succès définis avant de commencer.",
+      "price": "Portée sur mesure"
     },
-    "guaranteeTitle": "Garantie de remboursement de 30 jours",
-    "guaranteeDesc": "Si vous n’êtes pas satisfait du système et de la stratégie livrés dans vos 30 premiers jours, vous êtes intégralement remboursé.",
-    "guaranteeNote": "Sans aucune question."
+    "step3": {
+      "step": "Étape 3",
+      "name": "Infrastructure d’acquisition",
+      "duration": "En continu",
+      "desc": "Veille continue des signaux, nouveaux comptes chaque mois, activation et reporting — un système qui se renforce avec le temps.",
+      "price": "Portée sur mesure",
+      "note": "Un seul client par secteur et par territoire. Tant que vous y êtes, vos concurrents n’y sont pas."
+    },
+    "cta": "Réserver un appel",
+    "ctaNote": "Tout commence par une conversation de 30 minutes."
   },
   "founder": {
     "label": "Qui est derrière tout ça",

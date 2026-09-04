@@ -130,27 +130,35 @@
     "moreLabel": "Também feito para"
   },
   "access": {
-    "label": "Acesse o sistema",
+    "label": "Como começamos",
     "title": "FEITO",
     "titleAccent": "PARA VOCÊ",
-    "intro": "DA DETECÇÃO DE SINAIS À CONVERSA AGENDADA",
-    "scarcity": "Restam apenas 3 vagas até atingir a capacidade máxima",
-    "startingAt": "A partir de",
-    "recommended": "Recomendado",
-    "plan6": {
-      "badge": "6 meses",
-      "billing": "Faturado a cada seis meses · mínimo de 6 meses",
-      "desc": "Sistema de prospecção outbound completo: montagem de listas, copy, infraestrutura e otimização."
+    "intro": "Não começamos com um contrato pesado. Começamos pequeno, provamos que a inteligência funciona e só escalamos o que já deu resultado.",
+    "step1": {
+      "step": "Passo 1",
+      "name": "Sprint de Inteligência",
+      "duration": "2 semanas",
+      "desc": "De 25 a 30 dossiês de inteligência sobre suas contas ideais: os sinais que detectamos, os decisores por trás de cada um e o ângulo de abordagem que recomendamos.",
+      "price": "A partir de US$ 2.000",
+      "note": "Com garantia de reembolso de 30 dias: se os dossiês não afiarem seu pipeline, você recebe o valor de volta."
     },
-    "plan12": {
-      "badge": "12 meses",
-      "billing": "Faturado anualmente · compromisso de 12 meses",
-      "savings": "Economize $6,600 em relação à tarifa de 6 meses",
-      "desc": "Tudo do plano de 6 meses, com mais tempo para que os resultados se acumulem. O melhor custo-benefício para um pipeline sustentado."
+    "step2": {
+      "step": "Passo 2",
+      "name": "Piloto de Ativação",
+      "duration": "6–8 semanas",
+      "desc": "Uma campanha outbound delimitada sobre as contas do sprint, com métricas de sucesso combinadas antes de começar.",
+      "price": "Escopo sob medida"
     },
-    "guaranteeTitle": "Garantia de reembolso de 30 dias",
-    "guaranteeDesc": "Se você não ficar satisfeito com o sistema e a estratégia entregues nos seus primeiros 30 dias, recebe um reembolso completo.",
-    "guaranteeNote": "Sem perguntas."
+    "step3": {
+      "step": "Passo 3",
+      "name": "Infraestrutura de Aquisição",
+      "duration": "Contínuo",
+      "desc": "Monitoramento contínuo de sinais, contas novas todo mês, ativação e relatórios — um sistema que se acumula a seu favor.",
+      "price": "Escopo sob medida",
+      "note": "Um único cliente por vertical e território. Enquanto você está dentro, seus concorrentes não estão."
+    },
+    "cta": "Agendar uma conversa",
+    "ctaNote": "Tudo começa com uma conversa de 30 minutos."
   },
   "founder": {
     "label": "Quem está por trás disso",

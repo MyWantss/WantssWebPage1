@@ -75,101 +75,111 @@
   font-size: 13px;
 }
 
-/* ── Plans grid ── */
-.wts-access-plans-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  margin-bottom: 40px;
-  align-items: center;
+/* ── Engagement ladder ── */
+.wts-access-ladder {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  max-width: 720px;
+  margin: 0 auto 48px;
+  text-align: left;
 }
 
-.wts-access-plan-card {
+.wts-access-step {
+  display: grid;
+  grid-template-columns: 76px 1fr;
+  gap: 28px;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 32px 28px;
+  padding: 32px 32px 30px;
+}
+
+/* vertical connector between steps */
+.wts-access-step + .wts-access-step::before {
+  content: '';
+  position: absolute;
+  top: -23px;
+  left: 56px;
+  width: 1px;
+  height: 24px;
+  background: var(--accent);
+  opacity: 0.4;
+}
+
+.wts-access-step-index {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  align-self: center;
+  align-items: flex-start;
+  gap: 8px;
+  padding-top: 2px;
 }
 
-/* ── Featured / Recommended card ── */
-.wts-access-plan-card--featured {
-  border-color: var(--accent);
-  box-shadow: 0 0 30px rgba(139, 92, 246, 0.15);
-  padding: 40px 32px;
-  transform: scale(1.04);
-}
-
-.wts-access-recommended {
-  display: inline-block;
+.wts-access-step-num {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 11px;
+  font-size: 30px;
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: #fff;
-  background: var(--accent);
-  padding: 5px 16px;
-  border-radius: 20px;
-  margin-bottom: 20px;
-}
-
-.wts-access-plan-from {
-  display: block;
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 11px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--muted);
-  margin-bottom: 6px;
-}
-
-.wts-access-plan-price {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 40px;
-  font-weight: 700;
-  color: var(--text);
+  line-height: 1;
   letter-spacing: -0.02em;
-  margin: 0 0 4px 0;
+  color: var(--accent);
 }
 
-.wts-access-plan-mo {
-  font-size: 18px;
-  font-weight: 500;
-  color: var(--muted);
-}
-
-.wts-access-plan-billing {
-  font-size: 13px;
-  color: var(--muted);
-  margin: 0 0 20px 0;
-}
-
-.wts-access-plan-savings {
-  display: inline-block;
+.wts-access-step-tag {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #fff;
-  background: var(--accent);
-  padding: 4px 12px;
-  border-radius: 20px;
-  margin-bottom: 12px;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  white-space: nowrap;
 }
 
-.wts-access-plan-desc {
+.wts-access-step-head {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.wts-access-step-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text);
+  margin: 0;
+}
+
+.wts-access-step-duration {
+  margin-bottom: 0; /* overrides .wts-access-badge spacing inside step head */
+}
+
+.wts-access-step-desc {
   font-size: 14px;
   color: var(--muted);
+  line-height: 1.7;
+  margin: 0 0 18px 0;
+}
+
+.wts-access-step-price {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  border-top: 1px solid var(--border);
+  padding-top: 14px;
+}
+
+.wts-access-step-note {
+  font-size: 13px;
+  color: var(--muted);
   line-height: 1.6;
-  margin: 0 0 24px 0;
-  max-width: 340px;
+  margin: 14px 0 0 0;
+  padding-left: 14px;
+  border-left: 2px solid var(--accent);
 }
 
 /* ── CTA button ── */
@@ -212,47 +222,15 @@
   color: #fff;
 }
 
-/* ── Guarantee (bottom) ── */
-.wts-access-guarantee-bottom {
+/* ── CTA wrap (bottom of ladder) ── */
+.wts-access-cta-wrap {
   text-align: center;
-  max-width: 560px;
-  margin: 0 auto;
 }
 
-.wts-access-guarantee-badge {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  font-family: 'Space Grotesk', sans-serif;
-  color: #fff;
-  background: var(--accent);
-  padding: 28px 36px;
-  border-radius: 16px;
-}
-
-.wts-access-guarantee-title {
-  font-size: 18px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-
-.wts-access-guarantee-desc {
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.55);
-  letter-spacing: 0;
-  text-transform: none;
-}
-
-/* ── Scarcity ── */
-.wts-access-scarcity {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--accent);
-  margin: 0 0 40px 0;
+.wts-access-cta-note {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 16px 0 0 0;
   letter-spacing: 0.02em;
 }
 
@@ -273,12 +251,21 @@
 
 
 /* ── Responsive ── */
-@media (max-width: 768px) {
-  .wts-access-plans-grid {
+@media (max-width: 640px) {
+  .wts-access-step {
     grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 26px 22px 24px;
   }
 
-  .wts-access-plan-card {
-    padding: 28px 24px;
+  .wts-access-step-index {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 10px;
+    padding-top: 0;
+  }
+
+  .wts-access-step + .wts-access-step::before {
+    display: none;
   }
 }

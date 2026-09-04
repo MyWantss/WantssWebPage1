@@ -130,27 +130,35 @@
     "moreLabel": "También hecho para"
   },
   "access": {
-    "label": "Accede al sistema",
+    "label": "Cómo empezamos",
     "title": "HECHO",
     "titleAccent": "PARA TI",
-    "intro": "DE LA DETECCIÓN DE SEÑALES A LA CONVERSACIÓN AGENDADA",
-    "scarcity": "Solo quedan 3 lugares hasta llegar a capacidad máxima",
-    "startingAt": "Desde",
-    "recommended": "Recomendado",
-    "plan6": {
-      "badge": "6 meses",
-      "billing": "Facturado cada seis meses · mínimo de 6 meses",
-      "desc": "Sistema de prospección completo: armado de listas, copy, infraestructura y optimización."
+    "intro": "No arrancamos con un contrato pesado. Empezamos en corto, demostramos que la inteligencia funciona y solo escalamos lo que ya dio resultados.",
+    "step1": {
+      "step": "Paso 1",
+      "name": "Sprint de Inteligencia",
+      "duration": "2 semanas",
+      "desc": "De 25 a 30 fichas de inteligencia sobre tus cuentas ideales: las señales que detectamos, los tomadores de decisión detrás de cada una y el ángulo de contacto que recomendamos.",
+      "price": "Desde $2,000 USD",
+      "note": "Con garantía de reembolso de 30 días: si las fichas no afilan tu pipeline, te devolvemos el total."
     },
-    "plan12": {
-      "badge": "12 meses",
-      "billing": "Facturado anualmente · compromiso de 12 meses",
-      "savings": "Ahorra $6,600 frente a la tarifa de 6 meses",
-      "desc": "Todo lo del plan de 6 meses, con más tiempo para que los resultados se acumulen. La mejor relación valor-precio para un pipeline sostenido."
+    "step2": {
+      "step": "Paso 2",
+      "name": "Piloto de Activación",
+      "duration": "6–8 semanas",
+      "desc": "Una campaña outbound acotada sobre las cuentas del sprint, con métricas de éxito acordadas antes de arrancar.",
+      "price": "Alcance a medida"
     },
-    "guaranteeTitle": "Garantía de reembolso de 30 días",
-    "guaranteeDesc": "Si no quedas satisfecho con el sistema y la estrategia entregados en tus primeros 30 días, recibes un reembolso completo.",
-    "guaranteeNote": "Sin preguntas."
+    "step3": {
+      "step": "Paso 3",
+      "name": "Infraestructura de Adquisición",
+      "duration": "Continuo",
+      "desc": "Monitoreo continuo de señales, cuentas nuevas cada mes, activación y reportes: un sistema que se acumula a tu favor.",
+      "price": "Alcance a medida",
+      "note": "Un solo cliente por vertical y territorio. Mientras tú estás dentro, tu competencia no."
+    },
+    "cta": "Agenda una llamada",
+    "ctaNote": "Todo empieza con una conversación de 30 minutos."
   },
   "founder": {
     "label": "Quién está detrás de esto",

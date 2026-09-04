@@ -130,27 +130,35 @@
     "moreLabel": "Also built for"
   },
   "access": {
-    "label": "Access the System",
+    "label": "How We Start",
     "title": "BUILT",
     "titleAccent": "FOR YOU",
-    "intro": "FROM SIGNAL DETECTION TO BOOKED CONVERSATION",
-    "scarcity": "Only 3 spots left until maximum capacity",
-    "startingAt": "Starting at",
-    "recommended": "Recommended",
-    "plan6": {
-      "badge": "6 months",
-      "billing": "Billed every six months · 6-month minimum",
-      "desc": "Full outbound system — list building, copy, infrastructure, and optimization."
+    "intro": "We don't open with a heavy retainer. We start small, prove the intelligence works, and only scale what's proven.",
+    "step1": {
+      "step": "Step 1",
+      "name": "Intelligence Sprint",
+      "duration": "2 weeks",
+      "desc": "25–30 account intelligence briefs on your ideal targets — the signals we detected, the decision-makers behind them, and the outreach angle we recommend for each one.",
+      "price": "From $2,000 USD",
+      "note": "Backed by a 30-day money-back guarantee: if the briefs don't sharpen your pipeline, you get a full refund."
     },
-    "plan12": {
-      "badge": "12 months",
-      "billing": "Billed annually · 12-month commitment",
-      "savings": "Save $6,600 vs. 6-month rate",
-      "desc": "Everything in the 6-month plan, with a longer runway to compound results. Best value for sustained pipeline."
+    "step2": {
+      "step": "Step 2",
+      "name": "Activation Pilot",
+      "duration": "6–8 weeks",
+      "desc": "A scoped outbound campaign on the accounts from your sprint, with success metrics agreed before we start.",
+      "price": "Custom scope"
     },
-    "guaranteeTitle": "30-day money-back guarantee",
-    "guaranteeDesc": "If you're not satisfied with the system and strategy delivered in your first 30 days, you get a full refund.",
-    "guaranteeNote": "No questions asked."
+    "step3": {
+      "step": "Step 3",
+      "name": "Acquisition Infrastructure",
+      "duration": "Ongoing",
+      "desc": "Continuous signal monitoring, new accounts every month, activation and reporting — a system that compounds over time.",
+      "price": "Custom scope",
+      "note": "One client per vertical and territory. While you're in, your competitors aren't."
+    },
+    "cta": "Book a call",
+    "ctaNote": "Every engagement starts with a 30-minute conversation."
   },
   "founder": {
     "label": "Who's Behind This",
